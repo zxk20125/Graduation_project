@@ -2,12 +2,10 @@ package cn.zxk;
 
 import cn.zxk.entity.Student;
 import cn.zxk.mappers.StudentMapper;
-import org.assertj.core.error.ShouldBeTrue;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.rmi.CORBA.StubDelegate;
 import java.util.List;
 
 @SpringBootTest

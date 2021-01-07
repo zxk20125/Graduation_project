@@ -17,11 +17,11 @@
 
 
 <link rel="shortcut icon" href="favicon.ico">
-<link href="${ctx}/houtai/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-<link href="${ctx}/houtai/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-<link href="${ctx}/houtai/css/plugins/iCheck/custom.css" rel="stylesheet">
-<link href="${ctx}/houtai/css/animate.min.css" rel="stylesheet">
-<link href="${ctx}/houtai/css/style.min.css?v=4.0.0" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/animate.min.css" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/style.min.css?v=4.0.0" rel="stylesheet">
 <base target="_blank">
 
 </head>
@@ -51,23 +51,23 @@
 						<table class="table table-striped table-hover ">
 							<thead>
 								<tr>
-									<th>物件类型</th>
-									<!-- <th>终点地址</th> -->
+									<th>起始地址</th>
+									<th>终点地址</th>
 									<th>定价（元）</th>
 									<th>操作</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${resSorts}" var="resSort">
+								<c:forEach items="${shipAddresss}" var="shipAddress">
 									<tr>
-										<td>${resSort.resSort}</td>
-										<td>${resSort.resSortMoney}</td>
-										<%-- <td>${shipAddress.shipAddressMoney}</td> --%>
+										<td>${shipAddress.startAddress}</td>
+										<td>${shipAddress.endAddress}</td>
+										<td>${shipAddress.shipAddressMoney}</td>
 										<td><botton class="btn btn-danger btn-xs"
-												onclick="deleteTDis(${resSort.resSortId})"> <span
+												onclick="deleteTDis(${shipAddress.shipAddressId})"> <span
 												class="glyphicon glyphicon-remove"></span> 删除</botton>
 											<button class="btn btn-primary btn-xs"
-												onclick="updateTDis(${resSort.resSortId})"
+												onclick="updateTDis(${shipAddress.shipAddressId})"
 												data-toggle="modal" data-target="#myModalupdateTDistance">
 												<span class="glyphicon glyphicon-pencil"></span> 修改
 											</button></td>
@@ -102,28 +102,27 @@
 						name="updateTDistancefrom">
 						<div class="modal-body">
 
-						<div class="form-group">
-								<input type="hidden" class="form-control" id="res_sort_id"
-									name="resSortId" required="">
+							<div class="form-group">
+								<input type="hidden" class="form-control" id="ship_address_id"
+									name="shipAddressId" required="">
 							</div>
 
 							<div class="form-group">
-								<label>物件类别</label> <input type="text" class="form-control"
-									id="res_sort" required="" name="resSort" required="required">
+								<label>起始地址</label> <input type="text" class="form-control"
+									id="start_address" required="" name="startAddress" required="required">
 							</div>
 
 
-							<!-- <div class="form-group">
+							<div class="form-group">
 								<label>终点地址</label> <input type="text" class="form-control"
 									id="end_address" name="endAddress" required="required">
-							</div> -->
+							</div>
 							
 							<div class="form-group">
 								<label>定价</label> <input type="number" class="form-control"
-									id="res_sort_money" name="resSortMoney" required="required">
+									id="ship_address_money" name="shipAddressMoney" required="required">
 							</div>
 						</div>
-
 
 						<div class="modal-footer">
 							<button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
@@ -158,24 +157,24 @@
 
 
 							<div class="form-group">
-								<input type="hidden" class="form-control" id="res_sort_id"
-									name="resSortId" required="">
+								<input type="hidden" class="form-control" id="ship_address_id"
+									name="shipAddressId" required="">
 							</div>
 
 							<div class="form-group">
-								<label>物件类别</label> <input type="text" class="form-control"
-									id="res_sort" required="" name="resSort" required="required">
+								<label>起始地址</label> <input type="text" class="form-control"
+									id="start_address" required="" name="startAddress" required="required">
 							</div>
 
 
-							<!-- <div class="form-group">
+							<div class="form-group">
 								<label>终点地址</label> <input type="text" class="form-control"
 									id="end_address" name="endAddress" required="required">
-							</div> -->
+							</div>
 							
 							<div class="form-group">
 								<label>定价</label> <input type="number" class="form-control"
-									id="res_sort_money" name="resSortMoney" required="required">
+									id="ship_address_money" name="shipAddressMoney" required="required">
 							</div>
 						</div>
 
@@ -198,12 +197,12 @@
 		
 	</div>
 
-	<script src="${ctx}/houtai/js/jquery.min.js?v=2.1.4"></script>
-	<script src="${ctx}/houtai/js/bootstrap.min.js?v=3.3.5"></script>
-	<script src="${ctx}/houtai/js/plugins/peity/jquery.peity.min.js"></script>
-	<script src="${ctx}/houtai/js/content.min.js?v=1.0.0"></script>
-	<script src="${ctx}/houtai/js/plugins/iCheck/icheck.min.js"></script>
-	<script src="${ctx}/houtai/js/demo/peity-demo.min.js"></script>
+	<script src="${ctx}/static/houtai/js/jquery.min.js?v=2.1.4"></script>
+	<script src="${ctx}/static/houtai/js/bootstrap.min.js?v=3.3.5"></script>
+	<script src="${ctx}/static/houtai/js/plugins/peity/jquery.peity.min.js"></script>
+	<script src="${ctx}/static/houtai/js/content.min.js?v=1.0.0"></script>
+	<script src="${ctx}/static/houtai/js/plugins/iCheck/icheck.min.js"></script>
+	<script src="${ctx}/static/houtai/js/demo/peity-demo.min.js"></script>
 	<script>
         $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
     </script>
@@ -228,23 +227,23 @@
 	};
 		
 	
-	// 修改模态窗口显示
+	//距离 修改模态窗口显示
 	function updateTDis(id){
 		console.log(id)
-		$.post(getContextPath()+"/houtai/resSort/update.do",
+		$.post(getContextPath()+"/houtai/shipAddress/update.do",
 				{id:id},
 				function(msg){	
 					 console.log(msg);
-				$("#res_sort_id").val(msg.resSortId);
-				$("#res_sort").val(msg.resSort);
-				/* $("#end_address").val(msg.endAddress); */
-				$("#res_sort_money").val(msg.resSortMoney);
+				$("#ship_address_id").val(msg.shipAddressId);
+				$("#start_address").val(msg.startAddress);
+				$("#end_address").val(msg.endAddress);
+				$("#ship_address_money").val(msg.shipAddressMoney);
 				}
 				);
 		
 	};
 	
-	//修改 操作
+	//距离修改 操作
 	function doupdateTDis(){
 		//JSON数据结构数据
 		var sta = $("#updateTDistanceform").serializeArray();
@@ -259,11 +258,11 @@
 		console.log(formJSON);
 
 		// jquery 表单提交
-			$.post(getContextPath()+"/houtai/resSort/doupdate.do",formJSON,function(msg){ 
+			$.post(getContextPath()+"/houtai/shipAddress/doupdate.do",formJSON,function(msg){ 
 				console.log(msg);
 				if(msg == 1){
 					alert("修改成功");
-					 window.location.href = getContextPath()+"/houtai/resSort/res_sort_list.do";  
+					 window.location.href = getContextPath()+"/houtai/shipAddress/ship_address_list.do";  
 				}else{
 					alert("修改失败")
 				}
@@ -273,13 +272,13 @@
 	
 	//删除操作
 	function deleteTDis(id){
-		$.post(getContextPath()+"/houtai/resSort/delete.do",
+		$.post(getContextPath()+"/houtai/shipAddress/delete.do",
 				{id:id},
 				function(msg){		
 					if(msg == 1){
 						console.log(msg);
 						setTimeout(function() {
-							window.location.href=getContextPath()+"/houtai/resSort/res_sort_list.do";
+							window.location.href=getContextPath()+"/houtai/shipAddress/ship_address_list.do";
 						}, 500);
 					}else{
 						alert("删除失败");
@@ -303,15 +302,15 @@
 		console.log(formJSON);
 		
 		// jquery 表单提交
-			$.post(getContextPath()+"/houtai/resSort/insert.do",formJSON,function(msg){ 
+			$.post(getContextPath()+"/houtai/shipAddress/insert.do",formJSON,function(msg){ 
 				console.log(msg);
 				if(msg == 1){
 					//window.location.href = getContextPath()+"/staff.do?cmd=list"; 
 					alert("添加成功");
-					window.location.href = getContextPath()+"/houtai/resSort/res_sort_list.do"; 
+					window.location.href = getContextPath()+"/houtai/shipAddress/ship_address_list.do"; 
 				}else{
 					alert("已有条件，添加失败");
-					window.location.href = getContextPath()+"/houtai/resSort/res_sort_list.do";
+					window.location.href = getContextPath()+"/houtai/shipAddress/ship_address_list.do";
 				}
 		  	});
 			return false; // 必须返回false，否则表单会自己再做一次提交操作，并且页面跳转

@@ -11,21 +11,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>员工信息列表</title>
+<title>网点信息列表</title>
 
 <link rel="shortcut icon" href="${ctx}/houtai/favicon.ico">
-<link href="${ctx}/houtai/css/bootstrap.min.css?v=3.3.5"
+<link href="${ctx}/static/houtai/css/bootstrap.min.css?v=3.3.5"
 	rel="stylesheet">
-<link href="${ctx}/houtai/css/font-awesome.min.css?v=4.4.0"
+<link href="${ctx}/static/houtai/css/font-awesome.min.css?v=4.4.0"
 	rel="stylesheet">
 
 <!-- Data Tables -->
 <link
-	href="${ctx}/houtai/css/plugins/dataTables/dataTables.bootstrap.css"
+	href="${ctx}/static/houtai/css/plugins/dataTables/dataTables.bootstrap.css"
 	rel="stylesheet">
 
-<link href="${ctx}/houtai/css/animate.min.css" rel="stylesheet">
-<link href="${ctx}/houtai/css/style.min.css?v=4.0.0" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/animate.min.css" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/style.min.css?v=4.0.0" rel="stylesheet">
 <base target="_blank">
 
 </head>
@@ -38,7 +38,7 @@
 				<div class="ibox float-e-margins">
 					<div class="ibox-title">
 						<h5>
-							订单 <small>信息</small>
+							 <small>网点信息列表</small>
 						</h5>
 						<div class="ibox-tools">
 							<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
@@ -48,64 +48,41 @@
 					</div>
 					<div class="ibox-content">
 
-						<table
-							class="table table-striped table-stripped table-hover dataTables-example">
+						<table class="table table-striped  table-hover dataTables-example">
 							<thead>
 								<tr>
-									<th>订单号</th>
-									<th>下单用户</th> 
-									<th>地址</th>
-									<!-- <th>物件重量</th>
-									<th>物件类别</th>
-									<th>是否保价</th>
-									<th>物品信息</th> -->
-									<th>物品信息</th>
-									<!-- <th>运费</th> -->
-									<!-- <th>支付方式</th> -->
-									<th>下单时间</th>
-									<th>留言</th>
-									<!-- <th>操作</th> -->
+									<!-- <th>用户编号</th> -->
+									<th>网点名</th>
+									<th>网点所在城市</th>
+									<th>网点地址</th>
+									<th>联系号码</th>
+									<th>操作</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${orders}" var="order">
-									<tr>
-										<td>${order.orderId}</td>
-										<td>${order.customer.customerLoginName}</td>
+								<c:forEach items="${dots}" var="dot">
+									<tr class="gradeX">
+										<td>${dot.dotName}</td>
+										<td>${dot.dotCity}</td>
+										<td>${dot.dotAddress}</td>
+										<td>${dot.dotPhone}</td>
+										
 										<td>
-									寄：${order.sender} ${order.senderPhone}<br>	
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${order.senderAddress}<br><br>
-									收：${order.receiver} ${order.receiverPhone}<br>
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${order.receivingAddress}
-									</td>
-										<td>${order.resSort}<br> 重量：${order.weight}kg<br>
-
-									<c:if test="${order.insuredPrice==0 }">未保价</c:if> 
-									<c:if test="${order.insuredPrice==1 }">已保价</c:if> <br> 
-									运费${order.freight}元<br>
-										${order.paymentMethod}
-									</td>
-										
-										<%-- <td>${order.weight}</td>
-										<td>${order.resSort}</td>
-										<td>${order.insuredPrice}</td>
-										<td>${order.freight}</td> --%>
-
-										<td><fmt:formatDate value="${order.orderTime}"
-												pattern="yyyy-MM-dd HH:mm" /></td>
-										
-										 <td><%-- <botton class="btn btn-danger btn-xs"
-												onclick="deleteTDis(${resSort.resSortId})"> <span
-												class="glyphicon glyphicon-remove"></span> 删除</botton> --%>
-											<button class="btn btn-primary btn-xs" onclick="asdfasdfremarks(${order.orderId})" data-toggle="modal" data-target="#myModal">
-												<span class="glyphicon glyphicon-pencil"></span> 查看
-											</button></td> 
+											<button class="btn btn-primary btn-xs"
+												onclick="update(${dot.dotId})" data-toggle="modal"
+												data-target="#myModal">
+												<span class="glyphicon glyphicon-pencil"></span> 修改
+											</button></td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
 
-						<!-- 添加修改框 -->
+					
+
+
+						<!-- 修改弹出框 -->
+
 						<div class="modal inmodal" id="myModal" tabindex="-1"
 							role="dialog" aria-hidden="true">
 							<div class="modal-dialog">
@@ -116,7 +93,7 @@
 											<span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
 										</button>
 										<!-- <i class="fa fa-laptop modal-icon"></i> -->
-										<h5 class="modal-title">留言</h5>
+										<h5 class="modal-title">修改用户基本信息</h5>
 										<small class="font-bold"> <!-- 这里可以显示副标题。 -->
 									</div>
 
@@ -125,20 +102,32 @@
 										<div class="modal-body">
 											<!-- <p><strong>H+</strong> 是一个完全响应式，基于Bootstrap3.3.5最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术，她提供了诸多的强大的可以重新组合的UI组件，并集成了最新的jQuery版本(v2.1.1)，当然，也集成了很多功能强大，用途广泛的jQuery插件，她可以用于所有的Web应用程序，如网站管理后台，网站会员中心，CMS，CRM，OA等等，当然，您也可以对她进行深度定制，以做出更强系统。</p> -->
 
-									
+											<div class="form-group">
+												<input type="hidden" class="form-control" id="dot_id"
+													required="" name="dotId">
+											</div>
 
 											<div class="form-group">
-												
-												 <label class="col-sm-3 control-label">留言：</label>
-        <!-- <div class="col-sm-9">
-            <p class="form-control-static" id="remarks"
-													name="remarks"></p>
-        </div> -->
-											<input type="textarea" 
-													class="form-control" id="remarks"
-													name="remarks" required="required"> 
+												<label>网点名</label> <input type="text" placeholder="网点名"
+													class="form-control" id="dot_name" name="dotName">
 											</div>
-										
+
+											<div class="form-group">
+												<label>网点所在城市</label> <input type="text" placeholder="网点所在城市"
+													class="form-control" id="dot_city" name="dotCity" required="" >
+											</div>
+											
+											<div class="form-group">
+												<label>网点地址</label> <input type="text" placeholder="网点地址"
+													class="form-control" id="dot_address" name="dotAddress" required="">
+											</div>
+
+											<div class="form-group">
+												<label>联系号码</label> <input type="number" required="required"
+													placeholder="请输入电话号码" class="form-control"
+													id="dot_phone" name="dotPhone">
+											</div>
+
 										
 										</div>
 
@@ -146,7 +135,7 @@
 
 											<button type="button" class="btn btn-white"
 												data-dismiss="modal">关闭</button>
-											<!-- <button type="submit" class="btn btn-primary">保存</button> -->
+											<button type="submit" class="btn btn-primary">保存</button>
 										</div>
 
 									</form>
@@ -167,13 +156,13 @@
 
 
 
-	<script src="${ctx}/houtai/js/jquery.min.js?v=2.1.4"></script>
-	<script src="${ctx}/houtai/js/bootstrap.min.js?v=3.3.5"></script>
-	<script src="${ctx}/houtai/js/plugins/jeditable/jquery.jeditable.js"></script>
-	<script src="${ctx}/houtai/js/plugins/dataTables/jquery.dataTables.js"></script>
+	<script src="${ctx}/static/houtai/js/jquery.min.js?v=2.1.4"></script>
+	<script src="${ctx}/static/houtai/js/bootstrap.min.js?v=3.3.5"></script>
+	<script src="${ctx}/static/houtai/js/plugins/jeditable/jquery.jeditable.js"></script>
+	<script src="${ctx}/static/houtai/js/plugins/dataTables/jquery.dataTables.js"></script>
 	<script
-		src="${ctx}/houtai/js/plugins/dataTables/dataTables.bootstrap.js"></script>
-	<script src="${ctx}/houtai/js/content.min.js?v=1.0.0"></script>
+		src="${ctx}/static/houtai/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+	<script src="${ctx}/static/houtai/js/content.min.js?v=1.0.0"></script>
 	<script>
 			$(document).ready(function() {
 				$(".dataTables-example").dataTable();
@@ -211,38 +200,66 @@
 					window.location.reload();
 				}, 500);
 			})
+
 			
+			//提交修改数据	
+			function doupdate() {
 			
-			//模态窗口显示
-			function asdfasdfremarks(id){
-				/* console.log(id) */
-				$.post(getContextPath()+"/houtai/order/remarks.do",
+    		//JSON数据结构数据
+    		var sta = $("#updateform").serializeArray();
+    		//将序列化数据转为对象
+    		var formObject = {};
+    		for (var item in sta) {
+       			 formObject[sta[item].name] = sta[item].value;
+    			}
+    
+    		var formJSON = {data:JSON.stringify(formObject)};
+    		console.log(formJSON);
+  
+    		// jquery 表单提交
+   			$.post(getContextPath()+"/houtai/dot/doupdate.do",formJSON,function(msg){ 
+					console.log(msg);
+					if(msg == 1){
+						window.location.href = getContextPath()+"/houtai/dot/list.do"; 
+					}
+			  	});
+    			return false; // 必须返回false，否则表单会自己再做一次提交操作，并且页面跳转
+			};
+
+			
+			//时间戳转年月日格式
+			function timestampToTime(timestamp) {
+		        var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+		        var Y = date.getFullYear() + '-';
+		        var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+		        var D = date.getDate();
+		        return Y+M+D;
+		    };
+			
+			//修改模态窗口显示
+			function update(id){
+				console.log(id)
+				$.post(getContextPath()+"/houtai/dot/update.do",
 						{id:id},
-						function(msg){
+						function(msg){	
+							/*  console.log(msg)
+							 console.log(msg.hiredate)
+  
+   							 console.log(timestampToTime(msg.hiredate)); */
+							 
+							 $("#dot_id").val(msg.dotId);
+   							$("#dot_name").val(msg.dotName);
+							$("#dot_city").val(msg.dotCity);
+							$("#dot_address").val(msg.dotAddress);
+							$("#dot_phone").val(msg.dotPhone);
 							
-							$("#remarks").val(msg.remarks);
-							
+						
+						
 						}
 						);
 				
 			};
 		
-		
-			
-			
-
-			
-			//时间戳转年月日格式
-			function timestampToTime(timestamp) {
-				var date = new Date();   //timestamp 为10位需*1000，timestamp 为13位的话不需乘1000
-				var Y = date.getFullYear() + '-';
-				var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
-				var D = (date.getDate() < 10 ? '0'+ date.getDate() : date.getDate());
-				
-				return Y+M+D;
-		    };
-			
-			
 			
 			/**
 			 * 封装获取上下文路径的方法 

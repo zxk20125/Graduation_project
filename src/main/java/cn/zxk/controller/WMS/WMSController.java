@@ -14,6 +14,7 @@ public class WMSController {
 
     @RequestMapping("/WMS")
     public String index() {
-        return "";
+        System.out.println(111);
+        return "houtaiView/index";
     }
 }

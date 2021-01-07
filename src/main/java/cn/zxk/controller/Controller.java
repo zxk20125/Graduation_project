@@ -13,11 +13,6 @@ public class Controller {
     @Autowired
     private UserServiceImp userServiceImp;
 
-    @RequestMapping("/test")
-    public String test() {
-        return "";
-    }
-
     @RequestMapping("/")
     public String index() {
         return "login";

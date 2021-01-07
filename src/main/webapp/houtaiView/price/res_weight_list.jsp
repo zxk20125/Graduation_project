@@ -17,11 +17,11 @@
 
 
 <link rel="shortcut icon" href="favicon.ico">
-<link href="${ctx}/houtai/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-<link href="${ctx}/houtai/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-<link href="${ctx}/houtai/css/plugins/iCheck/custom.css" rel="stylesheet">
-<link href="${ctx}/houtai/css/animate.min.css" rel="stylesheet">
-<link href="${ctx}/houtai/css/style.min.css?v=4.0.0" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/animate.min.css" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/style.min.css?v=4.0.0" rel="stylesheet">
 <base target="_blank">
 
 </head>
@@ -33,7 +33,7 @@
 			<div class="col-sm-12">
 				<div class="ibox float-e-margins">
 					<div class="ibox-title">
-						<h5>运送城市 定价</h5>
+						<h5>定价</h5>
 						<div class="ibox-tools">
 							<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
 							</a>
@@ -51,23 +51,23 @@
 						<table class="table table-striped table-hover ">
 							<thead>
 								<tr>
-									<th>起始地址</th>
-									<th>终点地址</th>
+									<th>物件重量（kg）</th>
+									<!-- <th>终点地址</th> -->
 									<th>定价（元）</th>
 									<th>操作</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${shipAddresss}" var="shipAddress">
+								<c:forEach items="${resWeights}" var="resWeight">
 									<tr>
-										<td>${shipAddress.startAddress}</td>
-										<td>${shipAddress.endAddress}</td>
-										<td>${shipAddress.shipAddressMoney}</td>
+										<td>${resWeight.resWeight}kg</td>
+										<td>${resWeight.resWeightMoney}</td>
+										<%-- <td>${shipAddress.shipAddressMoney}</td> --%>
 										<td><botton class="btn btn-danger btn-xs"
-												onclick="deleteTDis(${shipAddress.shipAddressId})"> <span
+												onclick="deleteTDis(${resWeight.resWeightId})"> <span
 												class="glyphicon glyphicon-remove"></span> 删除</botton>
 											<button class="btn btn-primary btn-xs"
-												onclick="updateTDis(${shipAddress.shipAddressId})"
+												onclick="updateTDis(${resWeight.resWeightId})"
 												data-toggle="modal" data-target="#myModalupdateTDistance">
 												<span class="glyphicon glyphicon-pencil"></span> 修改
 											</button></td>
@@ -102,27 +102,28 @@
 						name="updateTDistancefrom">
 						<div class="modal-body">
 
-							<div class="form-group">
-								<input type="hidden" class="form-control" id="ship_address_id"
-									name="shipAddressId" required="">
+						<div class="form-group">
+								<input type="hidden" class="form-control" id="res_weight_id"
+									name="resWeightId" required="">
 							</div>
 
 							<div class="form-group">
-								<label>起始地址</label> <input type="text" class="form-control"
-									id="start_address" required="" name="startAddress" required="required">
+								<label>物件重量</label> <input type="text" class="form-control"
+									id="res_weight" required="" name="resWeight" required="required">
 							</div>
 
 
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label>终点地址</label> <input type="text" class="form-control"
 									id="end_address" name="endAddress" required="required">
-							</div>
+							</div> -->
 							
 							<div class="form-group">
 								<label>定价</label> <input type="number" class="form-control"
-									id="ship_address_money" name="shipAddressMoney" required="required">
+									id="res_weight_money" name="resweightMoney" required="required">
 							</div>
 						</div>
+
 
 						<div class="modal-footer">
 							<button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
@@ -157,24 +158,24 @@
 
 
 							<div class="form-group">
-								<input type="hidden" class="form-control" id="ship_address_id"
-									name="shipAddressId" required="">
+								<input type="hidden" class="form-control" id="res_weight_id"
+									name="resWeightId" required="">
 							</div>
 
 							<div class="form-group">
-								<label>起始地址</label> <input type="text" class="form-control"
-									id="start_address" required="" name="startAddress" required="required">
+								<label>物件重量</label> <input type="text" class="form-control"
+									id="res_weight" required="" name="resWeight" required="required">
 							</div>
 
 
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label>终点地址</label> <input type="text" class="form-control"
 									id="end_address" name="endAddress" required="required">
-							</div>
+							</div> -->
 							
 							<div class="form-group">
 								<label>定价</label> <input type="number" class="form-control"
-									id="ship_address_money" name="shipAddressMoney" required="required">
+									id="res_weight_money" name="resWeightMoney" required="required">
 							</div>
 						</div>
 
@@ -197,12 +198,12 @@
 		
 	</div>
 
-	<script src="${ctx}/houtai/js/jquery.min.js?v=2.1.4"></script>
-	<script src="${ctx}/houtai/js/bootstrap.min.js?v=3.3.5"></script>
-	<script src="${ctx}/houtai/js/plugins/peity/jquery.peity.min.js"></script>
-	<script src="${ctx}/houtai/js/content.min.js?v=1.0.0"></script>
-	<script src="${ctx}/houtai/js/plugins/iCheck/icheck.min.js"></script>
-	<script src="${ctx}/houtai/js/demo/peity-demo.min.js"></script>
+	<script src="${ctx}/static/houtai/js/jquery.min.js?v=2.1.4"></script>
+	<script src="${ctx}/static/houtai/js/bootstrap.min.js?v=3.3.5"></script>
+	<script src="${ctx}/static/houtai/js/plugins/peity/jquery.peity.min.js"></script>
+	<script src="${ctx}/static/houtai/js/content.min.js?v=1.0.0"></script>
+	<script src="${ctx}/static/houtai/js/plugins/iCheck/icheck.min.js"></script>
+	<script src="${ctx}/static/houtai/js/demo/peity-demo.min.js"></script>
 	<script>
         $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
     </script>
@@ -227,23 +228,23 @@
 	};
 		
 	
-	//距离 修改模态窗口显示
+	// 修改模态窗口显示
 	function updateTDis(id){
 		console.log(id)
-		$.post(getContextPath()+"/houtai/shipAddress/update.do",
+		$.post(getContextPath()+"/houtai/resWeight/update.do",
 				{id:id},
 				function(msg){	
 					 console.log(msg);
-				$("#ship_address_id").val(msg.shipAddressId);
-				$("#start_address").val(msg.startAddress);
-				$("#end_address").val(msg.endAddress);
-				$("#ship_address_money").val(msg.shipAddressMoney);
+				$("#res_weight_id").val(msg.resWeightId);
+				$("#res_weight").val(msg.resWeight);
+				/* $("#end_address").val(msg.endAddress); */
+				$("#res_weight_money").val(msg.resWeightMoney);
 				}
 				);
 		
 	};
 	
-	//距离修改 操作
+	//修改 操作
 	function doupdateTDis(){
 		//JSON数据结构数据
 		var sta = $("#updateTDistanceform").serializeArray();
@@ -258,11 +259,11 @@
 		console.log(formJSON);
 
 		// jquery 表单提交
-			$.post(getContextPath()+"/houtai/shipAddress/doupdate.do",formJSON,function(msg){ 
+			$.post(getContextPath()+"/houtai/resWeight/doupdate.do",formJSON,function(msg){ 
 				console.log(msg);
 				if(msg == 1){
 					alert("修改成功");
-					 window.location.href = getContextPath()+"/houtai/shipAddress/ship_address_list.do";  
+					 window.location.href = getContextPath()+"/houtai/resWeight/res_weight_list.do";  
 				}else{
 					alert("修改失败")
 				}
@@ -272,13 +273,13 @@
 	
 	//删除操作
 	function deleteTDis(id){
-		$.post(getContextPath()+"/houtai/shipAddress/delete.do",
+		$.post(getContextPath()+"/houtai/resWeight/delete.do",
 				{id:id},
 				function(msg){		
 					if(msg == 1){
 						console.log(msg);
 						setTimeout(function() {
-							window.location.href=getContextPath()+"/houtai/shipAddress/ship_address_list.do";
+							window.location.href=getContextPath()+"/houtai/resWeight/res_weight_list.do";
 						}, 500);
 					}else{
 						alert("删除失败");
@@ -302,15 +303,15 @@
 		console.log(formJSON);
 		
 		// jquery 表单提交
-			$.post(getContextPath()+"/houtai/shipAddress/insert.do",formJSON,function(msg){ 
+			$.post(getContextPath()+"/houtai/resWeight/insert.do",formJSON,function(msg){ 
 				console.log(msg);
 				if(msg == 1){
 					//window.location.href = getContextPath()+"/staff.do?cmd=list"; 
 					alert("添加成功");
-					window.location.href = getContextPath()+"/houtai/shipAddress/ship_address_list.do"; 
+					window.location.href = getContextPath()+"/houtai/resWeight/res_weight_list.do"; 
 				}else{
 					alert("已有条件，添加失败");
-					window.location.href = getContextPath()+"/houtai/shipAddress/ship_address_list.do";
+					window.location.href = getContextPath()+"/houtai/resWeight/res_weight_list.do";
 				}
 		  	});
 			return false; // 必须返回false，否则表单会自己再做一次提交操作，并且页面跳转

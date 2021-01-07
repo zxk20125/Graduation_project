@@ -11,21 +11,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>信息列表</title>
+<title>员工信息列表</title>
 
 <link rel="shortcut icon" href="${ctx}/houtai/favicon.ico">
-<link href="${ctx}/houtai/css/bootstrap.min.css?v=3.3.5"
+<link href="${ctx}/static/houtai/css/bootstrap.min.css?v=3.3.5"
 	rel="stylesheet">
-<link href="${ctx}/houtai/css/font-awesome.min.css?v=4.4.0"
+<link href="${ctx}/static/houtai/css/font-awesome.min.css?v=4.4.0"
 	rel="stylesheet">
 
 <!-- Data Tables -->
 <link
-	href="${ctx}/houtai/css/plugins/dataTables/dataTables.bootstrap.css"
+	href="${ctx}/static/houtai/css/plugins/dataTables/dataTables.bootstrap.css"
 	rel="stylesheet">
 
-<link href="${ctx}/houtai/css/animate.min.css" rel="stylesheet">
-<link href="${ctx}/houtai/css/style.min.css?v=4.0.0" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/animate.min.css" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/style.min.css?v=4.0.0" rel="stylesheet">
 <base target="_blank">
 
 </head>
@@ -38,7 +38,7 @@
 				<div class="ibox float-e-margins">
 					<div class="ibox-title">
 						<h5>
-							 <small>信息</small>
+							订单 <small>信息</small>
 						</h5>
 						<div class="ibox-tools">
 							<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
@@ -52,75 +52,54 @@
 							class="table table-striped table-stripped table-hover dataTables-example">
 							<thead>
 								<tr>
-									<th>运单号</th>
-									<th>客户</th>
-									<th>状态</th> 
-									<th>是否付款</th>
-									<th>对应订单</th>
-									<th>运单物流</th>
+									<th>订单号</th>
+									<th>下单用户</th> 
+									<th>地址</th>
+									<!-- <th>物件重量</th>
+									<th>物件类别</th>
+									<th>是否保价</th>
+									<th>物品信息</th> -->
+									<th>物品信息</th>
+									<!-- <th>运费</th> -->
+									<!-- <th>支付方式</th> -->
+									<th>下单时间</th>
+									<th>留言</th>
+									<!-- <th>操作</th> -->
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${waybills}" var="waybill">
+								<c:forEach items="${orders}" var="order">
 									<tr>
-										<td>${waybill.waybillId}</td>
-										<td>${waybill.order.customer.customerLoginName}</td>
+										<td>${order.orderId}</td>
+										<td>${order.customer.customerLoginName}</td>
 										<td>
-										<c:if test="${waybill.cancelTime eq null }">
-										 <c:if test="${waybill.finishTime ne null }">
-										 已完成		
-										 </c:if>								
-										</c:if> 
-										
-										<c:if test="${waybill.cancelTime eq null }">
-										<c:if test="${waybill.finishTime eq null }">
-										<c:if test="${waybill.confirmTime ne null }">
-										运输中
-										</c:if>
-										</c:if>  										
-										</c:if>
-										
-										<c:if test="${waybill.cancelTime eq null }">
-										<c:if test="${waybill.finishTime eq null }">
-										<c:if test="${waybill.confirmTime eq null }">
-										<c:if test="${waybill.receiptTime ne null }">
-										已接单
-										</c:if>
-										</c:if>
-										</c:if>  										
-										</c:if>
-										
-										<c:if test="${waybill.cancelTime eq null }">
-										<c:if test="${waybill.finishTime eq null }">
-										<c:if test="${waybill.confirmTime eq null }">
-										<c:if test="${waybill.receiptTime eq null }">
-										未接单
-										</c:if>
-										</c:if>
-										</c:if>  										
-										</c:if>
-										
-										<c:if test="${waybill.cancelTime ne null }">
-										已取消
-										</c:if>
-										</td>
-										<td><c:if test="${waybill.paymentTime ne null }">
-										已付款
-										</c:if>
-										<c:if test="${waybill.paymentTime eq null }">
-										未付款
-										</c:if>
-										</td>
-										<td><a>${waybill.orderId}</a></td>
-										<td> <a href="${ctx}/houtai/waybill/orderTracking.do?waybillId=${waybill.waybillId}"> 查看</a> 
-												<%-- <button class="btn btn-primary btn-xs"
-													onclick="updatestaff(${staff.staffId})" data-toggle="modal"
-													data-target="#myModal">
-													 查看
-												</button> --%>
-											</td>
+									寄：${order.sender} ${order.senderPhone}<br>	
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${order.senderAddress}<br><br>
+									收：${order.receiver} ${order.receiverPhone}<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${order.receivingAddress}
+									</td>
+										<td>${order.resSort}<br> 重量：${order.weight}kg<br>
 
-							
+									<c:if test="${order.insuredPrice==0 }">未保价</c:if> 
+									<c:if test="${order.insuredPrice==1 }">已保价</c:if> <br> 
+									运费${order.freight}元<br>
+										${order.paymentMethod}
+									</td>
+										
+										<%-- <td>${order.weight}</td>
+										<td>${order.resSort}</td>
+										<td>${order.insuredPrice}</td>
+										<td>${order.freight}</td> --%>
+
+										<td><fmt:formatDate value="${order.orderTime}"
+												pattern="yyyy-MM-dd HH:mm" /></td>
+										
+										 <td><%-- <botton class="btn btn-danger btn-xs"
+												onclick="deleteTDis(${resSort.resSortId})"> <span
+												class="glyphicon glyphicon-remove"></span> 删除</botton> --%>
+											<button class="btn btn-primary btn-xs" onclick="asdfasdfremarks(${order.orderId})" data-toggle="modal" data-target="#myModal">
+												<span class="glyphicon glyphicon-pencil"></span> 查看
+											</button></td> 
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -132,14 +111,14 @@
 							<div class="modal-dialog">
 								<div class="modal-content animated bounceInRight">
 
-									<!-- <div class="modal-header">
+									<div class="modal-header">
 										<button type="button" class="close" data-dismiss="modal">
 											<span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
 										</button>
-										<i class="fa fa-laptop modal-icon"></i>
-										<h5 class="modal-title"></h5>
-										<small class="font-bold"> 这里可以显示副标题。
-									</div> -->
+										<!-- <i class="fa fa-laptop modal-icon"></i> -->
+										<h5 class="modal-title">留言</h5>
+										<small class="font-bold"> <!-- 这里可以显示副标题。 -->
+									</div>
 
 									<form id="updateform" onsubmit="return doupdate()"
 										name="updatefrom">
@@ -163,12 +142,12 @@
 										
 										</div>
 
-									<!-- 	<div class="modal-footer">
+										<div class="modal-footer">
 
 											<button type="button" class="btn btn-white"
 												data-dismiss="modal">关闭</button>
-											<button type="submit" class="btn btn-primary">保存</button>
-										</div> -->
+											<!-- <button type="submit" class="btn btn-primary">保存</button> -->
+										</div>
 
 									</form>
 								</div>
@@ -188,13 +167,13 @@
 
 
 
-	<script src="${ctx}/houtai/js/jquery.min.js?v=2.1.4"></script>
-	<script src="${ctx}/houtai/js/bootstrap.min.js?v=3.3.5"></script>
-	<script src="${ctx}/houtai/js/plugins/jeditable/jquery.jeditable.js"></script>
-	<script src="${ctx}/houtai/js/plugins/dataTables/jquery.dataTables.js"></script>
+	<script src="${ctx}/static/houtai/js/jquery.min.js?v=2.1.4"></script>
+	<script src="${ctx}/static/houtai/js/bootstrap.min.js?v=3.3.5"></script>
+	<script src="${ctx}/static/houtai/js/plugins/jeditable/jquery.jeditable.js"></script>
+	<script src="${ctx}/static/houtai/js/plugins/dataTables/jquery.dataTables.js"></script>
 	<script
-		src="${ctx}/houtai/js/plugins/dataTables/dataTables.bootstrap.js"></script>
-	<script src="${ctx}/houtai/js/content.min.js?v=1.0.0"></script>
+		src="${ctx}/static/houtai/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+	<script src="${ctx}/static/houtai/js/content.min.js?v=1.0.0"></script>
 	<script>
 			$(document).ready(function() {
 				$(".dataTables-example").dataTable();

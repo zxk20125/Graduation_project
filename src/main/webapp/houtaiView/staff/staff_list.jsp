@@ -14,18 +14,18 @@
 <title>员工信息列表</title>
 
 <link rel="shortcut icon" href="${ctx}/houtai/favicon.ico">
-<link href="${ctx}/houtai/css/bootstrap.min.css?v=3.3.5"
+<link href="${ctx}/static/houtai/css/bootstrap.min.css?v=3.3.5"
 	rel="stylesheet">
-<link href="${ctx}/houtai/css/font-awesome.min.css?v=4.4.0"
+<link href="${ctx}/static/houtai/css/font-awesome.min.css?v=4.4.0"
 	rel="stylesheet">
 
 <!-- Data Tables -->
 <link
-	href="${ctx}/houtai/css/plugins/dataTables/dataTables.bootstrap.css"
+	href="${ctx}/static/houtai/css/plugins/dataTables/dataTables.bootstrap.css"
 	rel="stylesheet">
 
-<link href="${ctx}/houtai/css/animate.min.css" rel="stylesheet">
-<link href="${ctx}/houtai/css/style.min.css?v=4.0.0" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/animate.min.css" rel="stylesheet">
+<link href="${ctx}/static/houtai/css/style.min.css?v=4.0.0" rel="stylesheet">
 <base target="_blank">
 
 </head>
@@ -215,13 +215,13 @@
 
 
 
-	<script src="${ctx}/houtai/js/jquery.min.js?v=2.1.4"></script>
-	<script src="${ctx}/houtai/js/bootstrap.min.js?v=3.3.5"></script>
-	<script src="${ctx}/houtai/js/plugins/jeditable/jquery.jeditable.js"></script>
-	<script src="${ctx}/houtai/js/plugins/dataTables/jquery.dataTables.js"></script>
+	<script src="${ctx}/static/houtai/js/jquery.min.js?v=2.1.4"></script>
+	<script src="${ctx}/static/houtai/js/bootstrap.min.js?v=3.3.5"></script>
+	<script src="${ctx}/static/houtai/js/plugins/jeditable/jquery.jeditable.js"></script>
+	<script src="${ctx}/static/houtai/js/plugins/dataTables/jquery.dataTables.js"></script>
 	<script
-		src="${ctx}/houtai/js/plugins/dataTables/dataTables.bootstrap.js"></script>
-	<script src="${ctx}/houtai/js/content.min.js?v=1.0.0"></script>
+		src="${ctx}/static/houtai/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+	<script src="${ctx}/static/houtai/js/content.min.js?v=1.0.0"></script>
 	<script>
 			$(document).ready(function() {
 				$(".dataTables-example").dataTable();
