@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class WMSController {
 
-    @RequestMapping("/WMS")
+    @RequestMapping("/WMS/login")
     public String index() {
         System.out.println(111);
-        return "index";
+        return "redirect:/login";
     }
 }
