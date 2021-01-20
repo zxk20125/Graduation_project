@@ -2,7 +2,6 @@ package cn.zxk.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.sun.istack.internal.NotNull;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -15,10 +14,9 @@ import java.time.LocalDate;
  * </p>
  *
  * @author Chick
- * @since 2021-01-05
+ * @since 2021-01-20
  */
 @Data
-
 //@EqualsAndHashCode(callSuper = true)
 public class TStaff{
 
@@ -69,6 +67,11 @@ public class TStaff{
      * 网点id
      */
     private Integer dotId;
+
+    /**
+     * 角色
+     */
+    private String staffRole;
 
 
 }

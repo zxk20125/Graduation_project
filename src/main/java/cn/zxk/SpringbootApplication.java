@@ -1,6 +1,7 @@
 package cn.zxk;
 import cn.zxk.entity.Student;
 import cn.zxk.mappers.StudentMapper;
+import cn.zxk.service.ITStaffService;
 import org.junit.Test;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +23,9 @@ Listener可以直接通过@WebListener 注解自动注册
 */
 @MapperScan("cn.zxk.mappers")
 public class SpringbootApplication implements CommandLineRunner {
-   
+
     @Autowired
-    private StudentMapper mapper;
+    private ITStaffService staffService;
    
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(SpringbootApplication.class, args);
@@ -36,10 +37,4 @@ public class SpringbootApplication implements CommandLineRunner {
         //spring ioc启动完之后会回调该方法
         System.out.println("spring启动完成。。。");
     }
-    @Test
-    public void test_Student(){
-        List<Student> students = mapper.selectList(null);
-        students.forEach(li-> System.out.println(li));
-    }
-
 }

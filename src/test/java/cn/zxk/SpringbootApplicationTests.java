@@ -1,31 +1,24 @@
 package cn.zxk;
 
 import cn.zxk.entity.Student;
+import cn.zxk.entity.TStaff;
 import cn.zxk.mappers.StudentMapper;
+import cn.zxk.service.ITStaffService;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
-
+@RunWith(SpringRunner.class)
 @SpringBootTest
 class SpringbootApplicationTests {
-    @Autowired
-    private StudentMapper studentMapper;
-    @Test
-    void contextLoads() {
-        List<Student> students = studentMapper.selectList(null);
-        students.forEach(System.out::println);
-    }
-    @Test
-    void insert(){
-        Student student=new Student();
-        student.setUsername("zhangsan");
-        student.setPassword("1234");
-        student.setNum(1);
-        student.setChinese("100");
-        student.setEnglish("99");
-        int insert = studentMapper.insert(student);
-        System.out.println(insert);
-    }
+   @Autowired
+    private ITStaffService staffService;
+   @Test
+    public void getList(){
+       List<TStaff> list = staffService.list();
+       System.out.println(list);
+   }
 }
