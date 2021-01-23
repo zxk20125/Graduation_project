@@ -1,8 +1,6 @@
 package cn.zxk;
 
-import cn.zxk.entity.Student;
 import cn.zxk.entity.TStaff;
-import cn.zxk.mappers.StudentMapper;
 import cn.zxk.service.ITStaffService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

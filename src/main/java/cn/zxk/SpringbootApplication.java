@@ -1,8 +1,5 @@
 package cn.zxk;
-import cn.zxk.entity.Student;
-import cn.zxk.mappers.StudentMapper;
 import cn.zxk.service.ITStaffService;
-import org.junit.Test;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -10,8 +7,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ConfigurableApplicationContext;
-
-import java.util.List;
 
 @SpringBootApplication
 @ServletComponentScan

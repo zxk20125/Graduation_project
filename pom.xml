@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cn.zxk</groupId>
-    <artifactId>springboot</artifactId>
+    <artifactId>GDP</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot</name>
+    <name>GDP</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -19,15 +19,16 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
             <version>3.4.1</version>
         </dependency>
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.9.3</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.58</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
