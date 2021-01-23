@@ -1,4 +1,4 @@
-package cn.zxk.config;
+package cn.zxk.config.security;
 
 import cn.zxk.service.impl.StaffUserDetailsService;
 import cn.zxk.util.crypto.DES3Util;
@@ -13,10 +13,11 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 
 
 /**
- * 功能描述：
+ * ??????????
  *
  * @author Chickck
  * @date 2021/1/20
@@ -50,27 +51,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                // 如果有允许匿名的url，填在下面
+                // ???????????????url??????????
                 .antMatchers("/verify/jpgCode").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                // 设置登陆页
+                // ???????
                 .formLogin().loginPage("/login")
-                // 设置登陆成功页
+                // ??????????
                 .defaultSuccessUrl("/WMS/login").permitAll()
-                // 自定义登陆用户名和密码参数，默认为username和password
+                .successHandler(new AuthenticationSuccessHandler())
+                // ???????????????????????????username??password
 //                .usernameParameter("username")
 //                .passwordParameter("password")
                 .and()
                 .logout().permitAll();
 
 
-        // 关闭CSRF跨域
+        // ???CSRF????
         http.csrf().disable();
     }
     @Override
     public void configure(WebSecurity web) throws Exception {
-        // 设置拦截忽略文件夹，可以对静态资源放行
+        // ???????????????У???????????????
         web.ignoring().antMatchers("/css/**", "/js/**");
     }
 }

@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * 功能描述：
+ * ??????????
  *
  * @author Chickck
  * @date 2021/1/20
@@ -28,21 +28,21 @@ import java.util.Collection;
 public class StaffUserDetailsService implements UserDetailsService {
     @Autowired
     private TStaffServiceImpl staffService;
-    //处理不想处理的异常
+    //???????????
     @SneakyThrows
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Collection<GrantedAuthority> authorities = new ArrayList<>();
-        //从数据库取出用户信息
+        //????????????????
         QueryWrapper<TStaff> staffQueryWrapper=new QueryWrapper<>();
         staffQueryWrapper.eq("staff_login_name",username);
         TStaff staff = staffService.getOne(staffQueryWrapper);
         System.out.println(staff.getStaffRole());
         if(null!=staff)
-            //获取用户角色，添加权限
+            //?????????????????
             authorities.add(new SimpleGrantedAuthority(staff.getStaffRole()));
         else
-            throw new UsernameNotFoundException("用户名不存在");
+            throw new UsernameNotFoundException("???????????");
         return new User(staff.getStaffLoginName(), staff.getStaffPassword(), authorities);
     }
 }

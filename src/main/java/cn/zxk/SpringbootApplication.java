@@ -29,7 +29,6 @@ public class SpringbootApplication implements CommandLineRunner {
    
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(SpringbootApplication.class, args);
-
     }
 
     @Override
