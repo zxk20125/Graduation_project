@@ -1,10 +1,11 @@
 package cn.zxk.util;
 
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import cn.zxk.entity.AWebConstants;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 public class ServletUtil {
 
@@ -18,7 +19,7 @@ public class ServletUtil {
    */
   public static HttpServletRequest getRequest() {
     ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder
-        .getRequestAttributes();
+            .getRequestAttributes();
     return requestAttributes == null ? null : requestAttributes.getRequest();
   }
 
@@ -41,7 +42,7 @@ public class ServletUtil {
    */
   public static String getIp() {
     ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder
-        .getRequestAttributes();
+            .getRequestAttributes();
     if (servletRequestAttributes != null) {
       HttpServletRequest request = servletRequestAttributes.getRequest();
       return request.getRemoteAddr();
@@ -65,6 +66,7 @@ public class ServletUtil {
     if (request != null) {
       request.getSession().setAttribute(name, value);
     }
+    System.out.println("code  "+getSessionAttribute(AWebConstants.VERIFY_OBJ_SESSION_ATTR_NAME));
   }
 
   /**

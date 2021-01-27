@@ -1,6 +1,5 @@
 package cn.zxk.config.security;
 
-
 import cn.zxk.entity.AWebConstants;
 import cn.zxk.entity.RespMessage;
 import cn.zxk.util.ServletUtil;
@@ -125,7 +124,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         String sessionCode = (String) ServletUtil
                                 .getSessionAttribute(AWebConstants.VERIFY_OBJ_SESSION_ATTR_NAME);
                         String code = request.getParameter("code");
+                        System.out.println(sessionCode+"  "+code);
                         ServletUtil.removeSessionAttribute(AWebConstants.VERIFY_OBJ_SESSION_ATTR_NAME);
+
                         if (code == null) {
                             response.setContentType("application/json;charset=utf-8");
                             response.getWriter()
@@ -168,7 +169,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         }
                     }
                     chain.doFilter(req, resp);
-                }, FilterSecurityInterceptor.class);
+                }, FilterSecurityInterceptor.class)
+//        XSS防御 过滤参数
+                .addFilterBefore((request, response, chain) -> {
+                    XssHttpServletRequestWrapper xssRequest = new XssHttpServletRequestWrapper(
+                            (HttpServletRequest) request);
+                    chain.doFilter(xssRequest, response);
+                }, FilterSecurityInterceptor.class)
+                //关闭Spring Security自带的csrf
+                .csrf().disable()
+                .headers().frameOptions().sameOrigin().and()
+                //允许跨域
+                .cors();
+
     }
 
 

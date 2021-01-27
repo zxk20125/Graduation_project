@@ -1,5 +1,6 @@
 package cn.zxk.util.verify.controller;
 
+import cn.zxk.entity.AWebConstants;
 import cn.zxk.util.ServletUtil;
 import cn.zxk.util.verify.Captcha;
 import cn.zxk.util.verify.GifCaptcha;
@@ -56,7 +57,7 @@ public class VerifyController {
 
       //输出
       captcha.out(response.getOutputStream());
-      ServletUtil.setSessionAttribute("aweb-verify-code-session",
+      ServletUtil.setSessionAttribute(AWebConstants.VERIFY_OBJ_SESSION_ATTR_NAME,
           captcha.text().toLowerCase());
 
     } catch (Exception e) {
