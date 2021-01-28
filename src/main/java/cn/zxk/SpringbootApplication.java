@@ -1,5 +1,5 @@
 package cn.zxk;
-import cn.zxk.service.ITStaffService;
+import cn.zxk.service.appService.ITStaffService;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

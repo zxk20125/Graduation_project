@@ -1,9 +1,6 @@
 package cn.zxk.controller.WMS;
 
-import cn.zxk.entity.TStaff;
-import cn.zxk.service.ITCustomerService;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import cn.zxk.service.appService.ITCustomerService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
