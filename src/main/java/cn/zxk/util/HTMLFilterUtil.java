@@ -1,4 +1,4 @@
-package cn.zxk.config.security;
+package cn.zxk.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;

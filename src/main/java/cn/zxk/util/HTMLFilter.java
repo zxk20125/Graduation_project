@@ -1,4 +1,4 @@
-package cn.zxk.config.security;
+package cn.zxk.util;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
