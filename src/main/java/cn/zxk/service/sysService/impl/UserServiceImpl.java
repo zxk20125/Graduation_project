@@ -4,6 +4,7 @@ import cn.zxk.entity.serveEntity.Authority;
 import cn.zxk.entity.serveEntity.Menu;
 import cn.zxk.entity.serveEntity.Role;
 import cn.zxk.entity.serveEntity.User;
+import cn.zxk.entity.utilEntity.QueryEntity;
 import cn.zxk.mappers.serveMapper.RoleMapper;
 import cn.zxk.mappers.serveMapper.UserMapper;
 import cn.zxk.service.DefaultUserDetails;
@@ -13,6 +14,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -41,6 +44,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     private UserMapper userMapper;
     @Autowired
     private RoleMapper roleMapper;
+
+    public List<User> query(QueryEntity<User>queryEntity){
+        return null;
+    }
 
     private User userWithDetail(String username) {
 //    UserPO userPO = Optional.ofNullable(userDao.findByNameWithRoles(username))

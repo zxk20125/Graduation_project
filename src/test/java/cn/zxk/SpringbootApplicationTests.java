@@ -4,6 +4,7 @@ import cn.zxk.entity.appEntity.TStaff;
 import cn.zxk.entity.serveEntity.Authority;
 import cn.zxk.entity.serveEntity.Role;
 import cn.zxk.entity.serveEntity.User;
+import cn.zxk.entity.utilEntity.QueryEntity;
 import cn.zxk.mappers.serveMapper.RoleMapper;
 import cn.zxk.mappers.serveMapper.UserMapper;
 import cn.zxk.service.DefaultUserDetails;
@@ -15,12 +16,17 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.web.bind.annotation.RequestMapping;
 import sun.plugin2.message.GetAppletMessage;
 
+import javax.sound.midi.Soundbank;
+import javax.xml.ws.WebServiceRefs;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@WebAppConfiguration
 class SpringbootApplicationTests {
     @Autowired
     private ITStaffService staffService;
@@ -38,13 +44,10 @@ class SpringbootApplicationTests {
     }
 
     @Test
-    public void getUserdetail() {
-        User user = userService.getOne(new QueryWrapper<User>().eq("NAME", "admin"));
-        System.out.println(user.getID());
-        List<Role> roles = userMapper.getRoles(user.getID());
-//        roles.forEach(role -> {
-//            List<Authority> authority = roleMapper.getAuthority(role.getID());
-//            System.out.println(authority);
-//        });
+    public void query(){
+        QueryEntity<User> userQueryEntity = new QueryEntity<>();
+        List<User> update_time = userMapper.selectList(new QueryWrapper<User>()
+                .orderByDesc("UPDATE_TIME"));
+        System.out.println(update_time);
     }
 }

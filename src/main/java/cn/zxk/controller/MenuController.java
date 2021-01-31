@@ -1,6 +1,6 @@
 //package cn.zxk.controller;
 //
-//import cn.zxk.entity.RespMessage;
+//import cn.zxk.entity.utilEntity.RespMessage;
 //import cn.zxk.mappers.serveMapper.MenuMapper;
 //import cn.zxk.service.sysService.IMenuService;
 //import org.springframework.beans.factory.annotation.Autowired;

@@ -1,13 +1,12 @@
 package cn.zxk.util.verify.controller;
 
-import cn.zxk.entity.AWebConstants;
+import cn.zxk.entity.utilEntity.Constants;
 import cn.zxk.util.ServletUtil;
 import cn.zxk.util.verify.Captcha;
 import cn.zxk.util.verify.GifCaptcha;
 import cn.zxk.util.verify.SpecCaptcha;
 //import io.swagger.annotations.Api;
 //import io.swagger.annotations.ApiOperation;
-import com.mysql.cj.protocol.WatchableOutputStream;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -57,7 +56,7 @@ public class VerifyController {
 
       //输出
       captcha.out(response.getOutputStream());
-      ServletUtil.setSessionAttribute(AWebConstants.VERIFY_OBJ_SESSION_ATTR_NAME,
+      ServletUtil.setSessionAttribute(Constants.VERIFY_OBJ_SESSION_ATTR_NAME,
           captcha.text().toLowerCase());
 
     } catch (Exception e) {

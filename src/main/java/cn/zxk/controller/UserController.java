@@ -1,66 +1,79 @@
-//package cn.zxk.controller;
-//
-//import cn.com.agree.aweb.common.base.dao.Range;
-//import cn.com.agree.aweb.common.base.entity.RespMessage;
-//import cn.com.agree.aweb.common.crypto.DES3Util;
-//import cn.com.agree.aweb.entity.enmus.UserStatus;
-//import cn.com.agree.aweb.entity.mapper.UserMapper;
-//import cn.com.agree.aweb.entity.po.RolePO;
-//import cn.com.agree.aweb.entity.po.UserPO;
-//import cn.com.agree.aweb.entity.query.QueryEntity;
-//import cn.com.agree.aweb.entity.vo.UserVO;
-//import cn.com.agree.aweb.service.UserService;
+package cn.zxk.controller;
+
+import cn.zxk.entity.serveEntity.User;
+import cn.zxk.entity.utilEntity.QueryEntity;
+import cn.zxk.entity.utilEntity.Range;
+import cn.zxk.service.sysService.IUserService;
+import cn.zxk.util.StringUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 //import io.swagger.annotations.Api;
 //import io.swagger.annotations.ApiOperation;
-//import org.springframework.beans.factory.annotation.Autowired;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.data.domain.Example;
 //import org.springframework.data.domain.ExampleMatcher;
 //import org.springframework.data.domain.ExampleMatcher.StringMatcher;
 //import org.springframework.data.domain.Page;
 //import org.springframework.data.domain.Pageable;
-//import org.springframework.security.access.prepost.PreAuthorize;
-//import org.springframework.security.crypto.password.PasswordEncoder;
-//import org.springframework.web.bind.annotation.*;
-//
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.domain.Pageable;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.*;
+
 //import javax.validation.Valid;
-//import java.io.IOException;
-//import java.io.UnsupportedEncodingException;
-//import java.security.GeneralSecurityException;
-//import java.util.ArrayList;
-//import java.util.List;
-//
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.security.GeneralSecurityException;
+import java.util.ArrayList;
+import java.util.List;
+
 //@Api(description = "用户管理")
-//@RestController
-//@RequestMapping("/user")
-//@PreAuthorize("hasAuthority('userManagement')")
-//public class UserController {
-//
-//  @Autowired
-//  UserService userService;
-//
-//  UserMapper mapper = UserMapper.INSTANCE;
-//
-//  @Autowired
-//  PasswordEncoder passwordEncoder;
-//
-//  @ApiOperation(value = "列出所有用户", notes = "查找并以list形式列出所有用户")
-//  @GetMapping("/list")
-//  public List<UserVO> list() {
-//    return mapper.poToVO(userService.findAll());
-//  }
-//
-//  @ApiOperation(value = "根据条件排序分页列出所有用户（模糊查询）", notes = "对类型为字符串的属性进行模糊查询，排序分页列出所有用户")
-//  @PostMapping("/list")
-//  public Page<UserVO> listByQuery(@RequestBody QueryEntity<UserVO> query) {
+@RestController
+@RequestMapping("/user")
+@PreAuthorize("hasAuthority('userManagement')")
+public class UserController {
+
+    @Autowired
+    IUserService userService;
+
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
+    //  @ApiOperation(value = "列出所有用户", notes = "查找并以list形式列出所有用户")
+    @GetMapping("/list")
+    public List<User> list() {
+        return userService.list();
+    }
+
+    //  @ApiOperation(value = "根据条件排序分页列出所有用户（模糊查询）", notes = "对类型为字符串的属性进行模糊查询，排序分页列出所有用户")
+    @PostMapping("/list")
+    public Page<User> listByQuery(@RequestBody QueryEntity<User> query) {
+        System.out.println(query.getQuery());
+        System.out.println(query.getOrders());
+        userService.page(new Page<User>(query.getPageNum(),query.getPageSize()),new QueryWrapper<User>()
+                            .like(!StringUtil.isBlank(query.getQuery().getName()),"NAME",query.getQuery().getName())
+                            .like(!StringUtil.isBlank(query.getQuery().getStatus()),"STATUS",query.getQuery().getStatus())
+                            .orderBy(true,!query.getOrders().get(0).getOrder().equals("desc"),query.getOrders().get(0).getOrder(),query.getOrders().get(0).getOrder())
+                            .between(!query.getRanges().get(0).getFrom().equals("null")&&query.getRanges().get(0).getTo().equals("null"),)
+        )
+
+//      System.out.println(query);
+//      Page<User> page=new Page<>();
+//      userService.page(page);
 //    ExampleMatcher matcher = ExampleMatcher.matching()
-//        .withStringMatcher(StringMatcher.CONTAINING)
+//        .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING)
 //        .withIgnoreCase().withIgnorePaths("password");
 //    Example<UserPO> example = Example.of(mapper.voToPO(query.getQuery()), matcher);
 //    List<Range> ranges = query.getRanges();
 //    Pageable page = query.getPage();
 //    return userService.findAll(example, ranges, page, mapper);
-//  }
-//
+        return null;
+    }
+
 //  @ApiOperation(value = "根据条件排序分页列出所有用户（匹配查询）", notes = "类型为字符串的属性进行匹配查询，单个字段模糊匹配即可，排序分页列出所有用户")
 //  @PostMapping("/list/matching")
 //  public Page<UserVO> listByString(@RequestBody QueryEntity<String> queryEntity)
@@ -116,6 +129,6 @@
 //    userService.delete(ids);
 //    return RespMessage.ok();
 //  }
-//
-//
-//}
+
+
+}

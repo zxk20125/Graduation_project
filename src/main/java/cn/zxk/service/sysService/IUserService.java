@@ -2,7 +2,10 @@ package cn.zxk.service.sysService;
 
 
 import cn.zxk.entity.serveEntity.User;
+import cn.zxk.entity.utilEntity.QueryEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -14,4 +17,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserService extends IService<User> {
 
+    public List<User> query(QueryEntity<User>queryEntity);
 }

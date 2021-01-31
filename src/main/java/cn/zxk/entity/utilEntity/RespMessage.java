@@ -1,4 +1,4 @@
-package cn.zxk.entity;
+package cn.zxk.entity.utilEntity;
 
 import lombok.Data;
 import lombok.NonNull;

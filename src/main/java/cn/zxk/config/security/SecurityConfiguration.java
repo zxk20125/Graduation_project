@@ -1,7 +1,7 @@
 package cn.zxk.config.security;
 
-import cn.zxk.entity.AWebConstants;
-import cn.zxk.entity.RespMessage;
+import cn.zxk.entity.utilEntity.Constants;
+import cn.zxk.entity.utilEntity.RespMessage;
 import cn.zxk.util.ServletUtil;
 import cn.zxk.util.SpringContextUtil;
 import com.alibaba.fastjson.JSONObject;
@@ -122,10 +122,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                     if (req.getServletPath().equals("/login") && HttpMethod.POST.matches(req.getMethod())) {
                         req = new PasswordDecodeRequestWrapper((HttpServletRequest) request);
                         String sessionCode = (String) ServletUtil
-                                .getSessionAttribute(AWebConstants.VERIFY_OBJ_SESSION_ATTR_NAME);
+                                .getSessionAttribute(Constants.VERIFY_OBJ_SESSION_ATTR_NAME);
                         String code = request.getParameter("code");
                         System.out.println(sessionCode+"  "+code);
-                        ServletUtil.removeSessionAttribute(AWebConstants.VERIFY_OBJ_SESSION_ATTR_NAME);
+                        ServletUtil.removeSessionAttribute(Constants.VERIFY_OBJ_SESSION_ATTR_NAME);
 
                         if (code == null) {
                             response.setContentType("application/json;charset=utf-8");

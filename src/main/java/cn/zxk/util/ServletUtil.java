@@ -3,7 +3,7 @@ package cn.zxk.util;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import cn.zxk.entity.AWebConstants;
+import cn.zxk.entity.utilEntity.Constants;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -66,7 +66,7 @@ public class ServletUtil {
     if (request != null) {
       request.getSession().setAttribute(name, value);
     }
-    System.out.println("code  "+getSessionAttribute(AWebConstants.VERIFY_OBJ_SESSION_ATTR_NAME));
+    System.out.println("code  "+getSessionAttribute(Constants.VERIFY_OBJ_SESSION_ATTR_NAME));
   }
 
   /**

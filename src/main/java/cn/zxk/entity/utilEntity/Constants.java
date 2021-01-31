@@ -1,6 +1,6 @@
-package cn.zxk.entity;
+package cn.zxk.entity.utilEntity;
 
-public interface AWebConstants {
+public interface Constants {
 
   String VERIFY_OBJ_SESSION_ATTR_NAME = "aweb-verify-code-session";
 
