@@ -39,11 +39,11 @@ public class RoleController {
 //    return roleService.findByString(RolePO.class, queryEntity, mapper);
 //  }
 //
-//  @ApiOperation(value = "获取单个角色详情", notes = "根据id获取角色详情")
-//  @GetMapping("/get/{id}")
-//  public RoleVO get(@PathVariable("id") String id) {
-//    return mapper.poToVO(roleService.findById(id).orElse(null));
-//  }
+  @ApiOperation(value = "获取单个角色详情", notes = "根据id获取角色详情")
+  @GetMapping("/get/{id}")
+  public RespMessage get(@PathVariable("id") String id) {
+    return RespMessage.ok(roleService.getById(id));
+  }
 //
 //  @ApiOperation(value = "添加角色", notes = "添加单个角色")
 //  @PostMapping("/add")

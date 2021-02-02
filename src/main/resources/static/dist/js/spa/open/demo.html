@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<title>spa-open demo</title>
+<script src="https://unpkg.com/vue"></script>
+<script src="./spa-open.umd.js"></script>
+
+
+<div id="app">
+  <demo></demo>
+</div>
+
+<script>
+new Vue({
+  components: {
+    demo: spa-open
+  }
+}).$mount('#app')
+</script>

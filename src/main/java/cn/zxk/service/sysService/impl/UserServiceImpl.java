@@ -51,7 +51,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return RespMessage.ok("success", userMapper.selectPage(new Page<>(query.getPageNum(), query.getPageSize()), new QueryWrapper<User>()
                 .like(!StringUtil.isBlank(query.getQuery().getName()), "NAME", query.getQuery().getName())
                 .like(!StringUtil.isBlank(query.getQuery().getStatus()), "STATUS", query.getQuery().getStatus())
-                .orderBy(true, !order.getOrder().equals("desc"), order.getKey())
+                .orderBy(true, !order.getOrder().equals("desc"), "create_time")
                 ));
     }
 

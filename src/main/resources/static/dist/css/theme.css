@@ -1,0 +1,29 @@
+/* li标签统一样式*/
+li{
+    list-style:none;
+}
+/*清除浮动*/
+.clearfix{
+    zoom:1;
+}
+/*清除浮动after*/
+.clearfix::after{
+    content:"";
+    display:table;
+    clear:both;
+}
+
+/*组件通用包裹样式*/
+.V2Widget{
+    position:relative;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+/* 图片样式矫正 */
+.v2-picture{
+    position:relative;
+}
+
+.fx-tabs-ctt >div{
+    overflow-y:auto;
+}

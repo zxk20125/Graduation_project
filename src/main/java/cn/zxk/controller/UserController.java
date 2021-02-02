@@ -15,6 +15,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 //import io.swagger.annotations.ApiOperation;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import freemarker.core.ReturnInstruction;
+import io.swagger.annotations.ApiOperation;
 import org.apache.ibatis.lang.UsesJava7;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +51,7 @@ public class UserController {
     @Autowired
     PasswordEncoder passwordEncoder;
 
-    //  @ApiOperation(value = "列出所有用户", notes = "查找并以list形式列出所有用户")
+      @ApiOperation(value = "列出所有用户", notes = "查找并以list形式列出所有用户")
     @GetMapping("/list")
     public RespMessage list() {
         return RespMessage.ok("success",userService.list());
@@ -76,7 +77,7 @@ public class UserController {
     return RespMessage.ok("",userService.getById(id));
   }
 //
-//  @ApiOperation(value = "添加用户", notes = "添加单个用户")
+  @ApiOperation(value = "添加用户", notes = "添加单个用户")
   @PostMapping("/add")
   public RespMessage add(@RequestBody @Valid User user) throws IOException {
     //设置初始密码为123456
@@ -102,19 +103,15 @@ public class UserController {
 //    return mapper.poToVO(userService.update(mapper.voToPO(vo), vo.getId()));
 //  }
 //
-//  @ApiOperation(value = "关联角色", notes = "对单个用户和任意权限进行关联，id为用户id，ids为角色id集合")
-//  @PostMapping("/update/role/{id}")
-//  public UserVO updateRole(@PathVariable("id") String id,
-//      @RequestBody(required = false) List<String> ids) {
-//    UserPO userPO = new UserPO().setId(id).setRoles(new ArrayList<>());
-//    for (String roleId : ids) {
-//      RolePO rolePO = new RolePO();
-//      rolePO.setId(roleId);
-//      userPO.getRoles().add(rolePO);
-//    }
-//    return mapper.poToVO(userService.update(userPO, id));
-//  }
-//
+  @ApiOperation(value = "关联角色", notes = "对单个用户和任意权限进行关联，id为用户id，ids为角色id集合")
+  @PostMapping("/update/role/{id}")
+  public RespMessage updateRole(@PathVariable("id") String id,
+      @RequestBody(required = false) List<String> ids) {
+      System.out.println(id);
+      System.out.println(ids);
+      return null;
+  }
+
 //  @ApiOperation(value = "删除用户", notes = "根据id删除单个或多个用户")
   @PostMapping("/delete")
   public RespMessage delete(@RequestBody List<String> ids) {
