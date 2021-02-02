@@ -2,6 +2,8 @@ package cn.zxk.service.sysService;
 
 
 import cn.zxk.entity.serveEntity.Role;
+import cn.zxk.entity.utilEntity.QueryEntity;
+import cn.zxk.entity.utilEntity.RespMessage;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,5 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2021-01-27
  */
 public interface IRoleService extends IService<Role> {
-
+    RespMessage query(QueryEntity<Role> queryEntity);
 }

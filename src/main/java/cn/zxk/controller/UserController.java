@@ -1,14 +1,21 @@
 package cn.zxk.controller;
 
 import cn.zxk.entity.serveEntity.User;
+import cn.zxk.entity.serveEntity.enmus.UserStatus;
 import cn.zxk.entity.utilEntity.QueryEntity;
 import cn.zxk.entity.utilEntity.Range;
+import cn.zxk.entity.utilEntity.RespMessage;
 import cn.zxk.service.sysService.IUserService;
+import cn.zxk.service.sysService.impl.UserServiceImpl;
 import cn.zxk.util.StringUtil;
+import cn.zxk.util.crypto.DES3Util;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 //import io.swagger.annotations.Api;
 //import io.swagger.annotations.ApiOperation;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+import freemarker.core.ReturnInstruction;
+import org.apache.ibatis.lang.UsesJava7;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.data.domain.Example;
@@ -23,7 +30,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-//import javax.validation.Valid;
+import javax.validation.Valid;
+import javax.crypto.spec.OAEPParameterSpec;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
@@ -37,75 +45,59 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    IUserService userService;
-
+    private IUserService userService;
 
     @Autowired
     PasswordEncoder passwordEncoder;
 
     //  @ApiOperation(value = "列出所有用户", notes = "查找并以list形式列出所有用户")
     @GetMapping("/list")
-    public List<User> list() {
-        return userService.list();
+    public RespMessage list() {
+        return RespMessage.ok("success",userService.list());
     }
 
     //  @ApiOperation(value = "根据条件排序分页列出所有用户（模糊查询）", notes = "对类型为字符串的属性进行模糊查询，排序分页列出所有用户")
     @PostMapping("/list")
-    public Page<User> listByQuery(@RequestBody QueryEntity<User> query) {
-        System.out.println(query.getQuery());
-        System.out.println(query.getOrders());
-        userService.page(new Page<User>(query.getPageNum(),query.getPageSize()),new QueryWrapper<User>()
-                            .like(!StringUtil.isBlank(query.getQuery().getName()),"NAME",query.getQuery().getName())
-                            .like(!StringUtil.isBlank(query.getQuery().getStatus()),"STATUS",query.getQuery().getStatus())
-                            .orderBy(true,!query.getOrders().get(0).getOrder().equals("desc"),query.getOrders().get(0).getOrder(),query.getOrders().get(0).getOrder())
-                            .between(!query.getRanges().get(0).getFrom().equals("null")&&query.getRanges().get(0).getTo().equals("null"),)
-        )
-
-//      System.out.println(query);
-//      Page<User> page=new Page<>();
-//      userService.page(page);
-//    ExampleMatcher matcher = ExampleMatcher.matching()
-//        .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING)
-//        .withIgnoreCase().withIgnorePaths("password");
-//    Example<UserPO> example = Example.of(mapper.voToPO(query.getQuery()), matcher);
-//    List<Range> ranges = query.getRanges();
-//    Pageable page = query.getPage();
-//    return userService.findAll(example, ranges, page, mapper);
-        return null;
+    public RespMessage listByQuery(@RequestBody QueryEntity<User> query) {
+        return userService.query(query);
     }
 
 //  @ApiOperation(value = "根据条件排序分页列出所有用户（匹配查询）", notes = "类型为字符串的属性进行匹配查询，单个字段模糊匹配即可，排序分页列出所有用户")
 //  @PostMapping("/list/matching")
-//  public Page<UserVO> listByString(@RequestBody QueryEntity<String> queryEntity)
+//  public Page<User> listByString(@RequestBody QueryEntity<String> queryEntity)
 //      throws IllegalAccessException, InstantiationException {
-//    return userService.findByString(UserPO.class, queryEntity, mapper);
+//    return userService.query(queryEntity);
 //  }
 //
 //
 //  @ApiOperation(value = "获取单个用户详情", notes = "根据id获取用户详情")
-//  @GetMapping("/get/{id}")
-//  public UserVO get(@PathVariable("id") String id) {
-//    return mapper.poToVO(userService.findById(id).orElse(null));
-//  }
+  @GetMapping("/get/{id}")
+  public RespMessage get(@PathVariable("id") String id) {
+    return RespMessage.ok("",userService.getById(id));
+  }
 //
 //  @ApiOperation(value = "添加用户", notes = "添加单个用户")
-//  @PostMapping("/add")
-//  public UserVO add(@RequestBody @Valid UserVO vo) throws IOException {
-//    //设置初始密码为123456
-//    vo.setPassword(passwordEncoder.encode("123456"));
-//    //设置为新角色
-//    vo.setStatus(UserStatus.AVAILABLE.getCode());
-//    return mapper.poToVO(userService.add(mapper.voToPO(vo)));
-//  }
+  @PostMapping("/add")
+  public RespMessage add(@RequestBody @Valid User user) throws IOException {
+    //设置初始密码为123456
+    //设置为新角色
+    user.setStatus(UserStatus.AVAILABLE.getCode());
+    try {
+
+        return RespMessage.ok("",userService.save(user));
+    }catch (Exception e){
+        return RespMessage.error(e.toString());
+    }
+  }
 //
 //  @ApiOperation(value = "修改用户", notes = "修改单个用户的相关信息")
 //  @PostMapping("/update")
-//  public UserVO update(@RequestBody @Valid UserVO vo)
+//  public RespMessage update(@RequestBody @Valid User user)
 //      throws GeneralSecurityException, UnsupportedEncodingException {
-//    vo.setRoles(null);
-//    vo.setName(null);//不可修改
-//    if (vo.getPassword() != null) {
-//      vo.setPassword(passwordEncoder.encode(DES3Util.decode(vo.getPassword())));
+//    user.setRoles(null);
+//    user.setName(null);//不可修改
+//    if (user.getPassword() != null) {
+//      user.setPassword(passwordEncoder.encode(DES3Util.decode(vo.getPassword())));
 //    }
 //    return mapper.poToVO(userService.update(mapper.voToPO(vo), vo.getId()));
 //  }
@@ -124,11 +116,13 @@ public class UserController {
 //  }
 //
 //  @ApiOperation(value = "删除用户", notes = "根据id删除单个或多个用户")
-//  @PostMapping("/delete")
-//  public RespMessage delete(@RequestBody List<String> ids) {
-//    userService.delete(ids);
-//    return RespMessage.ok();
-//  }
+  @PostMapping("/delete")
+  public RespMessage delete(@RequestBody List<String> ids) {
+    ids.forEach(id->{
+        userService.removeById(new QueryWrapper<User>().eq("ID",id));
+    });
+    return RespMessage.ok();
+  }
 
 
 }

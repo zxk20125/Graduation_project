@@ -5,17 +5,19 @@ import cn.zxk.entity.serveEntity.Menu;
 import cn.zxk.entity.serveEntity.Role;
 import cn.zxk.entity.serveEntity.User;
 import cn.zxk.entity.utilEntity.QueryEntity;
+import cn.zxk.entity.utilEntity.Range;
+import cn.zxk.entity.utilEntity.RespMessage;
 import cn.zxk.mappers.serveMapper.RoleMapper;
 import cn.zxk.mappers.serveMapper.UserMapper;
 import cn.zxk.service.DefaultUserDetails;
 import cn.zxk.service.sysService.IUserService;
+import cn.zxk.util.StringUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -37,29 +39,33 @@ import java.util.Set;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService, UserDetailsService {
 
-    @Autowired
-    private IUserService userService;
 
     @Autowired
     private UserMapper userMapper;
     @Autowired
     private RoleMapper roleMapper;
 
-    public List<User> query(QueryEntity<User>queryEntity){
-        return null;
+    public RespMessage query(QueryEntity<User> query) {
+        QueryEntity.Order order = query.getOrders().get(0);
+        Range range = query.getRanges().get(0);
+        return RespMessage.ok("success", userMapper.selectPage(new Page<>(query.getPageNum(), query.getPageSize()), new QueryWrapper<User>()
+                .like(!StringUtil.isBlank(query.getQuery().getName()), "NAME", query.getQuery().getName())
+                .like(!StringUtil.isBlank(query.getQuery().getStatus()), "STATUS", query.getQuery().getStatus())
+                .orderBy(true, !order.getOrder().equals("desc"), order.getKey())
+                ));
     }
 
     private User userWithDetail(String username) {
 //    UserPO userPO = Optional.ofNullable(userDao.findByNameWithRoles(username))
 //        .orElseThrow(() -> new UsernameNotFoundException("User '" + username + "' not found"));
 
-        User User = Optional.ofNullable(userService.getOne(new QueryWrapper<User>().eq("NAME", username)))
+        User User = Optional.ofNullable(userMapper.selectOne(new QueryWrapper<User>().eq("NAME", username)))
                 .orElseThrow(() -> new UsernameNotFoundException("User '" + username + "' not found"));
         return User;
     }
 
     public User findByName(String username) {
-        return userService.getOne(new QueryWrapper<User>().eq("NAME", username));
+        return userMapper.selectOne(new QueryWrapper<User>().eq("NAME", username));
     }
 
     @Override

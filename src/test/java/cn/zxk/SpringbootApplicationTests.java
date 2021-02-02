@@ -11,6 +11,7 @@ import cn.zxk.service.DefaultUserDetails;
 import cn.zxk.service.appService.ITStaffService;
 import cn.zxk.service.sysService.IUserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,9 +46,5 @@ class SpringbootApplicationTests {
 
     @Test
     public void query(){
-        QueryEntity<User> userQueryEntity = new QueryEntity<>();
-        List<User> update_time = userMapper.selectList(new QueryWrapper<User>()
-                .orderByDesc("UPDATE_TIME"));
-        System.out.println(update_time);
     }
 }

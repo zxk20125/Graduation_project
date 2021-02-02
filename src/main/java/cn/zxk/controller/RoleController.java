@@ -1,51 +1,36 @@
-//package cn.zxk.controller;
-//
-//import cn.com.agree.aweb.common.base.entity.RespMessage;
-//import cn.com.agree.aweb.entity.mapper.RoleMapper;
-//import cn.com.agree.aweb.entity.po.AuthorityPO;
-//import cn.com.agree.aweb.entity.po.MenuPO;
-//import cn.com.agree.aweb.entity.po.RolePO;
-//import cn.com.agree.aweb.entity.query.QueryEntity;
-//import cn.com.agree.aweb.entity.vo.RoleVO;
-//import cn.com.agree.aweb.service.RoleService;
-//import com.alibaba.fastjson.JSON;
-//import com.alibaba.fastjson.JSONObject;
-//import io.swagger.annotations.Api;
-//import io.swagger.annotations.ApiOperation;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.data.domain.Page;
-//import org.springframework.security.access.prepost.PreAuthorize;
-//import org.springframework.web.bind.annotation.*;
-//import org.springframework.web.multipart.MultipartFile;
-//
-//import javax.servlet.http.HttpServletResponse;
-//import javax.validation.Valid;
-//import java.io.IOException;
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//@Api(description = "角色管理")
-//@RestController
-//@RequestMapping("/role")
-//@PreAuthorize("hasAuthority('roleManagement')")
-//public class RoleController {
-//
-//  @Autowired
-//  RoleService roleService;
-//
-//  RoleMapper mapper = RoleMapper.INSTANCE;
-//
-//  @ApiOperation(value = "列出所有角色", notes = "查找并以list形式列出所有角色")
-//  @GetMapping("/list")
-//  public List<RoleVO> list() {
-//    return mapper.poToVO(roleService.findAll());
-//  }
-//
-//  @ApiOperation(value = "根据条件排序分页列出所有角色（模糊查询）", notes = "对类型为字符串的属性进行模糊查询，排序分页列出所有角色")
-//  @PostMapping("/list")
-//  public Page<RoleVO> listByQuery(@RequestBody QueryEntity<RoleVO> queryEntity) {
-//    return roleService.findByQuery(queryEntity, mapper);
-//  }
+package cn.zxk.controller;
+
+import cn.zxk.entity.serveEntity.Role;
+import cn.zxk.entity.utilEntity.QueryEntity;
+import cn.zxk.entity.utilEntity.RespMessage;
+import cn.zxk.service.sysService.IRoleService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+@Api(description = "角色管理")
+@RestController
+@RequestMapping("/role")
+@PreAuthorize("hasAuthority('roleManagement')")
+public class RoleController {
+
+  @Autowired
+  IRoleService roleService;
+
+
+  @ApiOperation(value = "列出所有角色", notes = "查找并以list形式列出所有角色")
+  @GetMapping("/list")
+  public RespMessage list() {
+    return RespMessage.ok("",roleService.list());
+  }
+
+  @ApiOperation(value = "根据条件排序分页列出所有角色（模糊查询）", notes = "对类型为字符串的属性进行模糊查询，排序分页列出所有角色")
+  @PostMapping("/list")
+  public RespMessage listByQuery(@RequestBody QueryEntity<Role> queryEntity) {
+    return roleService.query(queryEntity);
+  }
 //
 //  @ApiOperation(value = "根据条件排序分页列出所有角色（匹配查询）", notes = "类型为字符串的属性进行匹配查询，单个字段模糊匹配即可，排序分页列出所有角色")
 //  @PostMapping("/list/matching")
@@ -166,5 +151,5 @@
 //      return RespMessage.error("该角色不存在");
 //    }
 //  }
-//
-//}
+
+}
