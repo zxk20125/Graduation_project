@@ -85,7 +85,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
                     .setDescription(menu.getDescription())
                     .setIcon(menu.getIcon())
                     .setOrder(menu.getOrder())
-                    .setDeploy(menu.getDeploy())));
+                    .setDeploy(menu.getDeploy())
+                    .setParentId(menu.getParentId())));
             dud.setPermissions(JSONObject.parseObject(role.getPermissions()));
         });
         dud.setAuthorities(authoritySet);

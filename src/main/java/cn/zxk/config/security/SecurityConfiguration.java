@@ -52,7 +52,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/verify/**")
                 //注册放行
                 .antMatchers("/register")
-                .antMatchers("/static/**");
+                .antMatchers("/dist/**");
 //        .antMatchers("/test**/**");
     }
 
