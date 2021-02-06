@@ -1,9 +1,12 @@
 package cn.zxk.entity.serveEntity;
 
 
+import com.baomidou.mybatisplus.annotation.FieldStrategy;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
@@ -14,6 +17,7 @@ import lombok.EqualsAndHashCode;
  * @since 2021-01-27
  */
 @Data
+@Accessors(chain = true)
 //@EqualsAndHashCode(callSuper = true)
 public class RoleMenu {
 
@@ -22,13 +26,15 @@ public class RoleMenu {
     /**
      * 角色id
      */
-    @TableField("ROLE_ID")
+    @TableId
+    @TableField(value = "ROLE_ID", insertStrategy = FieldStrategy.NOT_EMPTY)
     private String roleId;
 
     /**
      * 菜单id
      */
-    @TableField("MENU_ID")
+    @TableId
+    @TableField(value = "MENU_ID",insertStrategy = FieldStrategy.NOT_EMPTY)
     private String menuId;
 
 

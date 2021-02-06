@@ -1,14 +1,21 @@
 package cn.zxk.controller;
 
 import cn.zxk.entity.serveEntity.Role;
+import cn.zxk.entity.serveEntity.RoleMenu;
 import cn.zxk.entity.utilEntity.QueryEntity;
 import cn.zxk.entity.utilEntity.RespMessage;
+import cn.zxk.service.sysService.IRoleMenuService;
 import cn.zxk.service.sysService.IRoleService;
+import cn.zxk.service.sysService.impl.RoleMenuServiceImpl;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Api(description = "角色管理")
 @RestController
@@ -16,22 +23,26 @@ import org.springframework.web.bind.annotation.*;
 @PreAuthorize("hasAuthority('roleManagement')")
 public class RoleController {
 
-  @Autowired
-  IRoleService roleService;
+    @Autowired
+    IRoleService roleService;
+
+    @Autowired
+    IRoleMenuService roleMenuService;
 
 
-  @ApiOperation(value = "列出所有角色", notes = "查找并以list形式列出所有角色")
-  @GetMapping("/list")
-  public RespMessage list() {
-    return RespMessage.ok("",roleService.list());
-  }
+    @ApiOperation(value = "列出所有角色", notes = "查找并以list形式列出所有角色")
+    @GetMapping("/list")
+    public RespMessage list() {
+        return RespMessage.ok("", roleService.list());
+    }
 
-  @ApiOperation(value = "根据条件排序分页列出所有角色（模糊查询）", notes = "对类型为字符串的属性进行模糊查询，排序分页列出所有角色")
-  @PostMapping("/list")
-  public RespMessage listByQuery(@RequestBody QueryEntity<Role> queryEntity) {
-    return roleService.query(queryEntity);
-  }
-//
+    @ApiOperation(value = "根据条件排序分页列出所有角色（模糊查询）", notes = "对类型为字符串的属性进行模糊查询，排序分页列出所有角色")
+    @PostMapping("/list")
+    public RespMessage listByQuery(@RequestBody QueryEntity<Role> queryEntity) {
+        return roleService.query(queryEntity);
+    }
+
+    //
 //  @ApiOperation(value = "根据条件排序分页列出所有角色（匹配查询）", notes = "类型为字符串的属性进行匹配查询，单个字段模糊匹配即可，排序分页列出所有角色")
 //  @PostMapping("/list/matching")
 //  public Page<RoleVO> listByString(@RequestBody QueryEntity<String> queryEntity)
@@ -39,12 +50,13 @@ public class RoleController {
 //    return roleService.findByString(RolePO.class, queryEntity, mapper);
 //  }
 //
-  @ApiOperation(value = "获取单个角色详情", notes = "根据id获取角色详情")
-  @GetMapping("/get/{id}")
-  public RespMessage get(@PathVariable("id") String id) {
-    return RespMessage.ok(roleService.getById(id));
-  }
-//
+    @ApiOperation(value = "获取单个角色详情", notes = "根据id获取角色详情")
+    @GetMapping("/get/{id}")
+    public RespMessage get(@PathVariable("id") String id) {
+        return RespMessage.ok(roleService.getById(id));
+    }
+
+    //
 //  @ApiOperation(value = "添加角色", notes = "添加单个角色")
 //  @PostMapping("/add")
 //  public RoleVO add(@RequestBody @Valid RoleVO vo) {
@@ -72,18 +84,18 @@ public class RoleController {
 //    return mapper.poToVO(roleService.update(rolePO, id));
 //  }
 //
-//  @ApiOperation(value = "关联菜单", notes = "对单个角色和任意菜单进行关联，id为角色id，ids为菜单id集合")
-//  @PostMapping("/update/menu/{id}")
-//  public RoleVO updateMenu(@PathVariable("id") String id,
-//      @RequestBody(required = false) List<String> ids) {
-//    RolePO rolePO = new RolePO();
-//    rolePO.setId(id);
-//    rolePO.setMenus(new ArrayList<>());
-//    for (String menuId : ids) {
-//      rolePO.getMenus().add(new MenuPO().setId(menuId));
-//    }
-//    return mapper.poToVO(roleService.update(rolePO, id));
-//  }
+    @ApiOperation(value = "关联菜单", notes = "对单个角色和任意菜单进行关联，id为角色id，ids为菜单id集合")
+    @PostMapping("/update/menu/{id}")
+    public RespMessage updateMenu(@PathVariable("id") String id,
+                                  @RequestBody(required = false) List<String> ids) {
+        System.out.println(id + "  " + ids);
+        for (String menu_id : ids) {
+            roleMenuService.saveOrUpdate(new RoleMenu().setRoleId(id).setMenuId(menu_id), new QueryWrapper<RoleMenu>()
+                    .eq("role_id", id)
+                    .eq("menu_id", menu_id));
+        }
+        return RespMessage.error("未知错误");
+    }
 //
 //  @ApiOperation(value = "删除角色", notes = "根据id删除单个或多个角色")
 //  @PostMapping("/delete")
