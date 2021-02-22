@@ -1,9 +1,11 @@
 package cn.zxk.entity.appEntity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.springframework.boot.autoconfigure.web.WebProperties;
 
 /**
  * <p>
@@ -45,7 +47,7 @@ public class TAddress {
      */
     private String phone;
 
-    
+    @TableField(select = false)
     private String login_name;
 
 

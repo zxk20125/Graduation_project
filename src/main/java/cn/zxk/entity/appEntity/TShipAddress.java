@@ -26,7 +26,7 @@ public class TShipAddress {
      * 运送地址定价
      */
     @TableId(value = "ship_address_id", type = IdType.AUTO)
-    private Integer shipAddressId;
+    private double shipAddressId;
 
     /**
      * 始点

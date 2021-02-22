@@ -1,16 +1,16 @@
 package cn.zxk.controller.appController;
 
 import cn.zxk.entity.appEntity.TCustomer;
+import cn.zxk.entity.serveEntity.User;
+import cn.zxk.entity.utilEntity.QueryEntity;
 import cn.zxk.entity.utilEntity.RespMessage;
 import cn.zxk.service.appService.ITCustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.server.authentication.ReactivePreAuthenticatedAuthenticationManager;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -26,11 +26,15 @@ public class CustomerController {
     private ITCustomerService customerService;
 
 
-    @GetMapping("/list")
-    public RespMessage list() {
+    @PostMapping("/list")
+    public RespMessage list(@RequestBody QueryEntity<TCustomer> query) {
+        TCustomer customer = query.getQuery();
+        System.out.println(customer.getCustomerName());
         List<TCustomer> customers = customerService.list();
+        HashMap<String, Object> records = new HashMap<>();
+        records.put("records",customers);
         if(null!=customers)
-            return RespMessage.ok(customers);
+            return RespMessage.ok(records);
         else return RespMessage.error("查询失败");
     }
 }
