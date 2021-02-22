@@ -1,4 +1,4 @@
-package cn.zxk.controller;
+package cn.zxk.controller.serverController;
 
 import cn.zxk.entity.serveEntity.Role;
 import cn.zxk.entity.serveEntity.RoleMenu;
@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Api(description = "角色管理")
@@ -57,13 +58,14 @@ public class RoleController {
     }
 
     //
-//  @ApiOperation(value = "添加角色", notes = "添加单个角色")
-//  @PostMapping("/add")
-//  public RoleVO add(@RequestBody @Valid RoleVO vo) {
-//    vo.setAuthorities(null);
-//    return mapper.poToVO(roleService.add(mapper.voToPO(vo)));
-//  }
-//
+    @ApiOperation(value = "添加角色", notes = "添加单个角色")
+    @PostMapping("/add")
+    public RespMessage add(@RequestBody @Valid Role role) {
+        System.out.println(role);
+        return RespMessage.ok("新增成功");
+    }
+
+    //
 //  @ApiOperation(value = "修改角色", notes = "修改单个角色的相关信息")
 //  @PostMapping("/update")
 //  public RoleVO update(@RequestBody @Valid RoleVO vo) {
@@ -88,13 +90,14 @@ public class RoleController {
     @PostMapping("/update/menu/{id}")
     public RespMessage updateMenu(@PathVariable("id") String id,
                                   @RequestBody(required = false) List<String> ids) {
-        System.out.println(id + "  " + ids);
+        boolean success = false;
         for (String menu_id : ids) {
-            roleMenuService.saveOrUpdate(new RoleMenu().setRoleId(id).setMenuId(menu_id), new QueryWrapper<RoleMenu>()
+            success = roleMenuService.saveOrUpdate(new RoleMenu().setRoleId(id).setMenuId(menu_id), new QueryWrapper<RoleMenu>()
                     .eq("role_id", id)
                     .eq("menu_id", menu_id));
         }
-        return RespMessage.error("未知错误");
+        if (success) return RespMessage.ok("操作成功");
+        else return RespMessage.error("关联失败");
     }
 //
 //  @ApiOperation(value = "删除角色", notes = "根据id删除单个或多个角色")

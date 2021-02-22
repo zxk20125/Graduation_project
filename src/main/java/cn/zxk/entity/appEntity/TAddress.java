@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author Chick
@@ -15,7 +15,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 //@EqualsAndHashCode(callSuper = true)
-public class TAddress{
+public class TAddress {
 
     private static final long serialVersionUID = 1L;
 
@@ -44,6 +44,9 @@ public class TAddress{
      * 联系号码
      */
     private String phone;
+
+    
+    private String login_name;
 
 
 }

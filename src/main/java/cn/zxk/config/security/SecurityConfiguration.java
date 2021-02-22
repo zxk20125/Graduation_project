@@ -5,8 +5,10 @@ import cn.zxk.entity.utilEntity.RespMessage;
 import cn.zxk.util.ServletUtil;
 import cn.zxk.util.SpringContextUtil;
 import com.alibaba.fastjson.JSONObject;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -95,8 +97,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .failureHandler((request, response, e) -> {
                     response.setContentType("application/json;charset=utf-8");
                     response.getWriter()
-                            .write(JSONObject.toJSONString(
-                                    RespMessage.build(false, HttpServletResponse.SC_UNAUTHORIZED, e.getMessage())));
+                            .write(JSONObject.toJSONString(RespMessage.build(false, HttpServletResponse.SC_UNAUTHORIZED, e.getMessage())));
                     response.getWriter().flush();
                     response.getWriter().close();
                 })
@@ -124,7 +125,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         String sessionCode = (String) ServletUtil
                                 .getSessionAttribute(Constants.VERIFY_OBJ_SESSION_ATTR_NAME);
                         String code = request.getParameter("code");
-                        System.out.println(sessionCode+"  "+code);
+                        System.out.println(sessionCode + "  " + code);
                         ServletUtil.removeSessionAttribute(Constants.VERIFY_OBJ_SESSION_ATTR_NAME);
 
                         if (code == null) {
@@ -159,7 +160,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         return;
                     } else {
                         String csrf = req.getHeader(csrfToken.getHeaderName());
-                        if(csrf == null){
+                        if (csrf == null) {
                             csrf = req.getParameter(csrfToken.getParameterName());
                         }
                         if (csrf == null || !csrfToken.getToken().equals(csrf)) {

@@ -29,9 +29,13 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements IM
     @Override
     public RespMessage query(QueryEntity<Menu> query) {
         QueryEntity.Order order = query.getOrders().get(0);
+        Menu menu = query.getQuery();
         Range range = query.getRanges().get(0);
         return RespMessage.ok("success", menuMapper.selectPage(new Page<>(query.getPageNum(), query.getPageSize()), new QueryWrapper<Menu>()
-                .like(!StringUtil.isBlank(query.getQuery().getName()), "NAME", query.getQuery().getName())
+                .like(!StringUtil.isBlank(menu.getCreateUserName()), "create_user_name", menu.getCreateUserName())
+                .like(!StringUtil.isBlank(menu.getTitle()), "title", menu.getTitle())
+                .between(!StringUtil.isBlank(range.getFrom())&!StringUtil.isBlank(range.getTo())
+                        ,"create_time",range.getFrom(),range.getTo())
                 .orderBy(true, !order.getOrder().equals("desc"), "create_time")
         ));
     }

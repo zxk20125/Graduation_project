@@ -65,7 +65,7 @@ public class Role{
      * 角色描述
      */
     @TableField("DESCRIPTION")
-    private String description;
+    private String DESCRIPTION;
 
     /**
      * 角色名称，ROLE_开头，后接全英文，唯一

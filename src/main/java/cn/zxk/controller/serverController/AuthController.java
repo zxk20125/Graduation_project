@@ -1,15 +1,16 @@
-package cn.zxk.controller;
+package cn.zxk.controller.serverController;
 
 import cn.zxk.entity.utilEntity.RespMessage;
 import cn.zxk.service.DefaultUserDetails;
 import cn.zxk.service.sysService.IUserService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-//@Api(description = "用户相关功能")
+@Api(description = "用户相关功能")
 @RestController
 public class AuthController {
 
@@ -68,7 +69,8 @@ public class AuthController {
   public Object current() {
     DefaultUserDetails details= (DefaultUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     details.getUser().setPassword(null);
-    RespMessage ok = RespMessage.ok(null, details);
+    System.out.println(details.getUser().getID());
+    RespMessage ok = RespMessage.ok(details);
     return ok;
   }
 

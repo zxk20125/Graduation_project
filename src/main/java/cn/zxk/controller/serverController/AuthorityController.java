@@ -1,4 +1,4 @@
-package cn.zxk.controller;
+package cn.zxk.controller.serverController;
 
 import cn.zxk.entity.serveEntity.Authority;
 import cn.zxk.entity.utilEntity.QueryEntity;
@@ -23,7 +23,7 @@ public class AuthorityController {
   @ApiOperation(value = "列出所有权限", notes = "查找并以list形式列出所有权限")
   @GetMapping("/list")
   public RespMessage list() {
-    return RespMessage.ok("",authorityService.list());
+    return RespMessage.ok(authorityService.list());
   }
 
 //  @ApiOperation(value = "列出所有权限", notes = "查找并以菜单树的形式列出所有权限")

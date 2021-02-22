@@ -1,12 +1,8 @@
 package cn.zxk.service;
 
-import cn.zxk.entity.serveEntity.Authority;
 import cn.zxk.entity.serveEntity.Menu;
 import cn.zxk.entity.serveEntity.User;
 import cn.zxk.entity.serveEntity.enmus.UserStatus;
-import cn.zxk.service.sysService.impl.RoleServiceImpl;
-import cn.zxk.service.sysService.impl.UserServiceImpl;
-import cn.zxk.util.GetMapperUtil;
 import com.alibaba.fastjson.JSONObject;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -14,7 +10,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 

@@ -33,7 +33,6 @@ public class RoleMenu {
     /**
      * 菜单id
      */
-    @TableId
     @TableField(value = "MENU_ID",insertStrategy = FieldStrategy.NOT_EMPTY)
     private String menuId;
 

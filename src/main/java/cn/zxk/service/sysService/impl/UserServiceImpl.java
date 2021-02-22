@@ -75,7 +75,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         Set menuSet = new HashSet();
         User user = userWithDetail(s);
         userMapper.getRoles(user.getID()).forEach(role -> {
-            authoritySet.add(new Authority().setName(role.getName()).setDescription(role.getDescription()));
+            authoritySet.add(new Authority().setName(role.getName()).setDescription(role.getDESCRIPTION()));
             roleMapper.getAuthority(role.getID()).forEach(authority -> authoritySet.add(new Authority().setName(authority.getName())
                     .setDescription(authority.getDescription())));
             roleMapper.getMenu(role.getID()).forEach(menu -> menuSet.add(new Menu().setID(menu.getID())
