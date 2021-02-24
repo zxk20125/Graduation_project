@@ -1,6 +1,9 @@
 package cn.zxk.service.appService;
 
 import cn.zxk.entity.appEntity.TAddress;
+import cn.zxk.entity.appEntity.TStaff;
+import cn.zxk.entity.utilEntity.QueryEntity;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ITAddressService extends IService<TAddress> {
 
+    Page<TAddress> selectStaff(QueryEntity<TAddress> addressQueryEntity);
 }

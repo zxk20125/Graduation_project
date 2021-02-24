@@ -1,7 +1,6 @@
 package cn.zxk.service.sysService.impl;
 
 import cn.zxk.entity.serveEntity.Authority;
-import cn.zxk.entity.serveEntity.Role;
 import cn.zxk.entity.utilEntity.QueryEntity;
 import cn.zxk.entity.utilEntity.Range;
 import cn.zxk.entity.utilEntity.RespMessage;

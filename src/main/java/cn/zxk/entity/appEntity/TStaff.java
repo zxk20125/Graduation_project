@@ -68,10 +68,6 @@ public class TStaff{
      */
     private Integer dotId;
 
-    /**
-     * 角色
-     */
-    private String staffRole;
 
 
 }

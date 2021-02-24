@@ -25,9 +25,6 @@ public class AddressController {
 
     @PostMapping("/list")
     public RespMessage list(@RequestBody QueryEntity<TAddress> query) {
-        TAddress address = query.getQuery();
-        System.out.println(address.getAddressName());
-        addressService.list();
-        return RespMessage.ok();
+        return RespMessage.ok(addressService.selectStaff(query));
     }
 }

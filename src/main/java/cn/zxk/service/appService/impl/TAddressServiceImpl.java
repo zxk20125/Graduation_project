@@ -2,9 +2,13 @@ package cn.zxk.service.appService.impl;
 
 import cn.zxk.entity.appEntity.TAddress;
 import cn.zxk.entity.appEntity.TCustomer;
+import cn.zxk.entity.appEntity.TStaff;
+import cn.zxk.entity.utilEntity.QueryEntity;
 import cn.zxk.mappers.appMapper.TAddressMapper;
 import cn.zxk.service.appService.ITAddressService;
 import cn.zxk.service.appService.ITCustomerService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,16 +26,18 @@ import java.util.List;
 @Service
 public class TAddressServiceImpl extends ServiceImpl<TAddressMapper, TAddress> implements ITAddressService {
     @Autowired
-    private TAddressMapper addressMapper;
-    @Autowired
     private ITCustomerService customerService;
     
     @Override
-    public List<TAddress> list() {
-        List<TAddress> addresses = addressMapper.selectList(null);
-        addresses.forEach(address->{
-            address.setLogin_name(customerService.getById(address.getCustomerId()).getCustomerLoginName());
-        });
-        return addresses;
+    public Page<TAddress> selectStaff(QueryEntity<TAddress> addressQueryEntity) {
+        TAddress query = addressQueryEntity.getQuery();
+        if (query.getLoginName()!=null&&!query.getLoginName().equals("")){
+            Integer customerId=null;
+            System.out.println(111111);
+            customerId = customerService.getOne(new QueryWrapper<TCustomer>().eq("customer_login_name", query.getLoginName())).getCustomerId();
+            return this.getBaseMapper().selectPage(new Page<>(addressQueryEntity.getPageNum(), addressQueryEntity.getPageSize()),
+                    new QueryWrapper<TAddress>().eq("customer_id",customerId));
+        }
+        return this.getBaseMapper().selectPage(new Page<>(addressQueryEntity.getPageNum(), addressQueryEntity.getPageSize()),new QueryWrapper<TAddress>().eq("customer_id",""));
     }
 }

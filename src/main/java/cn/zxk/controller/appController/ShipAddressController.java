@@ -6,6 +6,7 @@ import cn.zxk.entity.utilEntity.RespMessage;
 import cn.zxk.service.appService.ITShipAddressService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,5 +23,8 @@ public class ShipAddressController {
         return RespMessage.ok(shipAddressService.selectPage(queryEntity));
     }
 
-    @pos
+    @PostMapping("/add")
+    public RespMessage add(@Validated TShipAddress shipAddress){
+        return null;
+    }
 }

@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.apache.ibatis.annotations.One;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 
 /**
@@ -48,7 +50,7 @@ public class TAddress {
     private String phone;
 
     @TableField(select = false)
-    private String login_name;
+    private String loginName;
 
 
 }
