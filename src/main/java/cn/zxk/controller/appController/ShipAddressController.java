@@ -4,6 +4,7 @@ import cn.zxk.entity.appEntity.TShipAddress;
 import cn.zxk.entity.utilEntity.QueryEntity;
 import cn.zxk.entity.utilEntity.RespMessage;
 import cn.zxk.service.appService.ITShipAddressService;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,10 +19,8 @@ public class ShipAddressController {
 
     @PostMapping("/list")
     public RespMessage list(@RequestBody QueryEntity<TShipAddress> queryEntity){
-        List<TShipAddress> shipAddresses = shipAddressService.list();
-        if(null!= shipAddresses)
-            return RespMessage.ok(shipAddresses);
-        else return RespMessage.error("查询失败！");
+        return RespMessage.ok(shipAddressService.selectPage(queryEntity));
     }
 
+    @pos
 }

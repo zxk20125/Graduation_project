@@ -1,8 +1,11 @@
 package cn.zxk.service.appService.impl;
 
 import cn.zxk.entity.appEntity.TShipAddress;
+import cn.zxk.entity.utilEntity.QueryEntity;
 import cn.zxk.mappers.appMapper.TShipAddressMapper;
 import cn.zxk.service.appService.ITShipAddressService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -17,4 +20,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class TShipAddressServiceImpl extends ServiceImpl<TShipAddressMapper, TShipAddress> implements ITShipAddressService {
 
+
+    @Override
+    public Page<TShipAddress> selectPage(QueryEntity<TShipAddress> query) {
+        return this.getBaseMapper().selectPage(new Page<>(query.getPageNum(),query.getPageSize()),null);
+    }
 }
