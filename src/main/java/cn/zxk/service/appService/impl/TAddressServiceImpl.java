@@ -33,11 +33,10 @@ public class TAddressServiceImpl extends ServiceImpl<TAddressMapper, TAddress> i
         TAddress query = addressQueryEntity.getQuery();
         if (query.getLoginName()!=null&&!query.getLoginName().equals("")){
             Integer customerId=null;
-            System.out.println(111111);
-            customerId = customerService.getOne(new QueryWrapper<TCustomer>().eq("customer_login_name", query.getLoginName())).getCustomerId();
-            return this.getBaseMapper().selectPage(new Page<>(addressQueryEntity.getPageNum(), addressQueryEntity.getPageSize()),
-                    new QueryWrapper<TAddress>().eq("customer_id",customerId));
+            TCustomer customer = customerService.getOne(new QueryWrapper<TCustomer>().eq("customer_login_name", query.getLoginName()));
+            if (customer!=null) customerId = customer.getCustomerId();
+            return this.getBaseMapper().selectPage1(new Page<>(addressQueryEntity.getPageNum(), addressQueryEntity.getPageSize()),customerId);
         }
-        return this.getBaseMapper().selectPage(new Page<>(addressQueryEntity.getPageNum(), addressQueryEntity.getPageSize()),new QueryWrapper<TAddress>().eq("customer_id",""));
+        return this.getBaseMapper().selectPage(new Page<>(addressQueryEntity.getPageNum(), addressQueryEntity.getPageSize()),null);
     }
 }

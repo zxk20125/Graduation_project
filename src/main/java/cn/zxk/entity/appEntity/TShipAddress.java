@@ -26,7 +26,7 @@ public class TShipAddress {
      * 运送地址定价
      */
     @TableId(value = "ship_address_id", type = IdType.AUTO)
-    private double shipAddressId;
+    private Integer shipAddressId;
 
     /**
      * 始点
@@ -41,7 +41,7 @@ public class TShipAddress {
     /**
      * 运送地址定价
      */
-    private BigDecimal shipAddressMoney;
+    private String shipAddressMoney;
 
 
 }

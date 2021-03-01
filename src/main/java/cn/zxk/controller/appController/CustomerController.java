@@ -5,6 +5,7 @@ import cn.zxk.entity.serveEntity.User;
 import cn.zxk.entity.utilEntity.QueryEntity;
 import cn.zxk.entity.utilEntity.RespMessage;
 import cn.zxk.service.appService.ITCustomerService;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.server.authentication.ReactivePreAuthenticatedAuthenticationManager;
 import org.springframework.stereotype.Controller;
@@ -20,7 +21,7 @@ import java.util.List;
  * @date 2021/1/19
  */
 @RestController
-@RequestMapping("/customer")
+@RequestMapping("/customerInfo")
 public class CustomerController {
     @Autowired
     private ITCustomerService customerService;
@@ -28,13 +29,10 @@ public class CustomerController {
 
     @PostMapping("/list")
     public RespMessage list(@RequestBody QueryEntity<TCustomer> query) {
-        TCustomer customer = query.getQuery();
-        System.out.println(customer.getCustomerName());
-        List<TCustomer> customers = customerService.list();
-        HashMap<String, Object> records = new HashMap<>();
-        records.put("records",customers);
-        if(null!=customers)
-            return RespMessage.ok(records);
-        else return RespMessage.error("查询失败");
+        return RespMessage.ok(customerService.selectQuery(query));
+    }
+    @GetMapping("/get/{customerId}")
+    public RespMessage list(@PathVariable String customerId) {
+        return RespMessage.ok(customerService.getById(customerId));
     }
 }

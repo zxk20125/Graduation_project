@@ -1,6 +1,8 @@
 package cn.zxk.service.appService;
 
 import cn.zxk.entity.appEntity.TResSort;
+import cn.zxk.entity.utilEntity.QueryEntity;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -12,5 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2021-01-16
  */
 public interface ITResSortService extends IService<TResSort> {
-
+    Page<TResSort> selectPage(QueryEntity<TResSort> queryEntity);
 }

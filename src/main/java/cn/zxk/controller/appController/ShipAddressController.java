@@ -27,4 +27,8 @@ public class ShipAddressController {
     public RespMessage add(@Validated TShipAddress shipAddress){
         return null;
     }
+    @GetMapping("/get/{shipAddressId}")
+    public RespMessage get(@PathVariable("shipAddressId") String id) {
+        return RespMessage.ok(shipAddressService.getById(id));
+    }
 }

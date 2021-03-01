@@ -36,7 +36,7 @@ public class TResSort{
     /**
      * 物品定价
      */
-    private BigDecimal resSortMoney;
+    private String resSortMoney;
 
 
 }

@@ -18,16 +18,22 @@ import org.apache.ibatis.annotations.*;
 public interface TAddressMapper extends BaseMapper<TAddress> {
 
 
-    @Select({"<script>",
-            "SELECT * FROM t_address",
-            "WHERE 1=1",
-            "<if test=\" null!= ew.customer_id and '' != ew.customer_id\">",
-            "AND customer_id = ${ew.customer_id}",
-            "</if>",
-            "</script>"})
+    @Select("select * from t_address")
     @Results({
         @Result(property = "loginName",column = "customer_id",one=@One(select = "cn.zxk.mappers.appMapper.TCustomerMapper.getLoginName"))
     })
     <E extends IPage<TAddress>> E selectPage(E page, @Param("ew") Wrapper<TAddress> queryWrapper);
+
+    @Select({"<script>",
+            "SELECT * FROM t_address",
+            "WHERE 1=1",
+            "<if test=\" null!=#{customer_id} and '' != #{customer_id}\">",
+            "AND customer_id = #{customer_id}",
+            "</if>",
+            "</script>"})
+    @Results({
+            @Result(property = "loginName",column = "customer_id",one=@One(select = "cn.zxk.mappers.appMapper.TCustomerMapper.getLoginName"))
+    })
+    <E extends IPage<TAddress>> E selectPage1(E page, @Param("customer_id") Integer id);
 
 }

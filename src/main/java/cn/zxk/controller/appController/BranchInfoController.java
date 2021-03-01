@@ -19,11 +19,11 @@ public class BranchInfoController {
     private ITDotService dotService;
 
     @PostMapping("/list")
-    public RespMessage listByQuery(@RequestBody QueryEntity<TDot> query) {
-        return RespMessage.ok();
+    public RespMessage list(@RequestBody QueryEntity<TDot> query) {
+        return RespMessage.ok(dotService.selectPage(query));
     }
-    @GetMapping("/list")
-    public RespMessage list() {
-        return RespMessage.ok(dotService.list());
+    @GetMapping("/get/{branchId}")
+    public RespMessage get(@PathVariable("branchId") String id) {
+        return RespMessage.ok(dotService.getById(id));
     }
 }
