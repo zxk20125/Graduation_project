@@ -54,8 +54,8 @@ public class UserController {
 
     @ApiOperation(value = "根据条件排序分页列出所有用户（模糊查询）", notes = "对类型为字符串的属性进行模糊查询，排序分页列出所有用户")
     @PostMapping("/list")
-    public RespMessage listByQuery(@RequestBody QueryEntity<User> query) {
-        return userService.query(query);
+    public RespMessage list(@RequestBody QueryEntity<User> query) {
+        return RespMessage.ok(userService.selectPage(query));
     }
 
     //  @ApiOperation(value = "根据条件排序分页列出所有用户（匹配查询）", notes = "类型为字符串的属性进行匹配查询，单个字段模糊匹配即可，排序分页列出所有用户")

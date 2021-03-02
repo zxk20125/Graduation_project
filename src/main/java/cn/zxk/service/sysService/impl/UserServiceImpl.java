@@ -44,20 +44,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     private UserMapper userMapper;
     @Autowired
     private RoleMapper roleMapper;
-
-    public RespMessage query(QueryEntity<User> query) {
-        QueryEntity.Order order = query.getOrders().get(0);
-        Range range = query.getRanges().get(0);
-        return RespMessage.ok("success", userMapper.selectPage(new Page<>(query.getPageNum(), query.getPageSize()), new QueryWrapper<User>()
-                .like(!StringUtil.isBlank(query.getQuery().getName()), "NAME", query.getQuery().getName())
-                .like(!StringUtil.isBlank(query.getQuery().getStatus()), "STATUS", query.getQuery().getStatus())
-                .orderBy(true, !order.getOrder().equals("desc"), "create_time")
-                ));
-    }
+    
 
     private User userWithDetail(String username) {
-//    UserPO userPO = Optional.ofNullable(userDao.findByNameWithRoles(username))
-//        .orElseThrow(() -> new UsernameNotFoundException("User '" + username + "' not found"));
 
         User User = Optional.ofNullable(userMapper.selectOne(new QueryWrapper<User>().eq("NAME", username)))
                 .orElseThrow(() -> new UsernameNotFoundException("User '" + username + "' not found"));
@@ -96,5 +85,16 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
                         .setStatus(user.getStatus()).setPassword(user.getPassword()).setEmail(user.getEmail())
                         .setPhone(user.getPhone()));
         return dud;
+    }
+
+    @Override
+    public Page<User> selectPage(QueryEntity<User> query) {
+        QueryEntity.Order order = query.getOrders().get(0);
+        Range range = query.getRanges().get(0);
+        return userMapper.selectPage(new Page<>(query.getPageNum(), query.getPageSize()), new QueryWrapper<User>()
+                .like(!StringUtil.isBlank(query.getQuery().getName()), "NAME", query.getQuery().getName())
+                .like(!StringUtil.isBlank(query.getQuery().getStatus()), "STATUS", query.getQuery().getStatus())
+                .orderBy(true, !order.getOrder().equals("desc"), "create_time")
+                .between(range.getFrom().equals("null")&&range.getTo().equals("null"),range.getKey(),range.getFrom(),range.getTo()));
     }
 }

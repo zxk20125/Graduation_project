@@ -1,5 +1,6 @@
 package cn.zxk.entity.appEntity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -105,6 +106,9 @@ public class TOrder{
      * 下单时间
      */
     private LocalDateTime orderTime;
+
+    @TableField(select = false)
+    private String loginName;
 
 
 }

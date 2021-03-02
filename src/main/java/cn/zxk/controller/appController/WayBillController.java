@@ -19,9 +19,7 @@ public class WayBillController {
 
     @PostMapping("/list")
     public RespMessage list(@RequestBody QueryEntity<TWaybill> queryEntity) {
-        List<TWaybill> waybills = waybillService.list();
-        if (null!=waybills) return RespMessage.ok(waybills);
-        else return RespMessage.error("查询失败");
+        return RespMessage.ok(waybillService.selectPage(queryEntity));
     }
 
 }

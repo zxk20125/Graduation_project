@@ -19,5 +19,5 @@ import java.util.List;
  */
 public interface IUserService extends IService<User> {
 
-    RespMessage query(QueryEntity<User>queryEntity);
+    Page<User> selectPage(QueryEntity<User>queryEntity);
 }
