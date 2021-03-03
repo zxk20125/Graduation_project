@@ -5,10 +5,11 @@ import cn.zxk.entity.utilEntity.QueryEntity;
 import cn.zxk.entity.utilEntity.RespMessage;
 import cn.zxk.service.appService.ITOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * ¹¦ÄÜÃèÊö£º
+ * åŠŸèƒ½æè¿°ï¼š
  *
  * @author Chickck
  * @date 2021/3/2
@@ -24,4 +25,9 @@ public class OrderInfoController {
     public RespMessage list(@RequestBody QueryEntity<TOrder> queryEntity){
         return RespMessage.ok(orderService.selectPage(queryEntity));
     }
+    @GetMapping("/get/{orderId}")
+    public RespMessage get(@PathVariable("orderId") String id){
+        return RespMessage.ok(orderService.selectById(id));
+    }
+
 }

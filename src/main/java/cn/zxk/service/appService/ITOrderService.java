@@ -17,4 +17,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ITOrderService extends IService<TOrder> {
     
     Page<TOrder> selectPage(QueryEntity<TOrder> queryEntity);
+
+    TOrder selectById(String id);
 }

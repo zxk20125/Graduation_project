@@ -24,4 +24,9 @@ public class TOrderServiceImpl extends ServiceImpl<TOrderMapper, TOrder> impleme
     public Page<TOrder> selectPage(QueryEntity<TOrder> queryEntity) {
         return this.baseMapper.selectPage(new Page<>(queryEntity.getPageNum(),queryEntity.getPageSize()),null);
     }
+
+    @Override
+    public TOrder selectById(String id) {
+        return this.baseMapper.selectById(id);
+    }
 }

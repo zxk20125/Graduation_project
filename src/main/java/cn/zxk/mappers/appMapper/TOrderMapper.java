@@ -7,6 +7,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.apache.ibatis.annotations.*;
 
+import java.io.Serializable;
+
 
 /**
  * <p>
@@ -24,4 +26,9 @@ public interface TOrderMapper extends BaseMapper<TOrder> {
     })
     <E extends IPage<TOrder>> E selectPage(E page, @Param("ew") Wrapper<TOrder> queryWrapper);
 
+    @Select("select * from t_order where order_id = #{id}")
+    @Results({
+            @Result(property = "loginName",column = "customer_id",one=@One(select = "cn.zxk.mappers.appMapper.TCustomerMapper.getLoginName"))
+    })
+    TOrder selectById(Serializable id);
 }

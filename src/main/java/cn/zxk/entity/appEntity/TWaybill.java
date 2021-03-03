@@ -1,7 +1,6 @@
 package cn.zxk.entity.appEntity;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.time.LocalDateTime;
 

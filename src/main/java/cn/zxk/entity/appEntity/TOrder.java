@@ -1,6 +1,7 @@
 package cn.zxk.entity.appEntity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -25,12 +26,13 @@ public class TOrder{
     /**
      * 订单编号
      */
+    @TableId(value = "order_id")
     private String orderId;
 
     /**
      * 客户编号
      */
-    private Integer custmerId;
+    private Integer customerId;
 
     /**
      * 网点编号
