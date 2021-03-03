@@ -19,4 +19,5 @@ import java.util.List;
 public interface ITStaffService extends IService<TStaff> {
 
     Page<TStaff> selectStaff(QueryEntity<TStaff> staffQueryEntity);
+
 }

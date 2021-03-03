@@ -22,6 +22,10 @@ public class BranchInfoController {
     public RespMessage list(@RequestBody QueryEntity<TDot> query) {
         return RespMessage.ok(dotService.selectPage(query));
     }
+    @GetMapping("/list")
+    public RespMessage list() {
+        return RespMessage.ok(dotService.list());
+    }
     @GetMapping("/get/{branchId}")
     public RespMessage get(@PathVariable("branchId") String id) {
         return RespMessage.ok(dotService.getById(id));

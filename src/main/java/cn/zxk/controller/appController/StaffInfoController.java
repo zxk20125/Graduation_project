@@ -26,4 +26,10 @@ public class StaffInfoController {
     public RespMessage get(@PathVariable("staffId") String id) {
         return RespMessage.ok(staffService.getById(id));
     }
+
+    @PostMapping("/update")
+    public RespMessage update(@RequestBody TStaff staff){
+        if(staffService.updateById(staff))return RespMessage.ok();
+        return RespMessage.error("修改失败");
+    }
 }
