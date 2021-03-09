@@ -25,7 +25,8 @@ public class ShipAddressController {
 
     @PostMapping("/add")
     public RespMessage add(@Validated TShipAddress shipAddress){
-        return null;
+        if(shipAddressService.save(shipAddress))return RespMessage.ok();
+        return RespMessage.error("新增失败");
     }
     @GetMapping("/get/{shipAddressId}")
     public RespMessage get(@PathVariable("shipAddressId") String id) {

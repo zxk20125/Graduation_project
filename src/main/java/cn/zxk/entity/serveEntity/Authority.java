@@ -3,6 +3,7 @@ package cn.zxk.entity.serveEntity;
 
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -22,6 +23,13 @@ import org.springframework.security.core.GrantedAuthority;
 public class Authority implements GrantedAuthority {
 
     private static final long serialVersionUID = 1L;
+
+
+    /**
+     *
+     */
+    @TableId(value = "ID")
+    private String id;
 
     /**
      * 创建时间

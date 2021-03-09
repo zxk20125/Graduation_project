@@ -1,6 +1,7 @@
 package cn.zxk.entity.appEntity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -8,7 +9,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author Chick
@@ -41,5 +42,11 @@ public class TFeedback {
      */
     private String mailxbox;
 
+    @TableField(select = false)
+    private String loginName;
+
+
+    @TableField(select = false)
+    private String customerPhone;
 
 }

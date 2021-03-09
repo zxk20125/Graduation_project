@@ -32,4 +32,9 @@ public class StaffInfoController {
         if(staffService.updateById(staff))return RespMessage.ok();
         return RespMessage.error("修改失败");
     }
+    @PostMapping
+    public RespMessage add(@RequestBody TStaff staff){
+        if(staffService.save(staff))return RespMessage.ok();
+        return RespMessage.error("新增失败");
+    }
 }

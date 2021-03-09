@@ -17,4 +17,7 @@ public interface TCustomerMapper extends BaseMapper<TCustomer> {
 
     @Select("select customer_login_name from t_customer where customer_id = #{id}")
     String getLoginName(int customerId);
+
+    @Select("select customer_phone from t_customer where customer_id = #{id}")
+    String getCustomerPhone(int customerId);
 }

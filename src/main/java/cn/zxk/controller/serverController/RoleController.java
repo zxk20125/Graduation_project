@@ -42,15 +42,6 @@ public class RoleController {
     public RespMessage listByQuery(@RequestBody QueryEntity<Role> queryEntity) {
         return roleService.query(queryEntity);
     }
-
-    //
-//  @ApiOperation(value = "根据条件排序分页列出所有角色（匹配查询）", notes = "类型为字符串的属性进行匹配查询，单个字段模糊匹配即可，排序分页列出所有角色")
-//  @PostMapping("/list/matching")
-//  public Page<RoleVO> listByString(@RequestBody QueryEntity<String> queryEntity)
-//      throws IllegalAccessException, InstantiationException {
-//    return roleService.findByString(RolePO.class, queryEntity, mapper);
-//  }
-//
     @ApiOperation(value = "获取单个角色详情", notes = "根据id获取角色详情")
     @GetMapping("/get/{id}")
     public RespMessage get(@PathVariable("id") String id) {

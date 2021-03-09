@@ -35,4 +35,14 @@ public class CustomerController {
     public RespMessage list(@PathVariable String customerId) {
         return RespMessage.ok(customerService.getById(customerId));
     }
+    @PostMapping("/edit")
+    public RespMessage edit(@RequestBody TCustomer customer){
+        if(customerService.updateById(customer))return RespMessage.ok();
+        return RespMessage.error("编辑失败");
+    }
+    @PostMapping("/add")
+    public RespMessage add(@RequestBody TCustomer customer){
+        if(customerService.save(customer))return RespMessage.ok();
+        return RespMessage.error("新增失败");
+    }
 }

@@ -3,11 +3,9 @@ package cn.zxk.service.sysService;
 
 import cn.zxk.entity.serveEntity.User;
 import cn.zxk.entity.utilEntity.QueryEntity;
-import cn.zxk.entity.utilEntity.RespMessage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
-import java.util.List;
 
 /**
  * <p>

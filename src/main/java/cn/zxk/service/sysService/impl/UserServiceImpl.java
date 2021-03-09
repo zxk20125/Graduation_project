@@ -95,6 +95,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
                 .like(!StringUtil.isBlank(query.getQuery().getName()), "NAME", query.getQuery().getName())
                 .like(!StringUtil.isBlank(query.getQuery().getStatus()), "STATUS", query.getQuery().getStatus())
                 .orderBy(true, !order.getOrder().equals("desc"), "create_time")
-                .between(range.getFrom().equals("null")&&range.getTo().equals("null"),range.getKey(),range.getFrom(),range.getTo()));
+                .between(null!=range.getFrom()&&null!=range.getTo(),range.getKey(),range.getFrom(),range.getTo()));
     }
 }
