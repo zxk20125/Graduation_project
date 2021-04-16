@@ -1,0 +1,1 @@
+{"uuid":"92e12270-d113-412c-9209-e12845270a0a","name":"tradeId","desp":"交易号","rules":[{"kind":"length","message":"{字段名}长度必须为77","uuid":"618bc31a-1647-4f66-b623-ba3fbd10ca64","chinese":false,"max":77,"min":77}]}

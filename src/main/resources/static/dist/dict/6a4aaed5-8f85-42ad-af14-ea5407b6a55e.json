@@ -1,0 +1,1 @@
+{"uuid":"6a4aaed5-8f85-42ad-af14-ea5407b6a55e","name":"COINS_TODAY_NUM","desp":"今天金币数","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"f3bc307e-3070-45e0-a14c-17a2ab74e9ff","value":"\\d{10}$"}]}

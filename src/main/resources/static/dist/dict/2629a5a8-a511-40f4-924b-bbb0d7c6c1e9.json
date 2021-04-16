@@ -1,0 +1,1 @@
+{"uuid":"2629a5a8-a511-40f4-924b-bbb0d7c6c1e9","name":"With_grant","desp":"With_grant","rules":[{"kind":"regexp","message":"{字段名}长度必须为3","uuid":"7cab2056-e813-4668-8d7e-99b71226a6ab","value":"\\d{3}$"}]}

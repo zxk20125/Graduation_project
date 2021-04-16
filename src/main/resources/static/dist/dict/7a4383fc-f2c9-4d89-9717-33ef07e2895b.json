@@ -1,0 +1,1 @@
+{"uuid":"7a4383fc-f2c9-4d89-9717-33ef07e2895b","name":"TASK_DEAD_LINE","desp":"任务截止时间","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"b5cab641-ec1d-41d1-ad35-25657e814e82","chinese":false,"max":50,"min":50}]}

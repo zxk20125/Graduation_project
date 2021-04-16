@@ -1,0 +1,1 @@
+{"uuid":"466aa91f-9ec9-412e-8bb9-d0262affce61","name":"ROL_ID","desp":"ROL_ID","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"80b8964b-7828-42de-9a5c-fb1d7fd6bb4e","chinese":false,"max":50,"min":50}]}

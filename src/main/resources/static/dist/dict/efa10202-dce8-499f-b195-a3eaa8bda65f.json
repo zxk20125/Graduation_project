@@ -1,0 +1,1 @@
+{"uuid":"efa10202-dce8-499f-b195-a3eaa8bda65f","name":"ULG_USER_ID","desp":"用户名","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"7f88e126-3438-438f-a918-f3721879bd96","chinese":false,"max":50,"min":50}]}

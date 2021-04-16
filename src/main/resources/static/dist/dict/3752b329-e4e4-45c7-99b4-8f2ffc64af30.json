@@ -1,0 +1,1 @@
+{"uuid":"3752b329-e4e4-45c7-99b4-8f2ffc64af30","name":"money","desp":"检验金额","rules":[{"kind":"regexp","value":"^[0-9]*\\.?[0-9]{0,2}$","message":"金额格式不正确，必须由数字和. 组成","uuid":"d546e884-e08a-4ba2-88ea-c4b73a604a72"}]}

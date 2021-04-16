@@ -9,6 +9,8 @@ import cn.zxk.service.appService.impl.TAddressServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -32,8 +34,11 @@ public class StaffInfoController {
         if(staffService.updateById(staff))return RespMessage.ok();
         return RespMessage.error("修改失败");
     }
-    @PostMapping
+    @PostMapping("/add")
     public RespMessage add(@RequestBody TStaff staff){
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        String hireDate = sdf.format(new Date());
+        staff.setHiredate(hireDate);
         if(staffService.save(staff))return RespMessage.ok();
         return RespMessage.error("新增失败");
     }

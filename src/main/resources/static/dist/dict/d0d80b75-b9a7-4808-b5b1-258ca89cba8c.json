@@ -1,0 +1,1 @@
+{"uuid":"d0d80b75-b9a7-4808-b5b1-258ca89cba8c","name":"Process_priv","desp":"Process_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"4080ad49-109e-44ef-aef1-f3903fc01a99","chinese":false,"max":1,"min":1}]}

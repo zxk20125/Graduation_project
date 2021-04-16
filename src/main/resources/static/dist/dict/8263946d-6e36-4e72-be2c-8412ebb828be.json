@@ -1,0 +1,1 @@
+{"uuid":"8263946d-6e36-4e72-be2c-8412ebb828be","name":"DEMO_ID","desp":"案例ID","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"ef3bddba-3cc0-42ed-aa1d-219031782fca","chinese":false,"max":50,"min":50}]}

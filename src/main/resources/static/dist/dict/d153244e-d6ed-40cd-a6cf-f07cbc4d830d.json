@@ -1,0 +1,1 @@
+{"uuid":"2cfc0c61-7330-4e33-a7cf-1ac6818df987","name":"originator","desp":"originator","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"b0e7e61e-bec0-4ed8-ad99-b9d62eb9ab6d","value":"\\d{10}$"}]}

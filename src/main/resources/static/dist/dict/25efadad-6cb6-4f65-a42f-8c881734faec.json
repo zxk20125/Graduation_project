@@ -1,0 +1,1 @@
+{"uuid":"25efadad-6cb6-4f65-a42f-8c881734faec","name":"GLB_VALUE","desp":"常量的值","rules":[{"kind":"length","message":"{字段名}长度必须为200","uuid":"a30a7a7b-38e8-4cf7-9618-39014e4beeb1","chinese":false,"max":200,"min":200}]}

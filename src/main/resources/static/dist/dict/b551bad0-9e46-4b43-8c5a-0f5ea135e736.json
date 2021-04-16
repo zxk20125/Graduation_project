@@ -1,0 +1,1 @@
+{"uuid":"b551bad0-9e46-4b43-8c5a-0f5ea135e736","name":"version","desp":"版本","rules":[{"kind":"length","message":"{字段名}长度必须为20","uuid":"3305596d-c587-462c-8240-e9d8e5eb07e8","chinese":false,"max":20,"min":20}]}

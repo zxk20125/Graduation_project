@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : mysqldb
+ Source Server         : Chick
  Source Server Type    : MySQL
  Source Server Version : 80021
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 80021
  File Encoding         : 65001
 
- Date: 22/02/2021 21:33:18
+ Date: 28/03/2021 22:03:19
 */
 
 SET NAMES utf8mb4;
@@ -79,6 +79,7 @@ INSERT INTO `menu` VALUES ('file-RaEbwYZ3', '1581049773800', 'usr-admin', 'admin
 INSERT INTO `menu` VALUES ('menu-0L06s0c8', '1613483590726', 'usr-admin', 'admin', NULL, NULL, NULL, 'shipAddress', 2, '', '定价管理', NULL, 'el-icon-money', '', b'0');
 INSERT INTO `menu` VALUES ('menu-5Nw4LdtV', '1613482737535', 'usr-admin', 'admin', NULL, NULL, NULL, 'customer', 1, '', '客户管理', NULL, 'el-icon-user', '', b'0');
 INSERT INTO `menu` VALUES ('menu-9eRWtA1O', '1613483637086', 'usr-admin', 'admin', NULL, NULL, NULL, 'shipAddressInfo', 2, 'menu-0L06s0c8', '运送地址定价', NULL, '', 'GRP/shipAddressInfo', b'0');
+INSERT INTO `menu` VALUES ('menu-D86XfYi2', '1614608874049', 'usr-admin', 'admin', NULL, NULL, NULL, 'resSortInfo', 2, 'menu-0L06s0c8', '物品类别定价', NULL, '', 'GRP/resSortInfo', b'0');
 INSERT INTO `menu` VALUES ('menu-gH77Z7Nt', '1613483952278', 'usr-admin', 'admin', NULL, NULL, NULL, 'orderInfo', 2, '', '订单管理', NULL, 'el-icon-s-order', 'GRP/OrderInfo', b'0');
 INSERT INTO `menu` VALUES ('menu-HskRPloF', '1613483328929', 'usr-admin', 'admin', NULL, NULL, NULL, 'deliver', 1, '', '配送员管理', NULL, 'el-icon-truck', '', b'0');
 INSERT INTO `menu` VALUES ('menu-IUB7ijrA', '1613482794296', 'usr-admin', 'admin', NULL, NULL, NULL, 'customerInfo', 2, 'menu-5Nw4LdtV', '客户信息', NULL, '', 'GRP/customerInfo', b'0');
@@ -86,7 +87,7 @@ INSERT INTO `menu` VALUES ('menu-jWERg0g2', '1613484470032', 'usr-admin', 'admin
 INSERT INTO `menu` VALUES ('menu-klZWxedI', '1613483059223', 'usr-admin', 'admin', NULL, NULL, NULL, 'addressInfo', 2, 'menu_pEovl9Ru', '客户地址', NULL, '', 'GRP/addressInfo', b'0');
 INSERT INTO `menu` VALUES ('menu-kNVMBpRR', '1613483514036', 'usr-admin', 'admin', NULL, NULL, NULL, 'branchInfo', 2, 'menu-T2MEXPjS', '网点信息', NULL, '', 'GRP/branchInfo', b'0');
 INSERT INTO `menu` VALUES ('menu-KXYSKxac', '1613483398640', 'usr-admin', 'admin', NULL, NULL, NULL, 'deliverInfo', 2, 'menu-HskRPloF', '配送员信息', NULL, '', 'GRP/deliverInfo', b'0');
-INSERT INTO `menu` VALUES ('menu-n9BknU3O', '1613484397827', 'usr-admin', 'admin', NULL, NULL, NULL, 'BillInfo', 3, '', '运单信息', NULL, 'el-icon-s-promotion', 'GRP/billInfo', b'0');
+INSERT INTO `menu` VALUES ('menu-n9BknU3O', '1613484397827', 'usr-admin', 'admin', NULL, NULL, NULL, 'BillInfo', 3, '', '运单信息', NULL, 'el-icon-s-promotion', 'GRP/BillInfo', b'0');
 INSERT INTO `menu` VALUES ('menu-T2MEXPjS', '1613483453990', 'usr-admin', 'admin', NULL, NULL, NULL, 'branch', 2, '', '网点管理', NULL, 'el-icon-office-building', '', b'0');
 INSERT INTO `menu` VALUES ('menu_pEovl9Ru', '1613229318126', 'usr-admin', 'admin', NULL, NULL, NULL, 'address', 1, '', '地址管理', NULL, 'el-icon-position', '', b'0');
 
@@ -113,6 +114,7 @@ CREATE TABLE `role`  (
 -- Records of role
 -- ----------------------------
 INSERT INTO `role` VALUES ('rol-QAv9DcTN', '1577254344223', 'usr-admin', 'admin', '1595490005856', 'usr-admin', 'admin', '管理员，拥有管理用户、角色、权限、菜单这四者的权限', 'ROLE_ADMIN', NULL);
+INSERT INTO `role` VALUES ('role-i3oZjrJC', '1615461818820', 'usr-admin', 'admin', NULL, NULL, NULL, NULL, 'ROLE_STAFF', NULL);
 
 -- ----------------------------
 -- Table structure for role_authority
@@ -161,6 +163,7 @@ INSERT INTO `role_menu` VALUES ('rol-QAv9DcTN', 'menu-9eRWtA1O');
 INSERT INTO `role_menu` VALUES ('rol-QAv9DcTN', 'menu-gH77Z7Nt');
 INSERT INTO `role_menu` VALUES ('rol-QAv9DcTN', 'menu-n9BknU3O');
 INSERT INTO `role_menu` VALUES ('rol-QAv9DcTN', 'menu-jWERg0g2');
+INSERT INTO `role_menu` VALUES ('rol-QAv9DcTN', 'menu-D86XfYi2');
 
 -- ----------------------------
 -- Table structure for t_address
@@ -180,14 +183,13 @@ CREATE TABLE `t_address`  (
 -- ----------------------------
 -- Records of t_address
 -- ----------------------------
-INSERT INTO `t_address` VALUES (1, 1, '卢炯良', '广东 东莞市 寮步镇东莞理工学院城市学院', '13729909370');
-INSERT INTO `t_address` VALUES (2, 1, '刘德华', '广东 东莞市 寮步镇东莞理工学院城市学院', '15099896867');
-INSERT INTO `t_address` VALUES (3, 1, '郭富城', '广东 东莞市 寮步镇莞火车站石龙出口附近', '18098498938');
-INSERT INTO `t_address` VALUES (4, 1, '张学友', '广东 东莞市 莞城区人民公园', '15058678970');
-INSERT INTO `t_address` VALUES (5, 1, '陈奕迅', '广东 东莞市 莞城区雅园花园', '13609090898');
-INSERT INTO `t_address` VALUES (7, 1, '吴优', '广东 东莞市 东城区汽车东站正门对面美宜佳', '15037285635');
-INSERT INTO `t_address` VALUES (8, 1, '刘秦', '广东 东莞市 寮步镇东莞理工学院城市学院', '13757463829');
-INSERT INTO `t_address` VALUES (12, 3, 'asdf', '东莞理工学院城市学院', '13890904982');
+INSERT INTO `t_address` VALUES (1, 1, '曾学锴', '广东 广州市 从化区 太平镇广州软件学院', '13265307487');
+INSERT INTO `t_address` VALUES (2, 1, '刘德华', '广东 广州市 天河区 天河区人民政府', '15099896867');
+INSERT INTO `t_address` VALUES (3, 1, '郭富城', '广东 广州市 海珠区 海珠区人民政府', '18098498938');
+INSERT INTO `t_address` VALUES (4, 1, '张学友', '广东 广州市 荔湾区荔湾区人民政府', '15058678970');
+INSERT INTO `t_address` VALUES (5, 1, '陈奕迅', '广东 广州市 越秀区越秀区人民政府', '13609090898');
+INSERT INTO `t_address` VALUES (7, 1, '吴优', '广东 广州市 番禺区 番禺区人民政府', '15037285635');
+INSERT INTO `t_address` VALUES (8, 1, '刘秦', '广东 广州市 白云区 白云区人民政府', '13757463829');
 
 -- ----------------------------
 -- Table structure for t_customer
@@ -208,9 +210,9 @@ CREATE TABLE `t_customer`  (
 -- ----------------------------
 -- Records of t_customer
 -- ----------------------------
-INSERT INTO `t_customer` VALUES (1, '卢炯良', 'lu', '123', 22, '男', '13729909370', '');
-INSERT INTO `t_customer` VALUES (2, '', 'lumm', '1111', 23, '男', '13729909371', '');
-INSERT INTO `t_customer` VALUES (3, NULL, 'yang', '1111', 24, '男', '15090930220', NULL);
+INSERT INTO `t_customer` VALUES (1, '曾学锴', 'zxk', '123', 22, '男', '13265307487', '');
+INSERT INTO `t_customer` VALUES (2, '张三', 'zhangsan', '123', 23, '男', '13729909371', '');
+INSERT INTO `t_customer` VALUES (3, '李四', 'lisi', '123', 24, '男', '15090930220', NULL);
 
 -- ----------------------------
 -- Table structure for t_dot
@@ -228,16 +230,15 @@ CREATE TABLE `t_dot`  (
 -- ----------------------------
 -- Records of t_dot
 -- ----------------------------
-INSERT INTO `t_dot` VALUES (1, '广东省东莞市', '广东省东莞市寮步镇东莞理工学院城市学院', '东莞寮步', '13729909370');
-INSERT INTO `t_dot` VALUES (2, '广东省东莞市', '广东省东莞市莞城区东兴路170号', '东莞莞城', '15067684889');
-INSERT INTO `t_dot` VALUES (4, '广东省东莞市', '广东省东莞市虎门镇虎门大道106号附近', '东莞虎门', '18022824745');
-INSERT INTO `t_dot` VALUES (5, '广东省东莞市', '广东省东莞市石排镇石排中学后门', '东莞石排', '13798907868');
-INSERT INTO `t_dot` VALUES (6, '广东省东莞市', '广东省东莞市东城区光明村83号', '东莞东城', '15098684678');
-INSERT INTO `t_dot` VALUES (7, '广东省东莞市', '广东省东莞市茶山镇彩虹街38号', '东莞茶山', '13890897865');
-INSERT INTO `t_dot` VALUES (8, '广东省东莞市', '广东省东莞市南城区', '东莞南城', '15023546786');
-INSERT INTO `t_dot` VALUES (9, '广东省东莞市', '广东省东莞市长安镇五柳街38号', '东莞长安', '15029099087');
-INSERT INTO `t_dot` VALUES (10, '广东省东莞市', '广东省东莞市凤岗镇百果园凤岗配送中心', '东莞凤岗', '18087965425');
-INSERT INTO `t_dot` VALUES (11, '广东省西城区', '广东省东莞市宝华二横街与江滨路交叉口东南100米', '东莞企石', '15020930908');
+INSERT INTO `t_dot` VALUES (1, '广东省广州市', '广东 广州市 从化区 太平镇广州软件学院', '从化总部', '13729909370');
+INSERT INTO `t_dot` VALUES (2, '广东省广州市', '广东 广州市 海珠区 海珠区宅急送分部', '海珠分部', '15067684889');
+INSERT INTO `t_dot` VALUES (4, '广东省广州市', '广东 广州市 荔湾区 荔湾区宅急送分部', '荔湾分部', '18022824745');
+INSERT INTO `t_dot` VALUES (5, '广东省广州市', '广东 广州市 天河区 天河区宅急送分部', '天河分部', '13798907868');
+INSERT INTO `t_dot` VALUES (6, '广东省广州市', '广东 广州市 白云区 白云区宅急送分部', '白云分部', '15098684678');
+INSERT INTO `t_dot` VALUES (7, '广东省广州市', '广东 广州市 越秀区 越秀区宅急送分部', '越秀分部', '13890897865');
+INSERT INTO `t_dot` VALUES (8, '广东省广州市', '广东 广州市 花都区 花都区宅急送分部', '花都分部', '15023546786');
+INSERT INTO `t_dot` VALUES (9, '广东省广州市', '广东 广州市 增城区 增城区宅急送分部', '增城分部', '15029099087');
+INSERT INTO `t_dot` VALUES (10, '广东省广州市', '广东 广州市 番禺区 番禺区宅急送分部', '番禺分部', '18087965425');
 
 -- ----------------------------
 -- Table structure for t_feedback
@@ -280,19 +281,16 @@ CREATE TABLE `t_logistics`  (
   INDEX `staff_id`(`staff_id`) USING BTREE,
   CONSTRAINT `t_logistics_ibfk_1` FOREIGN KEY (`waybill_id`) REFERENCES `t_waybill` (`waybill_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `t_logistics_ibfk_2` FOREIGN KEY (`staff_id`) REFERENCES `t_staff` (`staff_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_logistics
 -- ----------------------------
-INSERT INTO `t_logistics` VALUES (8, '112019050221074467', 1, '收入', '东莞寮步', '东莞寮步', '2019-05-02 23:50:53');
-INSERT INTO `t_logistics` VALUES (10, '112019050415231360', 1, '收入', '东莞寮步', '东莞莞城', '2019-05-04 15:24:18');
-INSERT INTO `t_logistics` VALUES (11, '112019050419241403', 1, '收入', '东莞寮步', '东莞莞城', '2019-05-04 19:25:14');
-INSERT INTO `t_logistics` VALUES (12, '112019050604463927', 1, '收入', '东莞寮步', '东莞寮步', '2019-05-06 06:53:05');
-INSERT INTO `t_logistics` VALUES (13, '112019051421352242', 1, '收入', '东莞寮步', '东莞莞城', '2019-05-14 21:37:17');
-INSERT INTO `t_logistics` VALUES (14, '112019051713534462', 1, '收入', '东莞寮步', '东莞寮步', '2019-05-17 13:55:46');
-INSERT INTO `t_logistics` VALUES (15, '112019051800194338', 1, '收入', '东莞寮步', '东莞寮步', '2019-05-18 00:20:26');
-INSERT INTO `t_logistics` VALUES (16, '112019051713153143', 1, '收入', '东莞寮步', '东莞寮步', '2019-05-20 18:49:06');
+INSERT INTO `t_logistics` VALUES (24, '112021031021255508', 1, '收入', '华软总部', '华软总部', '2021-03-10 14:12:52');
+INSERT INTO `t_logistics` VALUES (25, '112021031021255508', 1, '发出', '华软总部', '白云分部', '2021-03-10 14:16:02');
+INSERT INTO `t_logistics` VALUES (26, '112021031021255508', 1, '收入', '白云分部', '白云分部', '2021-03-10 14:34:48');
+INSERT INTO `t_logistics` VALUES (28, '112021031221430105', 10, '收入', '天河分部', '天河分部', '2021-03-12 16:33:05');
+INSERT INTO `t_logistics` VALUES (29, '112021031221430105', 10, '收入', '天河分部', '番禺分部', '2021-03-12 16:33:28');
 
 -- ----------------------------
 -- Table structure for t_order
@@ -300,7 +298,7 @@ INSERT INTO `t_logistics` VALUES (16, '112019051713153143', 1, '收入', '东莞
 DROP TABLE IF EXISTS `t_order`;
 CREATE TABLE `t_order`  (
   `order_id` varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '订单编号',
-  `custmer_id` int(0) NULL DEFAULT NULL COMMENT '客户编号',
+  `customer_id` int(0) NULL DEFAULT NULL COMMENT '客户编号',
   `dot_id` int(0) NULL DEFAULT NULL COMMENT '网点编号',
   `staff_id` int(0) NULL DEFAULT NULL COMMENT '员工编号',
   `sender` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '寄件人姓名',
@@ -317,31 +315,23 @@ CREATE TABLE `t_order`  (
   `remarks` varchar(160) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   `order_time` datetime(0) NULL DEFAULT NULL COMMENT '下单时间',
   PRIMARY KEY (`order_id`) USING BTREE,
-  INDEX `custmer_id`(`custmer_id`) USING BTREE,
+  INDEX `custmer_id`(`customer_id`) USING BTREE,
   INDEX `dot_id`(`dot_id`) USING BTREE,
   INDEX `staff_id`(`staff_id`) USING BTREE,
-  CONSTRAINT `t_order_ibfk_1` FOREIGN KEY (`custmer_id`) REFERENCES `t_customer` (`customer_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `t_order_ibfk_2` FOREIGN KEY (`dot_id`) REFERENCES `t_dot` (`dot_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `t_order_ibfk_3` FOREIGN KEY (`staff_id`) REFERENCES `t_staff` (`staff_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `t_order_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `t_customer` (`customer_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `t_order_ibfk_2` FOREIGN KEY (`dot_id`) REFERENCES `t_dot` (`dot_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `t_order_ibfk_3` FOREIGN KEY (`staff_id`) REFERENCES `t_staff` (`staff_id`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_order
 -- ----------------------------
-INSERT INTO `t_order` VALUES ('1556798184272579', 1, 1, 1, '刘德华', '广东 东莞市 寮步镇东莞理工学院城市学院', '15099896867', '吴优', '广东 东莞市 东城区汽车东站正门对面美宜佳', '15037285635', 1, '其他', 1, 20.00, '在线支付', NULL, '2019-05-02 19:56:24');
-INSERT INTO `t_order` VALUES ('1556802464756761', 1, 1, 1, '郭富城', '广东 东莞市 寮步镇莞火车站石龙出口附近', '18098498938', '张学友', '广东 东莞市 莞城区人民公园', '15058678970', 1, '其他', 1, 20.00, '在线支付', NULL, '2019-05-02 21:07:45');
-INSERT INTO `t_order` VALUES ('1556954593800589', 1, 1, 1, '卢炯良', '广东 东莞市 寮步镇东莞理工学院城市学院', '13729909370', '陈奕迅', '广东 东莞市 莞城区雅园花园', '13609090898', 2, '水果生鲜', 0, 17.00, '货到付款', NULL, '2019-05-04 15:23:14');
-INSERT INTO `t_order` VALUES ('1556955246391050', 1, 1, 1, '卢炯良', '广东 东莞市 寮步镇东莞理工学院城市学院', '13729909370', '吴优', '广东 东莞市 东城区汽车东站正门对面美宜佳', '15037285635', 2, '其他', 1, 20.00, '在线支付', NULL, '2019-05-04 15:34:06');
-INSERT INTO `t_order` VALUES ('1556955805939426', 1, 1, 1, '卢炯良', '广东 东莞市 寮步镇东莞理工学院城市学院', '13729909370', '刘秦', '广东 东莞市 寮步镇东莞理工学院城市学院', '13757463829', 2, '其他', 1, 22.00, '线下支付', NULL, '2019-05-04 15:43:26');
-INSERT INTO `t_order` VALUES ('1556969054700772', 1, 1, 1, '卢炯良', '广东 东莞市 寮步镇东莞理工学院城市学院', '13729909370', '张学友', '广东 东莞市 莞城区人民公园', '15058678970', 2, '其他', 1, 22.00, '在线支付', NULL, '2019-05-04 19:24:15');
-INSERT INTO `t_order` VALUES ('1557089199842598', 1, 1, 1, '卢炯良', '广东 东莞市 寮步镇东莞理工学院城市学院', '13729909370', '刘德华', '广东 东莞市 寮步镇东莞理工学院城市学院', '15099896867', 1, '服饰鞋帽', 1, 20.00, '在线支付', NULL, '2019-05-06 04:46:40');
-INSERT INTO `t_order` VALUES ('1557242269740986', 1, 1, 1, '卢炯良', '广东 东莞市 寮步镇东莞理工学院城市学院', '13729909370', '吴优', '广东 东莞市 东城区汽车东站正门对面美宜佳', '15037285635', 1, '证照证件', 1, 20.00, '在线支付', NULL, '2019-05-07 23:17:50');
-INSERT INTO `t_order` VALUES ('1557840922099778', 1, 1, 1, '卢炯良', '广东 东莞市 寮步镇东莞理工学院城市学院', '13729909370', '陈奕迅', '广东 东莞市 莞城区雅园花园', '13609090898', 1, '其他', 1, 20.00, '在线支付', NULL, '2019-05-14 21:35:22');
-INSERT INTO `t_order` VALUES ('1558070131171385', 1, 1, 1, '卢炯良', '广东 东莞市 寮步镇东莞理工学院城市学院', '13729909370', '刘秦', '广东 东莞市 寮步镇东莞理工学院城市学院', '13757463829', 1, '其他', 1, 20.00, '在线支付', NULL, '2019-05-17 13:15:31');
-INSERT INTO `t_order` VALUES ('1558072424433983', 1, 1, 1, '卢炯良', '广东 东莞市 寮步镇东莞理工学院城市学院', '13729909370', '郭富城', '广东 东莞市 寮步镇莞火车站石龙出口附近', '18098498938', 1, '其他', 1, 20.00, '在线支付', NULL, '2019-05-17 13:53:44');
-INSERT INTO `t_order` VALUES ('1558109983785122', 1, 1, 1, '卢炯良', '广东 东莞市 寮步镇东莞理工学院城市学院', '13729909370', '吴优', '广东 东莞市 东城区汽车东站正门对面美宜佳', '15037285635', 1, '其他', 1, 20.00, '在线支付', NULL, '2019-05-18 00:19:44');
-INSERT INTO `t_order` VALUES ('1558349830741412', 1, 1, 1, '卢炯良', '广东 东莞市 寮步镇东莞理工学院城市学院', '13729909370', '陈奕迅', '广东 东莞市 莞城区雅园花园', '13609090898', 1, '其他', 1, 20.00, '在线支付', NULL, '2019-05-20 18:57:11');
-INSERT INTO `t_order` VALUES ('1558487704157755', 1, 1, 1, '刘德华', '广东 东莞市 寮步镇东莞理工学院城市学院', '15099896867', '张学友', '广东 东莞市 莞城区人民公园', '15058678970', 1, '其他', 1, 20.00, '在线支付', NULL, '2019-05-22 09:15:04');
+INSERT INTO `t_order` VALUES ('1615288579189311', 1, 1, NULL, '曾学锴', '广东 广州市 从化区 太平镇广州软件学院', '13265307487', '刘德华', '广东 广州市 从化区 城建学院', '15099896867', 1, '证照证件', 0, 9.00, '在线支付', NULL, '2021-03-09 11:16:19');
+INSERT INTO `t_order` VALUES ('1615380797485942', 1, 1, NULL, '曾学锴', '广东 广州市 从化区 太平镇广州软件学院', '13265307487', '刘德华', '广东 广州市 天河区 天河区人民政府', '15099896867', 1, '鲜花', 0, 9.00, '在线支付', NULL, '2021-03-10 12:53:17');
+INSERT INTO `t_order` VALUES ('1615381014960702', 1, 1, NULL, '曾学锴', '广东 广州市 从化区 太平镇广州软件学院', '13265307487', '郭富城', '广东 广州市 海珠区 海珠区人民政府', '18098498938', 3, '蛋糕', 1, 15.00, '在线支付', NULL, '2021-03-10 12:56:55');
+INSERT INTO `t_order` VALUES ('1615381316370758', 1, 1, 10, '曾学锴', '广东 广州市 从化区 太平镇广州软件学院', '13265307487', '张学友', '广东 广州市 荔湾区荔湾区人民政府', '15058678970', 1, '文件', 0, 7.00, '在线支付', NULL, '2021-03-10 13:01:56');
+INSERT INTO `t_order` VALUES ('1615382755394064', 1, 1, 1, '曾学锴', '广东 广州市 从化区 太平镇广州软件学院', '13265307487', '刘秦', '广东 广州市 白云区 白云区人民政府', '13757463829', 1, '证照证件', 0, 9.00, '在线支付', NULL, '2021-03-10 13:25:55');
+INSERT INTO `t_order` VALUES ('1615556581837560', 1, 10, 10, '刘德华', '广东 广州市 天河区 天河区人民政府', '15099896867', '吴优', '广东 广州市 番禺区 番禺区人民政府', '15037285635', 2, '鲜花', 1, 13.00, '在线支付', NULL, '2021-03-12 13:43:02');
 
 -- ----------------------------
 -- Table structure for t_res_sort
@@ -350,22 +340,22 @@ DROP TABLE IF EXISTS `t_res_sort`;
 CREATE TABLE `t_res_sort`  (
   `res_sort_id` int(0) NOT NULL AUTO_INCREMENT COMMENT '物品类别编号',
   `res_sort` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '物品类别',
-  `res_sort_money` decimal(5, 2) NULL DEFAULT NULL COMMENT '物品定价',
+  `res_sort_money` varchar(5) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '物品定价',
   PRIMARY KEY (`res_sort_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_res_sort
 -- ----------------------------
-INSERT INTO `t_res_sort` VALUES (1, '其他', 2.00);
-INSERT INTO `t_res_sort` VALUES (2, '鲜花', 3.00);
-INSERT INTO `t_res_sort` VALUES (3, '蛋糕', 3.00);
-INSERT INTO `t_res_sort` VALUES (4, '文件', 1.00);
-INSERT INTO `t_res_sort` VALUES (6, '证照证件', 3.00);
-INSERT INTO `t_res_sort` VALUES (7, '数码家电', 3.00);
-INSERT INTO `t_res_sort` VALUES (8, '服饰鞋帽', 3.00);
-INSERT INTO `t_res_sort` VALUES (9, '食品饮料', 1.00);
-INSERT INTO `t_res_sort` VALUES (10, '水果生鲜', 2.00);
+INSERT INTO `t_res_sort` VALUES (1, '其他', '2.00');
+INSERT INTO `t_res_sort` VALUES (2, '鲜花', '3.00');
+INSERT INTO `t_res_sort` VALUES (3, '蛋糕', '3.00');
+INSERT INTO `t_res_sort` VALUES (4, '文件', '1.00');
+INSERT INTO `t_res_sort` VALUES (6, '证照证件', '3.00');
+INSERT INTO `t_res_sort` VALUES (7, '数码家电', '3.00');
+INSERT INTO `t_res_sort` VALUES (8, '服饰鞋帽', '3.00');
+INSERT INTO `t_res_sort` VALUES (9, '食品饮料', '1.00');
+INSERT INTO `t_res_sort` VALUES (10, '水果生鲜', '2.00');
 
 -- ----------------------------
 -- Table structure for t_res_weight
@@ -376,7 +366,7 @@ CREATE TABLE `t_res_weight`  (
   `res_weight` int(0) NULL DEFAULT NULL COMMENT '物品重量',
   `res_weight_money` decimal(5, 2) NULL DEFAULT NULL COMMENT '物品重量定价',
   PRIMARY KEY (`res_weight_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_res_weight
@@ -408,26 +398,13 @@ CREATE TABLE `t_send`  (
   INDEX `staff_id`(`staff_id`) USING BTREE,
   CONSTRAINT `t_send_ibfk_1` FOREIGN KEY (`waybill_id`) REFERENCES `t_waybill` (`waybill_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `t_send_ibfk_2` FOREIGN KEY (`staff_id`) REFERENCES `t_staff` (`staff_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 34 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_send
 -- ----------------------------
-INSERT INTO `t_send` VALUES (16, '112019050221074467', 1, '2019-05-03 01:58:53', 1, '2019-05-03 01:59:05', '电话没人听');
-INSERT INTO `t_send` VALUES (18, '112019050415231360', 1, '2019-05-04 15:24:39', 1, '2019-05-04 15:25:06', '电话没人听');
-INSERT INTO `t_send` VALUES (19, '112019050415231360', 1, '2019-05-04 15:25:21', 0, '2019-05-04 15:25:30', NULL);
-INSERT INTO `t_send` VALUES (20, '112019050419241403', 1, '2019-05-04 19:25:48', 0, '2019-05-04 19:36:22', '没人听电话');
-INSERT INTO `t_send` VALUES (22, '112019051421352242', 1, '2019-05-14 21:37:36', 0, '2019-05-14 21:38:10', NULL);
-INSERT INTO `t_send` VALUES (23, '112019050219562488', 1, '2019-05-14 22:07:41', 0, '2019-05-14 22:07:47', NULL);
-INSERT INTO `t_send` VALUES (24, '112019051713534462', 1, '2019-05-17 13:56:07', 0, '2019-05-17 13:57:13', '没人听电话');
-INSERT INTO `t_send` VALUES (25, '112019051800194338', 1, '2019-05-18 00:20:34', 1, '2019-05-18 00:23:16', '');
-INSERT INTO `t_send` VALUES (26, '112019051800194338', 1, '2019-05-18 00:29:31', 0, '2019-05-18 00:29:39', NULL);
-INSERT INTO `t_send` VALUES (27, '112019051713153143', 1, '2019-05-20 18:49:21', 0, '2019-05-20 18:49:32', NULL);
-INSERT INTO `t_send` VALUES (28, '112019052018571090', 1, '2019-05-20 18:57:34', 0, '2019-05-21 10:53:48', NULL);
-INSERT INTO `t_send` VALUES (30, '112019050604463927', 1, '2019-05-21 11:02:30', 0, '2019-05-22 09:27:32', NULL);
-INSERT INTO `t_send` VALUES (31, '112019052209150495', 1, '2019-05-22 09:31:28', 0, '2019-05-22 09:35:33', '');
-INSERT INTO `t_send` VALUES (32, '112019050415432542', 1, '2019-05-22 09:36:10', 1, '2019-05-22 09:36:17', '');
-INSERT INTO `t_send` VALUES (33, '112019050415432542', 1, '2019-05-22 16:12:32', 0, '2019-05-22 16:13:35', NULL);
+INSERT INTO `t_send` VALUES (35, '112021031021015613', 2, '2021-03-10 13:14:13', NULL, NULL, NULL);
+INSERT INTO `t_send` VALUES (38, '112021031021255508', 7, '2021-03-10 15:01:59', 0, '2021-03-10 15:18:51', NULL);
 
 -- ----------------------------
 -- Table structure for t_ship_address
@@ -437,22 +414,22 @@ CREATE TABLE `t_ship_address`  (
   `ship_address_id` int(0) NOT NULL AUTO_INCREMENT COMMENT '运送地址定价',
   `start_address` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '始点',
   `end_address` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '终点',
-  `ship_address_money` decimal(5, 2) NULL DEFAULT NULL COMMENT '运送地址定价',
+  `ship_address_money` varchar(5) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '运送地址定价',
   PRIMARY KEY (`ship_address_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_ship_address
 -- ----------------------------
-INSERT INTO `t_ship_address` VALUES (1, '广东 东莞市 松山湖', '广东 东莞市 寮步镇', 1.00);
-INSERT INTO `t_ship_address` VALUES (2, '广东 东莞市 寮步镇', '广东 东莞市 南城区', 2.00);
-INSERT INTO `t_ship_address` VALUES (4, '广东 东莞市 南城区', '广东 东莞市 东城区', 2.00);
-INSERT INTO `t_ship_address` VALUES (5, '广东 东莞市 寮步镇', '广东 东莞市 虎门镇', 3.00);
-INSERT INTO `t_ship_address` VALUES (6, '广东 东莞市 樟木头', '广东省 东莞市 虎门镇', 3.00);
-INSERT INTO `t_ship_address` VALUES (7, '广东 东莞市 樟木头', '广东 东莞市 麻涌镇', 3.00);
-INSERT INTO `t_ship_address` VALUES (8, '广东省 东莞市 谢岗镇', '广东省 东莞市 虎门镇', 3.00);
-INSERT INTO `t_ship_address` VALUES (9, '广东 东莞市 企石区', '广东省 东莞市 中堂镇', 3.00);
-INSERT INTO `t_ship_address` VALUES (10, '广东 东莞市 石排区', '广东省 东莞市 高埗镇', 1.00);
+INSERT INTO `t_ship_address` VALUES (1, '广东 广州市 从化区', '广东 广州市 从化区', '1.00');
+INSERT INTO `t_ship_address` VALUES (2, '广东 广州市 从化区', '广东 广州市 天河区', '3.00');
+INSERT INTO `t_ship_address` VALUES (4, '广东 广州市 从化区', '广东 广州市 海珠区', '3.00');
+INSERT INTO `t_ship_address` VALUES (5, '广东 广州市 从化区', '广东 广州市 荔湾区', '3.00');
+INSERT INTO `t_ship_address` VALUES (6, '广东 广州市 从化区', '广东 广州市 越秀区', '3.00');
+INSERT INTO `t_ship_address` VALUES (7, '广东 广州市 从化区', '广东 广州市 白云区', '2.00');
+INSERT INTO `t_ship_address` VALUES (8, '广东 广州市 从化区', '广东 广州市 花都区', '2.00');
+INSERT INTO `t_ship_address` VALUES (9, '广东 广州市 从化区', '广东 广州市 增城区', '2.00');
+INSERT INTO `t_ship_address` VALUES (10, '广东 广州市 从化区', '广东 广州市 番禺区', '3.00');
 
 -- ----------------------------
 -- Table structure for t_staff
@@ -471,19 +448,19 @@ CREATE TABLE `t_staff`  (
   PRIMARY KEY (`staff_id`) USING BTREE,
   INDEX `dot_id`(`dot_id`) USING BTREE,
   CONSTRAINT `t_staff_ibfk_1` FOREIGN KEY (`dot_id`) REFERENCES `t_dot` (`dot_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_staff
 -- ----------------------------
-INSERT INTO `t_staff` VALUES (1, '隆五', 'longwu', '123', 25, '男', '15289897867', '2019-04-02', 1);
-INSERT INTO `t_staff` VALUES (2, '李四', 'lisi', '123', 25, '男', '15090876757', '2019-04-03', 2);
-INSERT INTO `t_staff` VALUES (4, '张三', 'zhang', '123', 25, '男', '13729909370', '2019-03-25', 1);
-INSERT INTO `t_staff` VALUES (7, '史提芬生', 'sitifenshen', '123', 26, '男', '15090879087', '2019-04-22', 1);
-INSERT INTO `t_staff` VALUES (8, '刘牛', 'liuniu', '123', 26, '女', '15098976536', '2019-05-27', 7);
-INSERT INTO `t_staff` VALUES (9, '吴赵', 'wuzhao', '123', 29, '男', '18097987649', '2019-05-27', 2);
-INSERT INTO `t_staff` VALUES (10, '刘一', 'liuyi', '1111', 20, '女', '1509293849', '2019-06-04', 1);
-INSERT INTO `t_staff` VALUES (11, '系统管理员', 'admin', '1111', 25, '男', '15098086958', '2019-04-09', NULL);
+INSERT INTO `t_staff` VALUES (1, '隆五', 'longwu', '123', 25, '男', '15289897867', '2021-03-03', 1);
+INSERT INTO `t_staff` VALUES (2, '李四', 'lisi', '123', 25, '男', '15090876757', '2021-03-03', 2);
+INSERT INTO `t_staff` VALUES (4, '张三', 'zhang', '123', 25, '男', '13729909370', '2021-03-03', 4);
+INSERT INTO `t_staff` VALUES (7, '史提芬生', 'sitifenshen', '123', 26, '男', '15090879087', '2021-03-03', 6);
+INSERT INTO `t_staff` VALUES (8, '刘牛', 'liuniu', '123', 26, '女', '15098976536', '2021-03-03', 7);
+INSERT INTO `t_staff` VALUES (9, '吴赵', 'wuzhao', '123', 29, '男', '18097987649', '2021-03-03', 10);
+INSERT INTO `t_staff` VALUES (10, '刘一', 'liuyi', '123', 20, '女', '1509293849', '2021-03-03', 5);
+INSERT INTO `t_staff` VALUES (11, '系统管理员', 'admin', '1111', 25, '男', '15098086958', '2021-03-03', NULL);
 
 -- ----------------------------
 -- Table structure for t_waybill
@@ -505,20 +482,12 @@ CREATE TABLE `t_waybill`  (
 -- ----------------------------
 -- Records of t_waybill
 -- ----------------------------
-INSERT INTO `t_waybill` VALUES ('112019050219562488', '1556798184272579', '2019-05-02 20:28:00', '2019-05-04 19:35:35', '2019-05-02 19:56:24', NULL, '2019-05-04 19:36:22');
-INSERT INTO `t_waybill` VALUES ('112019050221074467', '1556802464756761', '2019-05-02 21:07:51', '2019-05-02 21:16:36', '2019-05-02 21:07:45', NULL, NULL);
-INSERT INTO `t_waybill` VALUES ('112019050415231360', '1556954593800589', '2019-05-06 06:22:03', '2019-05-04 19:35:22', NULL, NULL, '2019-05-04 15:25:30');
-INSERT INTO `t_waybill` VALUES ('112019050415340617', '1556955246391050', '2019-05-06 06:21:58', '2019-05-07 23:14:10', '2019-05-04 15:34:06', NULL, NULL);
-INSERT INTO `t_waybill` VALUES ('112019050415432542', '1556955805939426', '2019-05-04 19:36:54', '2019-05-04 19:36:58', '2019-05-22 16:13:35', NULL, '2019-05-22 16:13:35');
-INSERT INTO `t_waybill` VALUES ('112019050419241403', '1556969054700772', '2019-05-04 19:35:09', '2019-05-04 19:35:13', NULL, NULL, '2019-05-04 19:26:30');
-INSERT INTO `t_waybill` VALUES ('112019050604463927', '1557089199842598', '2019-05-06 06:11:11', '2019-05-06 06:27:01', '2019-05-21 11:08:13', NULL, '2019-05-21 11:08:13');
-INSERT INTO `t_waybill` VALUES ('112019050723174932', '1557242269740986', '2019-05-07 23:18:17', NULL, '2019-05-07 23:17:50', NULL, NULL);
-INSERT INTO `t_waybill` VALUES ('112019051421352242', '1557840922099778', '2019-05-14 21:36:24', '2019-05-14 21:36:43', '2019-05-14 21:35:22', NULL, '2019-05-14 21:38:10');
-INSERT INTO `t_waybill` VALUES ('112019051713153143', '1558070131171385', '2019-05-17 13:15:42', '2019-05-20 18:48:37', '2019-05-17 13:15:31', NULL, '2019-05-20 18:56:03');
-INSERT INTO `t_waybill` VALUES ('112019051713534462', '1558072424433983', '2019-05-17 13:54:37', '2019-05-17 13:54:57', '2019-05-17 13:57:13', NULL, '2019-05-17 13:57:13');
-INSERT INTO `t_waybill` VALUES ('112019051800194338', '1558109983785122', '2019-05-18 00:19:58', '2019-05-18 00:20:04', '2019-05-18 00:29:39', NULL, '2019-05-18 00:29:39');
-INSERT INTO `t_waybill` VALUES ('112019052018571090', '1558349830741412', '2019-05-20 18:57:18', '2019-05-20 18:57:23', '2019-05-20 19:00:04', NULL, '2019-05-20 19:00:04');
-INSERT INTO `t_waybill` VALUES ('112019052209150495', '1558487704157755', '2019-05-22 09:16:44', '2019-05-22 09:17:08', '2019-05-22 09:35:33', NULL, '2019-05-22 09:35:33');
+INSERT INTO `t_waybill` VALUES ('112021030919161935', '1615288579189311', NULL, NULL, '2021-03-09 11:16:19', NULL, NULL);
+INSERT INTO `t_waybill` VALUES ('112021031020531753', '1615380797485942', NULL, NULL, '2021-03-10 12:53:17', NULL, NULL);
+INSERT INTO `t_waybill` VALUES ('112021031020565473', '1615381014960702', NULL, NULL, '2021-03-10 12:56:55', NULL, NULL);
+INSERT INTO `t_waybill` VALUES ('112021031021015613', '1615381316370758', '2021-03-10 14:18:40', NULL, '2021-03-10 13:01:56', NULL, NULL);
+INSERT INTO `t_waybill` VALUES ('112021031021255508', '1615382755394064', '2021-03-10 13:53:40', '2021-03-10 14:04:38', '2021-03-10 15:18:51', NULL, '2021-03-10 15:18:51');
+INSERT INTO `t_waybill` VALUES ('112021031221430105', '1615556581837560', '2021-03-12 15:50:55', '2021-03-12 16:30:15', '2021-03-12 13:43:02', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for user

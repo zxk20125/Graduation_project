@@ -1,0 +1,1 @@
+{"uuid":"d9208d18-9ab4-4168-84ea-0a3174e5504a","name":"execute_at","desp":"execute_at","rules":[{"kind":"regexp","message":"{字段名}长度必须为0","uuid":"c4a61747-5d58-40a2-8796-d8204826b1a0","value":"\\d{0}$"}]}

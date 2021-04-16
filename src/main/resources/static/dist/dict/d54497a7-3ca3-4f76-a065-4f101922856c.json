@@ -1,0 +1,1 @@
+{"uuid":"e908415b-7fe5-460a-9935-900748edd584","name":"time_zone","desp":"time_zone","rules":[{"kind":"length","message":"{字段名}长度必须为64","uuid":"c584bdb9-7e30-4df4-bb3f-29741ea4af76","chinese":false,"max":64,"min":64}]}

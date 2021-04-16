@@ -90,7 +90,7 @@ public class UserController {
     @PostMapping("/delete")
     public RespMessage delete(@RequestBody List<String> ids) {
         ids.forEach(id -> {
-            userService.removeById(new QueryWrapper<User>().eq("ID", id));
+            userService.removeById(id);
         });
         return RespMessage.ok();
     }

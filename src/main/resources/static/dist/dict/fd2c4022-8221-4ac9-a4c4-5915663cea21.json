@@ -1,0 +1,1 @@
+{"uuid":"fd2c4022-8221-4ac9-a4c4-5915663cea21","name":"APP_NICKNAME","desp":"应用别名","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"47ed436c-bf14-4b04-9b53-d1a90bb96a7f","chinese":false,"max":50,"min":50}]}

@@ -1,0 +1,1 @@
+{"uuid":"cdd81736-eb42-4eb2-8ad9-5ed32fbeabfd","name":"max_questions","desp":"max_questions","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"41b5729f-9dfd-448f-b626-ca931def847f","value":"\\d{10}$"}]}

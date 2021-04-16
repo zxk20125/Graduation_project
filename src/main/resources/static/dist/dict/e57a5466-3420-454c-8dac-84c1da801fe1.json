@@ -1,0 +1,1 @@
+{"uuid":"e57a5466-3420-454c-8dac-84c1da801fe1","name":"comment","desp":"comment","rules":[{"kind":"length","message":"{字段名}长度必须为64","uuid":"d750e5b3-983f-439f-bc22-54467c52c4fb","chinese":false,"max":64,"min":64}]}

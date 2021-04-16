@@ -61,7 +61,7 @@ public class TStaff{
     /**
      * 入职时间
      */
-    private LocalDate hiredate;
+    private String hiredate;
 
     /**
      * 网点id

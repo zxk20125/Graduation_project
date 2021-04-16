@@ -6,9 +6,11 @@ import cn.zxk.entity.utilEntity.RespMessage;
 import cn.zxk.service.appService.ITShipAddressService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -24,12 +26,17 @@ public class ShipAddressController {
     }
 
     @PostMapping("/add")
-    public RespMessage add(@Validated TShipAddress shipAddress){
-        if(shipAddressService.save(shipAddress))return RespMessage.ok();
-        return RespMessage.error("新增失败");
+    public RespMessage add(@RequestBody @Valid TShipAddress shipAddress){
+        if(shipAddressService.save(shipAddress)) return RespMessage.ok();
+        else return RespMessage.error("新增失败");
     }
     @GetMapping("/get/{shipAddressId}")
     public RespMessage get(@PathVariable("shipAddressId") String id) {
         return RespMessage.ok(shipAddressService.getById(id));
+    }
+    @PostMapping("/delete")
+    public RespMessage delete(@RequestBody  List<String> ids){
+        if(shipAddressService.removeByIds(ids))return RespMessage.ok();
+        return RespMessage.error("删除失败");
     }
 }

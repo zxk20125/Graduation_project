@@ -1,0 +1,1 @@
+{"uuid":"dbf87ef1-d039-41b6-a862-1e2e4084d0bf","name":"rows_examined","desp":"rows_examined","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"3016d50e-2603-4981-8217-d9ec642115f6","value":"\\d{10}$"}]}

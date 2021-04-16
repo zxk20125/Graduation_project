@@ -1,0 +1,1 @@
+{"uuid":"5e70b157-7c9f-410b-8881-30352ea54931","name":"startAndEndTime","desp":"起始结束时间","rules":[{"kind":"length","message":"{字段名}长度必须为77","uuid":"353bf40b-a8f2-407f-88da-272c92c5492c","chinese":false,"max":77,"min":77}]}

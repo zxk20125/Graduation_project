@@ -1,0 +1,1 @@
+{"uuid":"62dcaa80-5024-44cc-b230-25c55be9dc59","name":"APP_DEV","desp":"应用设备","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"794547f7-b125-48e6-8d96-b7b923602cee","chinese":false,"max":50,"min":50}]}

@@ -1,0 +1,1 @@
+{"uuid":"0e56f442-8604-4426-baf1-64cb4bb517f5","name":"TASK_STATUS","desp":"任务状态：0:初始状态， 1：执行中（已分配）， 2：关闭， 3： 终止 ","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"f04fbccc-2623-4aa1-9073-56d92e5bbe59","value":"\\d{10}$"}]}

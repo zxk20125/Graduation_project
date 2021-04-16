@@ -1,0 +1,1 @@
+{"uuid":"b2a72055-9153-4309-a520-1eaa51a21f69","name":"USK_ID","desp":"搜索词条ID","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"3c1be24b-16c1-4974-b768-61786eb2f6d8","chinese":false,"max":50,"min":50}]}

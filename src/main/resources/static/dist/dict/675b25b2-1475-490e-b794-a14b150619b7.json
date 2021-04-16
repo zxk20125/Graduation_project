@@ -1,0 +1,1 @@
+{"uuid":"b74f4062-8ccd-47f9-b813-fe7d9a14303f","name":"USK_HREF","desp":"搜索的链接","rules":[{"kind":"length","message":"{字段名}长度必须为500","uuid":"c14cf14b-150c-4dc4-a683-b6a25dd31ccb","chinese":false,"max":500,"min":500}]}

@@ -1,0 +1,1 @@
+{"uuid":"98f39403-6cee-4a23-b2fa-1b64dcbaebb1","name":"URL_DESC","desp":"URL_DESC","rules":[{"kind":"length","message":"{字段名}长度必须为100","uuid":"5e38d7a0-cafc-4e46-9de5-218dea225b31","chinese":false,"max":100,"min":100}]}

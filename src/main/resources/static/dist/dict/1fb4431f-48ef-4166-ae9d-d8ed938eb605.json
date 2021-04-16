@@ -1,0 +1,1 @@
+{"uuid":"1fb4431f-48ef-4166-ae9d-d8ed938eb605","name":"security_type","desp":"security_type","rules":[{"kind":"length","message":"{字段名}长度必须为7","uuid":"6d2b48c0-e712-458d-906d-8771856be3c2","chinese":false,"max":7,"min":7}]}

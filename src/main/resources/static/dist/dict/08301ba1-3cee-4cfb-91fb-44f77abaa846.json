@@ -1,0 +1,1 @@
+{"uuid":"9da38a42-e132-456a-b129-845e9775eb95","name":"dl","desp":"dl","rules":[{"kind":"length","message":"{字段名}长度必须为128","uuid":"e09cf4ec-b24a-4822-b050-2018887e80ae","chinese":false,"max":128,"min":128}]}

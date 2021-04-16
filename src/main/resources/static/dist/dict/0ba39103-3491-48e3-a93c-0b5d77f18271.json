@@ -1,0 +1,1 @@
+{"uuid":"19fee6a4-7e24-4dc5-8253-20d7bb2e2643","name":"RTM_ID","desp":"RTM_ID","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"bcaddbe8-a8bd-4899-9ae9-5ea2fb51f133","chinese":false,"max":50,"min":50}]}

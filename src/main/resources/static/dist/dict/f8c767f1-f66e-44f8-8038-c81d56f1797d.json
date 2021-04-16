@@ -1,0 +1,1 @@
+{"uuid":"f8c767f1-f66e-44f8-8038-c81d56f1797d","name":"USK_NUM","desp":"搜索匹配数量","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"cd2dbc27-c845-4935-a898-b67ad601922e","value":"\\d{10}$"}]}

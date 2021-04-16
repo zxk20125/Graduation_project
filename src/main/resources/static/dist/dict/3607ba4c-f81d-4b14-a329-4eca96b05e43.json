@@ -1,0 +1,1 @@
+{"uuid":"3607ba4c-f81d-4b14-a329-4eca96b05e43","name":"on_completion","desp":"on_completion","rules":[{"kind":"length","message":"{字段名}长度必须为8","uuid":"bc77668d-44ad-404e-bcae-d749555b310e","chinese":false,"max":8,"min":8}]}

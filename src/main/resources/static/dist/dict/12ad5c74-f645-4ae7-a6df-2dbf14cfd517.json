@@ -1,0 +1,1 @@
+{"uuid":"12ad5c74-f645-4ae7-a6df-2dbf14cfd517","name":"MEN_VALUE","desp":"url值，为空时，无对应的页面","rules":[{"kind":"length","message":"{字段名}长度必须为200","uuid":"51a12abe-4b6c-43a5-8d0e-650f2c6ea341","chinese":false,"max":200,"min":200}]}

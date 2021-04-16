@@ -1,0 +1,1 @@
+{"uuid":"817c3ccf-e84c-4186-9a63-9d6eafa6c43d","name":"GTU_STATUS","desp":"发货状态： 0：未发货，1： 发货中， 2：已收","rules":[{"kind":"length","message":"{字段名}长度必须为20","uuid":"22d887d9-c656-466d-859c-3dcf2b430837","chinese":false,"max":20,"min":20}]}

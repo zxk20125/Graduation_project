@@ -1,0 +1,1 @@
+{"uuid":"736cea99-0451-4471-9191-5bd521e55178","name":"starts","desp":"starts","rules":[{"kind":"regexp","message":"{字段名}长度必须为0","uuid":"f7a065ef-f9c9-429c-bd83-d8ce98215515","value":"\\d{0}$"}]}

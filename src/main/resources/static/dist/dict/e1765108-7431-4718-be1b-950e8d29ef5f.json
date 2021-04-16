@@ -1,0 +1,1 @@
+{"uuid":"e1765108-7431-4718-be1b-950e8d29ef5f","name":"USR_TELEPHONE","desp":"电话号码","rules":[{"kind":"length","message":"{字段名}长度必须为20","uuid":"68654f90-e1d9-4b08-978e-8b5c377bfa82","chinese":false,"max":20,"min":20}]}

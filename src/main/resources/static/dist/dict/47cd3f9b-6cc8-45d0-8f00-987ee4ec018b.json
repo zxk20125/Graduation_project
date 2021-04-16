@@ -1,0 +1,1 @@
+{"uuid":"47cd3f9b-6cc8-45d0-8f00-987ee4ec018b","name":"Create_tmp_table_priv","desp":"Create_tmp_table_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"716c67cf-d732-460e-a4f1-9b8793f5589b","chinese":false,"max":1,"min":1}]}

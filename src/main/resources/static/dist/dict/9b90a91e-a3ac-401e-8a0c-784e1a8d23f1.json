@@ -1,0 +1,1 @@
+{"uuid":"9b90a91e-a3ac-401e-8a0c-784e1a8d23f1","name":"Drop_priv","desp":"Drop_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"20cb6f3c-03e9-4f24-953f-43c7dc7f8c50","chinese":false,"max":1,"min":1}]}

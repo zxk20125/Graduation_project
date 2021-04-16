@@ -1,0 +1,1 @@
+{"uuid":"17a960a6-6b43-4861-b90e-d45e8bdb923b","name":"USR_LASTFAILEDLOGINTIME","desp":"最后登录失败时间","rules":[{"kind":"length","message":"{字段名}长度必须为30","uuid":"a7f9ee6a-077b-4524-9ae2-4d0ba9bc5c06","chinese":false,"max":30,"min":30}]}

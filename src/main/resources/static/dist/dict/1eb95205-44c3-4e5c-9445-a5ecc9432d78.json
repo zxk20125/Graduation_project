@@ -1,0 +1,1 @@
+{"uuid":"1eb95205-44c3-4e5c-9445-a5ecc9432d78","name":"TASK_CREATE_USER","desp":"任务创建人","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"497eee32-57cb-4dd0-adf8-c9949fe490a8","chinese":false,"max":50,"min":50}]}

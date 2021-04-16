@@ -1,0 +1,1 @@
+{"uuid":"26faa1c2-ec2d-4b7e-b2e6-85974a7fa942","name":"ROL_UPDATETIME","desp":"更新时间","rules":[{"kind":"length","message":"{字段名}长度必须为30","uuid":"7f620157-bef3-45a6-b9f8-be389ca2e5df","chinese":false,"max":30,"min":30}]}

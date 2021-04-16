@@ -1,0 +1,1 @@
+{"uuid":"0943d45d-b703-4190-afff-a77a6a684312","name":"Owner","desp":"Owner","rules":[{"kind":"length","message":"{字段名}长度必须为64","uuid":"1c0d762c-372f-4942-b617-c73925d7ac77","chinese":false,"max":64,"min":64}]}

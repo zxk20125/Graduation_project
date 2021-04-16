@@ -1,0 +1,1 @@
+{"uuid":"181bef5b-04cd-4152-8ce9-5c5e72f9d460","name":"Select_priv","desp":"Select_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"109d7645-220b-4d72-8291-b2f20bfada0f","chinese":false,"max":1,"min":1}]}

@@ -1,0 +1,1 @@
+{"uuid":"431975df-0d6c-4222-9a8d-1e9f6d677292","name":"Server_name","desp":"Server_name","rules":[{"kind":"length","message":"{字段名}长度必须为64","uuid":"01aa42c4-1d79-43a2-bfb0-210864f85760","chinese":false,"max":64,"min":64}]}

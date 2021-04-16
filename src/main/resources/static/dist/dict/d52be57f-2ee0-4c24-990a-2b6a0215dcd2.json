@@ -1,0 +1,1 @@
+{"uuid":"d52be57f-2ee0-4c24-990a-2b6a0215dcd2","name":"USR_LASTLOGINTIME","desp":"最后登录成功时间","rules":[{"kind":"length","message":"{字段名}长度必须为30","uuid":"06e70392-050f-4a14-8e7a-4777718534e8","chinese":false,"max":30,"min":30}]}

@@ -1,0 +1,1 @@
+{"uuid":"0078b180-7cc0-425b-9ca2-ba396747e129","name":"TASK_REG_DEAD_LINE","desp":"报名截止时间","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"a92cf9bf-d362-4c4b-a2a2-c8e293ae9f0d","chinese":false,"max":50,"min":50}]}

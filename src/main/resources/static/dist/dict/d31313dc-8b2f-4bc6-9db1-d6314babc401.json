@@ -1,0 +1,1 @@
+{"uuid":"d31313dc-8b2f-4bc6-9db1-d6314babc401","name":"interval_field","desp":"interval_field","rules":[{"kind":"length","message":"{字段名}长度必须为18","uuid":"eef239c7-2880-4d7d-b6df-397d7130ac07","chinese":false,"max":18,"min":18}]}

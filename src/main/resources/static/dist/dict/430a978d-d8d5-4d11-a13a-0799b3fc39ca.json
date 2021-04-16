@@ -1,0 +1,1 @@
+{"uuid":"430a978d-d8d5-4d11-a13a-0799b3fc39ca","name":"organId","desp":"机构号","rules":[{"kind":"length","message":"{字段名}长度必须为77","uuid":"eb627cc9-fb91-4e16-a2c1-1825ee7c8174","chinese":false,"max":77,"min":77}]}

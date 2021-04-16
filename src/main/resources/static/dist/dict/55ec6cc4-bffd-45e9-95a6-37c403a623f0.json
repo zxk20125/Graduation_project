@@ -1,0 +1,1 @@
+{"uuid":"55ec6cc4-bffd-45e9-95a6-37c403a623f0","name":"TU_STATUS","desp":"状态： 0：初始，1：已申请，执行中， 2：关闭， 3：终止","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"3fb21506-bfed-4d87-a13a-c41aa4690a02","value":"\\d{10}$"}]}

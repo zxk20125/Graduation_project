@@ -1,0 +1,1 @@
+{"uuid":"e2c34414-90b7-4c93-a711-74cb2fcc7946","name":"Insert_priv","desp":"Insert_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"c4531b84-8ded-458d-a594-2ca3fbc3d8eb","chinese":false,"max":1,"min":1}]}

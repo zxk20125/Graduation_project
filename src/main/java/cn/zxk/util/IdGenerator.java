@@ -10,7 +10,7 @@ import java.util.UUID;
  * @date 2021/2/9
  */
 @Component
-public class IdGenerator {
+public class IdGenerator implements IdentifierGenerator{
 
 
     public static String[] chars = new String[]{"a", "b", "c", "d", "e", "f",
@@ -30,5 +30,15 @@ public class IdGenerator {
             shortBuffer.append(chars[x % 0x3E]);
         }
         return shortBuffer.toString();
+    }
+
+    @Override
+    public Number nextId(Object entity) {
+        return null;
+    }
+
+    @Override
+    public String nextUUID(Object entity) {
+        return null;
     }
 }

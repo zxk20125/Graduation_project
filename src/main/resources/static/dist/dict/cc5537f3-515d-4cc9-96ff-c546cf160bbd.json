@@ -1,0 +1,1 @@
+{"uuid":"cc5537f3-515d-4cc9-96ff-c546cf160bbd","name":"definer","desp":"definer","rules":[{"kind":"length","message":"{字段名}长度必须为77","uuid":"57525c1c-57d8-4ea6-b0eb-f18583458205","chinese":false,"max":77,"min":77}]}

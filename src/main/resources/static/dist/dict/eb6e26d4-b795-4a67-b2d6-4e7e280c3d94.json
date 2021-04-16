@@ -1,0 +1,1 @@
+{"uuid":"eb6e26d4-b795-4a67-b2d6-4e7e280c3d94","name":"Host","desp":"Host","rules":[{"kind":"length","message":"{字段名}长度必须为60","uuid":"7da9c739-5b05-40fc-9486-8c2ae0ea7ad2","chinese":false,"max":60,"min":60}]}

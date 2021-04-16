@@ -1,0 +1,1 @@
+{"uuid":"0a3525f2-407e-431d-a816-71c064c87f3e","name":"COINS_YESTERDAY_NUM","desp":"昨天金币数","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"c84c2a27-6b2a-4fcb-9ea1-864952eaeff1","value":"\\d{10}$"}]}

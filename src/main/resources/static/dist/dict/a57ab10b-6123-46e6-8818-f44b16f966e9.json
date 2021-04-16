@@ -1,0 +1,1 @@
+{"uuid":"a57ab10b-6123-46e6-8818-f44b16f966e9","name":"help_keyword_id","desp":"help_keyword_id","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"45713737-5f1c-4d20-9514-e3f56875612c","value":"\\d{10}$"}]}

@@ -3,12 +3,17 @@ package cn.zxk.controller.serverController;
 import cn.zxk.entity.serveEntity.Authority;
 import cn.zxk.entity.utilEntity.QueryEntity;
 import cn.zxk.entity.utilEntity.RespMessage;
+import cn.zxk.service.DefaultUserDetails;
 import cn.zxk.service.sysService.IAuthorityService;
+import cn.zxk.util.IdGenerator;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Api(description = "权限管理")
 @RestController
@@ -73,13 +78,18 @@ public class AuthorityController {
 //    return null;
 //  }
 //
-//  @ApiOperation(value = "添加权限", notes = "添加单个权限")
-//  @PostMapping("/add")
-//  public AuthorityVO add(@RequestBody AuthorityVO vo) {
-//    AuthorityVO result = mapper.poToVO(authorityService.add(mapper.voToPO(vo)));
-//    return result;
-//  }
-//
+  @ApiOperation(value = "添加权限", notes = "添加单个权限")
+  @PostMapping("/add")
+  public RespMessage add(@RequestBody @Valid  Authority authority) {
+    DefaultUserDetails user = (DefaultUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    authority.setCreateTime(String.valueOf(System.currentTimeMillis()))
+            .setCreateUserId(user.getUser().getID())
+            .setCreateUserName(user.getUser().getName())
+            .setId("auth-"+ IdGenerator.generateShortUuid());
+    if(authorityService.save(authority))return RespMessage.ok("新增成功");
+    return  RespMessage.error("新增失败");
+  }
+
   @ApiOperation(value = "修改权限", notes = "修改单个权限的相关信息")
   @PostMapping("/update")
   public RespMessage update(@RequestBody Authority authority) {

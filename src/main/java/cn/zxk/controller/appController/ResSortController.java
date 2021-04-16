@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/resSortInfo")
 public class ResSortController {
@@ -23,8 +25,15 @@ public class ResSortController {
     public RespMessage add(@Validated TResSort resSort){
         return null;
     }
+
     @GetMapping("/get/{resSortId}")
     public RespMessage get(@PathVariable("resSortId") String id) {
         return RespMessage.ok(resSortService.getById(id));
+    }
+
+    @PostMapping("/delete")
+    public RespMessage delete(@RequestBody List<String> ids){
+        if(resSortService.removeByIds(ids))return RespMessage.ok();
+        return RespMessage.error("删除失败");
     }
 }

@@ -1,0 +1,1 @@
+{"uuid":"3c934a8d-97a9-4047-bcb8-d1c1880a97da","name":"state","desp":"交易状态","rules":[{"kind":"length","message":"{字段名}长度必须为77","uuid":"1c61e7b8-5301-4523-b7e5-4720825ef5e0","chinese":false,"max":77,"min":77}]}

@@ -1,0 +1,1 @@
+{"uuid":"4af6b3b4-674c-4066-8d03-28f5d75ea621","name":"USR_UPDATETIME","desp":"更新时间","rules":[{"kind":"length","message":"{字段名}长度必须为30","uuid":"3c800214-5a9a-43f7-a67e-fd0c5054301c","chinese":false,"max":30,"min":30}]}

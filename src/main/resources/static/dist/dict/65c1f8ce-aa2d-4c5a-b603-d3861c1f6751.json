@@ -1,0 +1,1 @@
+{"uuid":"65c1f8ce-aa2d-4c5a-b603-d3861c1f6751","name":"Port","desp":"Port","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"389f3535-050f-4e1b-bb19-d3f3deb7fb60","value":"\\d{10}$"}]}

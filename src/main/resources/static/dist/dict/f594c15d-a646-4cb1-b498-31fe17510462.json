@@ -1,0 +1,1 @@
+{"uuid":"f594c15d-a646-4cb1-b498-31fe17510462","name":"MEN_STATE","desp":"MEN_STATE","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"b9708303-b325-445f-a7c8-92011603d7cb","chinese":false,"max":1,"min":1}]}

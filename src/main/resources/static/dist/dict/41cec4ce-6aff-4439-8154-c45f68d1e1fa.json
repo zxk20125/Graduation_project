@@ -1,0 +1,1 @@
+{"uuid":"41cec4ce-6aff-4439-8154-c45f68d1e1fa","name":"jar_group","desp":"组织","rules":[{"kind":"length","message":"{字段名}长度必须为100","uuid":"3cd75425-5d34-4c6a-acf0-e0b420fc0d0e","chinese":false,"max":100,"min":100}]}

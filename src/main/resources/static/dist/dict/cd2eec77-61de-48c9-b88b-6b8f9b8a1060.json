@@ -1,0 +1,1 @@
+{"uuid":"cd2eec77-61de-48c9-b88b-6b8f9b8a1060","name":"TU_FINISH_DEAD_LINE","desp":"预计完成时间","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"82ca745d-9c38-4178-9738-dadc407a65c0","chinese":false,"max":50,"min":50}]}

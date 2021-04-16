@@ -1,0 +1,1 @@
+{"uuid":"269b77a4-7941-40bb-8475-3e8851631b4f","name":"Execute_priv","desp":"Execute_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"bed40045-4765-4713-b9b0-9ee047521e24","chinese":false,"max":1,"min":1}]}

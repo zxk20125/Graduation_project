@@ -1,0 +1,1 @@
+{"uuid":"d0d73f04-fa9b-4f52-83c3-65c2947ea484","name":"APP_URL","desp":"下载链接","rules":[{"kind":"length","message":"{字段名}长度必须为200","uuid":"0a6b7a89-98dd-498e-a833-95a0be4fc928","chinese":false,"max":200,"min":200}]}

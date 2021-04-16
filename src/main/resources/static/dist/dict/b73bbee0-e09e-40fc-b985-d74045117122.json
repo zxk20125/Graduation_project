@@ -1,0 +1,1 @@
+{"uuid":"b73bbee0-e09e-40fc-b985-d74045117122","name":"USR_REMARK","desp":"备注","rules":[{"kind":"length","message":"{字段名}长度必须为200","uuid":"7acf9995-c865-41f1-a0aa-3a722170756f","chinese":false,"max":200,"min":200}]}

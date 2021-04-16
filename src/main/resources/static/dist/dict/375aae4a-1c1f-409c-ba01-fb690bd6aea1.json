@@ -1,0 +1,1 @@
+{"uuid":"375aae4a-1c1f-409c-ba01-fb690bd6aea1","name":"GTU_RECEIVER","desp":"收件人","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"8311f758-6fc0-4c45-aca8-036256a47552","chinese":false,"max":50,"min":50}]}

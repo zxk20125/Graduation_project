@@ -1,0 +1,1 @@
+{"uuid":"3fe09a71-9f89-4446-9da4-cada26bd9a3f","name":"File_priv","desp":"File_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"25521d87-c43b-4aec-97a0-2be1f7ab630a","chinese":false,"max":1,"min":1}]}

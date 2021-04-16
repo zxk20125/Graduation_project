@@ -1,0 +1,1 @@
+{"uuid":"be84ad2d-9835-4495-95bc-c978ff7d1cec","name":"Proxied_user","desp":"Proxied_user","rules":[{"kind":"length","message":"{字段名}长度必须为16","uuid":"db43ae02-162a-4b49-8767-0a7df81a0153","chinese":false,"max":16,"min":16}]}

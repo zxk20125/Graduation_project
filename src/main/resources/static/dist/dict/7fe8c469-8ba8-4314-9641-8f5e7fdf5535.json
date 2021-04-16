@@ -1,0 +1,1 @@
+{"uuid":"b91a20a0-56e8-4224-afb2-70e90ecfacf5","name":"Use_leap_seconds","desp":"Use_leap_seconds","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"8e8145d1-3530-4e36-b6d8-5195a248a924","chinese":false,"max":1,"min":1}]}

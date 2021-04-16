@@ -1,0 +1,1 @@
+{"uuid":"2d4bff2a-8777-4aaa-ba70-06d96950425a","name":"status","desp":"status","rules":[{"kind":"length","message":"{字段名}长度必须为18","uuid":"244cacd5-24f3-42cf-be79-954f9cefcfea","chinese":false,"max":18,"min":18}]}

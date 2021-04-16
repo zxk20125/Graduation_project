@@ -1,0 +1,1 @@
+{"uuid":"92eaf4b4-a0d5-4c94-bda4-8dbc1f06fcb3","name":"insert_id","desp":"insert_id","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"08ee4e71-ffff-43a2-b829-8d924e165ce8","value":"\\d{10}$"}]}

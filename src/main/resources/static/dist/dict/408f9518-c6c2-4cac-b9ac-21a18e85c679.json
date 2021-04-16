@@ -1,0 +1,1 @@
+{"uuid":"408f9518-c6c2-4cac-b9ac-21a18e85c679","name":"APP_TIMES","desp":"下载次数","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"36c93bf8-7b2e-463b-b90b-8f5600684811","value":"\\d{10}$"}]}

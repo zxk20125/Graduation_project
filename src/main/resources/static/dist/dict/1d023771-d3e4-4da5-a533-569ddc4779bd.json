@@ -1,0 +1,1 @@
+{"uuid":"1d023771-d3e4-4da5-a533-569ddc4779bd","name":"db_collation","desp":"db_collation","rules":[{"kind":"length","message":"{字段名}长度必须为32","uuid":"2657eb00-39b8-4881-99e3-31a6ed0a551c","chinese":false,"max":32,"min":32}]}

@@ -19,7 +19,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
-import sun.plugin2.message.GetAppletMessage;
 
 import javax.sound.midi.Soundbank;
 import javax.xml.ws.WebServiceRefs;

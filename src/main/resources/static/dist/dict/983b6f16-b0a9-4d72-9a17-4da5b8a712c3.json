@@ -1,0 +1,1 @@
+{"uuid":"983b6f16-b0a9-4d72-9a17-4da5b8a712c3","name":"phoneNumber","desp":"检验手机号","rules":[{"kind":"regexp","value":"^1[3|4|5|7|8][0-9]{9}$","message":"手机号格式不正确","uuid":"1c07b9c7-1444-459a-84a3-6d2fa391e465"}]}

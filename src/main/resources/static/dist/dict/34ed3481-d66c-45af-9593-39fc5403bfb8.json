@@ -1,0 +1,1 @@
+{"uuid":"34ed3481-d66c-45af-9593-39fc5403bfb8","name":"employeeId","desp":"柜员号","rules":[{"kind":"length","message":"{字段名}长度必须为77","uuid":"4d660e3a-d7c6-45bc-ab43-13453a9a8c2a","chinese":false,"max":77,"min":77}]}

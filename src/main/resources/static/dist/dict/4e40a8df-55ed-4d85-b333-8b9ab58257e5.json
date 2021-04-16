@@ -1,0 +1,1 @@
+{"uuid":"4e40a8df-55ed-4d85-b333-8b9ab58257e5","name":"GIFT_ID","desp":"ID","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"6151addd-d85e-4b12-bd15-46dc9942bda6","chinese":false,"max":50,"min":50}]}

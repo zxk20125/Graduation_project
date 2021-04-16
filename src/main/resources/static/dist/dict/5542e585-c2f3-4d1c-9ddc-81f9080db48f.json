@@ -1,0 +1,1 @@
+{"uuid":"5542e585-c2f3-4d1c-9ddc-81f9080db48f","name":"idNumber","desp":"检验身份证","rules":[{"kind":"regexp","value":"\\d{17}(\\d|x)$","message":"身份证格式不正确，必须添加18位正确身份证号","uuid":"3cdff5ca-1252-4951-983d-c1998e9ecbc0"}]}

@@ -1,0 +1,1 @@
+{"uuid":"94092c2b-a413-4551-8e8e-e10afb4c4fc7","name":"MEN_TYPE","desp":"菜单渲染位置","rules":[{"kind":"length","message":"{字段名}长度必须为20","uuid":"01a4d07d-2b97-4895-8409-5f5e335366dd","chinese":false,"max":20,"min":20}]}

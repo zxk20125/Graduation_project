@@ -1,0 +1,1 @@
+{"uuid":"53164ce2-bc22-451e-bba8-3e19929d7449","name":"modified","desp":"modified","rules":[{"kind":"regexp","message":"{字段名}长度必须为0","uuid":"99c60ddf-71ac-4d36-846d-edf4a024e2d8","value":"\\d{0}$"}]}

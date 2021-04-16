@@ -1,0 +1,1 @@
+{"uuid":"6639cc35-021b-4710-b248-a3673b306ee5","name":"ROL_NAME","desp":"角色名","rules":[{"kind":"length","message":"{字段名}长度必须为100","uuid":"8865bb6c-00ed-48f3-90cb-a984a8b4a406","chinese":false,"max":100,"min":100}]}

@@ -1,0 +1,1 @@
+{"uuid":"87040c3c-953a-485b-a4d7-e5bd0f8bfd8d","name":"GTU_USERNAME","desp":"兑奖者","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"ec3c7c2d-05c3-4b17-8244-9a4c3e3b14fd","chinese":false,"max":50,"min":50}]}

@@ -1,0 +1,1 @@
+{"uuid":"6b2d2236-6308-45e7-b999-ccf81ac5952b","name":"sql_data_access","desp":"sql_data_access","rules":[{"kind":"length","message":"{字段名}长度必须为17","uuid":"9a5cff6a-9628-446f-8b87-dad272a213dc","chinese":false,"max":17,"min":17}]}

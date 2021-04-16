@@ -1,0 +1,1 @@
+{"uuid":"0565b24a-3e4e-4f24-9146-c7f2387a867f","name":"Alter_priv","desp":"Alter_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"83a6be97-a6fc-4cc6-b020-449d1569de58","chinese":false,"max":1,"min":1}]}

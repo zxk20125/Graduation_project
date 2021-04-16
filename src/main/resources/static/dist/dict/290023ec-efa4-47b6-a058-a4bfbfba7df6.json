@@ -1,0 +1,1 @@
+{"uuid":"290023ec-efa4-47b6-a058-a4bfbfba7df6","name":"GTU_GIFT_NUM","desp":"兑奖数量","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"c0601bac-d29b-4f65-bd0a-d5ba891aee08","value":"\\d{10}$"}]}

@@ -1,0 +1,1 @@
+{"uuid":"c00b39bd-6a56-489d-b839-bc9690bf5a3e","name":"ret","desp":"ret","rules":[{"kind":"regexp","message":"{字段名}长度必须为3","uuid":"7c3de75d-162d-4ac4-a98f-411e7e4c22ec","value":"\\d{3}$"}]}

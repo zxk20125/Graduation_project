@@ -1,0 +1,1 @@
+{"uuid":"fad69e1f-944a-45fa-bfab-0de5de3673d2","name":"Is_DST","desp":"Is_DST","rules":[{"kind":"regexp","message":"{字段名}长度必须为3","uuid":"62db1f65-7e02-4f71-af77-ef35525abdc0","value":"\\d{3}$"}]}

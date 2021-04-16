@@ -1,0 +1,1 @@
+{"uuid":"14556c98-b2b5-4c25-b289-62853a573ed6","name":"Offset","desp":"Offset","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"42648928-d9f0-4bdd-bb60-9fe1f71bc3e8","value":"\\d{10}$"}]}

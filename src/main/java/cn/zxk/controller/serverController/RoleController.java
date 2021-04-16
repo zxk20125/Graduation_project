@@ -4,15 +4,18 @@ import cn.zxk.entity.serveEntity.Role;
 import cn.zxk.entity.serveEntity.RoleMenu;
 import cn.zxk.entity.utilEntity.QueryEntity;
 import cn.zxk.entity.utilEntity.RespMessage;
+import cn.zxk.service.DefaultUserDetails;
 import cn.zxk.service.sysService.IRoleMenuService;
 import cn.zxk.service.sysService.IRoleService;
 import cn.zxk.service.sysService.impl.RoleMenuServiceImpl;
+import cn.zxk.util.IdGenerator;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -52,8 +55,13 @@ public class RoleController {
     @ApiOperation(value = "添加角色", notes = "添加单个角色")
     @PostMapping("/add")
     public RespMessage add(@RequestBody @Valid Role role) {
-        System.out.println(role);
-        return RespMessage.ok("新增成功");
+        DefaultUserDetails user = (DefaultUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        role.setCreateTime(String.valueOf(System.currentTimeMillis()))
+                .setCreateUserId(user.getUser().getID())
+                .setCreateUserName(user.getUser().getName())
+                .setID("role-"+ IdGenerator.generateShortUuid());
+        if(roleService.save(role))return RespMessage.ok("新增成功");
+        return RespMessage.error("新增失败");
     }
 
     //

@@ -1,0 +1,1 @@
+{"uuid":"42e5943d-4fdb-43f7-bad9-58bc8a5a8f52","name":"Routine_name","desp":"Routine_name","rules":[{"kind":"length","message":"{字段名}长度必须为64","uuid":"978d591b-3fff-4037-9211-ad2bc2d5e592","chinese":false,"max":64,"min":64}]}

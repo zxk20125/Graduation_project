@@ -1,0 +1,1 @@
+{"uuid":"81163eb9-9422-4d5d-8a72-f9e0536c812d","name":"start","desp":"交易起始时间","rules":[{"kind":"length","message":"{字段名}长度必须为77","uuid":"3cbd638f-b590-471b-9454-9a4ef24e1f8b","chinese":false,"max":77,"min":77}]}

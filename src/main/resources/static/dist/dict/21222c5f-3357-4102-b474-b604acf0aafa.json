@@ -1,0 +1,1 @@
+{"uuid":"21222c5f-3357-4102-b474-b604acf0aafa","name":"GIFT_COIN","desp":"奖品所需金币数","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"b7394d83-31a4-43f0-b30a-35ec18ca3ef4","value":"\\d{10}$"}]}

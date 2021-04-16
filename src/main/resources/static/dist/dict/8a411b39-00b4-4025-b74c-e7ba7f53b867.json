@@ -1,0 +1,1 @@
+{"uuid":"8a411b39-00b4-4025-b74c-e7ba7f53b867","name":"ssl_type","desp":"ssl_type","rules":[{"kind":"length","message":"{字段名}长度必须为9","uuid":"ada189f3-8714-4eb6-bbe6-e154c09b1edb","chinese":false,"max":9,"min":9}]}

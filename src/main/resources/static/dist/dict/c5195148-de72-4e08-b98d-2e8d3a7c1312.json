@@ -1,0 +1,1 @@
+{"uuid":"c5195148-de72-4e08-b98d-2e8d3a7c1312","name":"APP_DESP","desp":"应用描述","rules":[{"kind":"length","message":"{字段名}长度必须为200","uuid":"1ca6ec6a-c43d-4916-935b-585c5999b252","chinese":false,"max":200,"min":200}]}

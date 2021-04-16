@@ -1,0 +1,1 @@
+{"uuid":"d71ddedc-c35f-433b-91ca-38e52604aaf0","name":"describe_doc","desp":"describe_doc","rules":[{"kind":"length","message":"{字段名}长度必须为100","uuid":"3389c226-4925-42a2-9d2c-dd319f16e0f6","chinese":false,"max":100,"min":100}]}

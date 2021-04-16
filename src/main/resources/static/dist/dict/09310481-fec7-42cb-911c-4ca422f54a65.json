@@ -1,0 +1,1 @@
+{"uuid":"09310481-fec7-42cb-911c-4ca422f54a65","name":"Update_priv","desp":"Update_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"59eada89-5f17-4259-97f2-24d4f42e7257","chinese":false,"max":1,"min":1}]}

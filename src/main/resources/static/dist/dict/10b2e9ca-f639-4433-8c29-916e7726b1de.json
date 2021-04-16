@@ -1,0 +1,1 @@
+{"uuid":"10b2e9ca-f639-4433-8c29-916e7726b1de","name":"max_user_connections","desp":"max_user_connections","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"c587be76-5da8-45ff-ae9a-32f6198fc717","value":"\\d{10}$"}]}
