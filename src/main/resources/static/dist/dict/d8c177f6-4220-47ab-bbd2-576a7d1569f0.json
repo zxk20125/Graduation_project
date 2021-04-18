@@ -1,1 +1,0 @@
-{"uuid":"d8c177f6-4220-47ab-bbd2-576a7d1569f0","name":"character_set_client","desp":"character_set_client","rules":[{"kind":"length","message":"{字段名}长度必须为32","uuid":"1a9af135-42a4-4f35-85b4-991d83e02755","chinese":false,"max":32,"min":32}]}

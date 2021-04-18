@@ -1,1 +1,0 @@
-{"uuid":"0256ac3f-db42-43f5-b32e-81ccfd496835","name":"GTU_ADDRESS","desp":"邮寄地址","rules":[{"kind":"length","message":"{字段名}长度必须为200","uuid":"7eac8a5a-dff4-4d9a-9355-11298e8ea47d","chinese":false,"max":200,"min":200}]}

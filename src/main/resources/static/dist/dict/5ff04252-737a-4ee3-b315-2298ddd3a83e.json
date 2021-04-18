@@ -1,1 +1,0 @@
-{"uuid":"5ff04252-737a-4ee3-b315-2298ddd3a83e","name":"Proxied_host","desp":"Proxied_host","rules":[{"kind":"length","message":"{字段名}长度必须为60","uuid":"f060fe16-7599-45fc-b0a7-34c81d96dd19","chinese":false,"max":60,"min":60}]}

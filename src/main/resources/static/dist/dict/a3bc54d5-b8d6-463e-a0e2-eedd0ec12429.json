@@ -1,1 +1,0 @@
-{"uuid":"a3bc54d5-b8d6-463e-a0e2-eedd0ec12429","name":"server_id","desp":"server_id","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"3b489645-0b0d-42f7-b0d9-2cd103aa0bb1","value":"\\d{10}$"}]}

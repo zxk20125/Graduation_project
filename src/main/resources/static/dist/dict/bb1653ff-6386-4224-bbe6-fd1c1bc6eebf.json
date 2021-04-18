@@ -1,1 +1,0 @@
-{"uuid":"bb1653ff-6386-4224-bbe6-fd1c1bc6eebf","name":"Column_name","desp":"Column_name","rules":[{"kind":"length","message":"{字段名}长度必须为64","uuid":"3182c70e-75d7-4f99-9ded-dbc65dd9a5dd","chinese":false,"max":64,"min":64}]}

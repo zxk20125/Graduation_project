@@ -1,1 +1,0 @@
-{"uuid":"708b71d1-9158-40c4-ad2a-5e146ad08867","name":"sql_mode","desp":"sql_mode","rules":[{"kind":"length","message":"{字段名}长度必须为478","uuid":"c59b4239-08a2-422d-9bb3-7d698a1ece17","chinese":false,"max":478,"min":478}]}

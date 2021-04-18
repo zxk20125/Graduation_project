@@ -1,1 +1,0 @@
-{"uuid":"88825f69-c413-43be-96f3-b8cc7e43c879","name":"GTU_GIFT_ID","desp":"奖品ID","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"caacfa9d-bca0-420b-a011-73561de5ace0","chinese":false,"max":50,"min":50}]}

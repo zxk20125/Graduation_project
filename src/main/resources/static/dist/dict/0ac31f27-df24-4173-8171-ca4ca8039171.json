@@ -1,1 +1,0 @@
-{"uuid":"0ac31f27-df24-4173-8171-ca4ca8039171","name":"USR_PASSWORD","desp":"密码","rules":[{"kind":"length","message":"{字段名}长度必须为300","uuid":"7f27b420-6089-4ec4-8156-7ca8fcf944d9","chinese":false,"max":300,"min":300}]}

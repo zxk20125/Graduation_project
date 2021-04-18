@@ -1,1 +1,0 @@
-{"uuid":"8b85a69b-5cd6-45ff-b94f-fde9d5e6a0cd","name":"TASK_ID","desp":"任务单id","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"95fdb2bc-bce5-4f70-a4c8-40d7a1d557f3","chinese":false,"max":50,"min":50}]}

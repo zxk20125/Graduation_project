@@ -1,1 +1,0 @@
-{"uuid":"09d19c30-b9c1-454a-836c-4995899e1703","name":"Abbreviation","desp":"Abbreviation","rules":[{"kind":"length","message":"{字段名}长度必须为8","uuid":"158eb0e9-1df2-4035-ad36-c67409816272","chinese":false,"max":8,"min":8}]}

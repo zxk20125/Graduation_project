@@ -1,1 +1,0 @@
-{"uuid":"cd25d833-3fcf-4352-80e9-48b47bb08d16","name":"USR_STATE","desp":"状态 0:未生效，1:生效 , 2:锁定","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"86f2f320-708a-4d7f-81ab-11e0a17c4b48","chinese":false,"max":1,"min":1}]}

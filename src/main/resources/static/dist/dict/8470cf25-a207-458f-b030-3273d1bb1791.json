@@ -1,1 +1,0 @@
-{"uuid":"c0b49316-ac91-4066-bdc5-38035d8ead27","name":"created","desp":"created","rules":[{"kind":"regexp","message":"{字段名}长度必须为0","uuid":"54c7dcab-4275-486e-b3eb-5e6b3b3e460b","value":"\\d{0}$"}]}

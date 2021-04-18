@@ -1,1 +1,0 @@
-{"uuid":"0f768439-0739-4f38-b827-b5a1366a8752","name":"ROL_CREATEUSER","desp":"创建用户","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"0ee33bd0-1f6a-4183-89e8-47555ca59815","chinese":false,"max":50,"min":50}]}

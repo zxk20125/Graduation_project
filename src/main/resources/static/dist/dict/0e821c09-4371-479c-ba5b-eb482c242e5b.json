@@ -1,1 +1,0 @@
-{"uuid":"0e821c09-4371-479c-ba5b-eb482c242e5b","name":"is_deterministic","desp":"is_deterministic","rules":[{"kind":"length","message":"{字段名}长度必须为3","uuid":"cacc93c9-942c-46a4-88a3-8a20760642ec","chinese":false,"max":3,"min":3}]}

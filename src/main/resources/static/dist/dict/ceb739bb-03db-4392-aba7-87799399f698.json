@@ -1,1 +1,0 @@
-{"uuid":"8f3c4bcc-1e0e-476e-b296-ba091893e701","name":"Transition_type_id","desp":"Transition_type_id","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"7e29d09b-c727-446a-a2c4-de58c3a53bd5","value":"\\d{10}$"}]}

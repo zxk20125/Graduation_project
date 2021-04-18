@@ -1,1 +1,0 @@
-{"uuid":"1122c9c4-90ac-4e1e-a7b1-1c1868362a2c","name":"COINS_CHANGE_NUM","desp":"已兑换金币数","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"867086be-6238-4dda-89f5-97cde20ea99b","value":"\\d{10}$"}]}

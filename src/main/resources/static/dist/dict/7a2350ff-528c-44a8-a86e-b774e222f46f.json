@@ -1,1 +1,0 @@
-{"uuid":"7a2350ff-528c-44a8-a86e-b774e222f46f","name":"Delete_priv","desp":"Delete_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"2e3941ed-d7f8-428a-b991-124af4c17c54","chinese":false,"max":1,"min":1}]}

@@ -1,1 +1,0 @@
-{"uuid":"5b46ed41-f6f1-4b0a-9441-7326d4b25179","name":"File","desp":"File","rules":[{"kind":"length","message":"{字段名}长度必须为255","uuid":"8fab17bb-0397-4f78-91f0-ae59562928dc","chinese":false,"max":255,"min":255}]}

@@ -1,1 +1,0 @@
-{"uuid":"82af003d-5684-4b18-8135-733855491dea","name":"Alter_routine_priv","desp":"Alter_routine_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"201fd5bc-52fc-44b5-b7a7-31bc6cb6f93a","chinese":false,"max":1,"min":1}]}

@@ -1,1 +1,0 @@
-{"uuid":"149ce16a-e991-4fd7-af32-d50dabceae87","name":"USK_AUI_VERSION","desp":"aui2版本","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"de363e8c-1e6e-4bef-968a-4c7de76705f0","chinese":false,"max":50,"min":50}]}

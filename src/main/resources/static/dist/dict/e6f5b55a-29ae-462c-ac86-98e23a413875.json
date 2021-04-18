@@ -1,1 +1,0 @@
-{"uuid":"e6f5b55a-29ae-462c-ac86-98e23a413875","name":"APP_USER","desp":"上传用户","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"d10e0555-894f-4f93-bf0f-af25e67a04d6","chinese":false,"max":50,"min":50}]}

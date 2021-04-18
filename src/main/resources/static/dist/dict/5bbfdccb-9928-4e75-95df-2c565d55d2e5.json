@@ -1,1 +1,0 @@
-{"uuid":"5bbfdccb-9928-4e75-95df-2c565d55d2e5","name":"Shutdown_priv","desp":"Shutdown_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"a7524853-c310-48b1-8ea7-bd86177ba847","chinese":false,"max":1,"min":1}]}

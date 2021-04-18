@@ -1,1 +1,0 @@
-{"uuid":"ea5dac31-61f0-4e4b-9645-47924a757010","name":"Correction","desp":"Correction","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"57368bd1-eaf1-4bd4-ae2b-3de7f6e40897","value":"\\d{10}$"}]}

@@ -1,1 +1,0 @@
-{"uuid":"904fa8b0-58a2-4c11-9c2a-58c2c395b5d9","name":"plugin","desp":"plugin","rules":[{"kind":"length","message":"{字段名}长度必须为64","uuid":"4455f097-c223-43db-ad57-4a0fd70f68cb","chinese":false,"max":64,"min":64}]}

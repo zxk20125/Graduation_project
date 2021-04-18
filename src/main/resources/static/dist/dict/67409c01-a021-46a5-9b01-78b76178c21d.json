@@ -1,1 +1,0 @@
-{"uuid":"67409c01-a021-46a5-9b01-78b76178c21d","name":"ROL_REMARK","desp":"备注","rules":[{"kind":"length","message":"{字段名}长度必须为200","uuid":"c35edd69-13cb-4268-b627-cea7dc319fc0","chinese":false,"max":200,"min":200}]}

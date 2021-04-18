@@ -1,1 +1,0 @@
-{"uuid":"7283091e-a397-4ac4-b888-a5ecbbf4abd0","name":"Proc_priv","desp":"Proc_priv","rules":[{"kind":"length","message":"{字段名}长度必须为27","uuid":"c74f55ca-19ab-415f-9b62-971fd46e01c0","chinese":false,"max":27,"min":27}]}

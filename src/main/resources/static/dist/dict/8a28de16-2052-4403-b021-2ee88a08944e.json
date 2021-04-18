@@ -1,1 +1,0 @@
-{"uuid":"8a28de16-2052-4403-b021-2ee88a08944e","name":"TASK_CREATE_TIME","desp":"任务创建时间","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"f8d99bc6-0c59-4530-8cd4-5f47bbcf1ed3","chinese":false,"max":50,"min":50}]}

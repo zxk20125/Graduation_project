@@ -1,1 +1,0 @@
-{"uuid":"f76f1e45-c15e-4ede-b591-195e3a3443ed","name":"AMV_ID","desp":"验证ID","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"5ddb33ef-0146-47e3-9ce0-e2a03d8c6e7f","chinese":false,"max":50,"min":50}]}

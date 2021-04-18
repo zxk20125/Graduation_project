@@ -1,1 +1,0 @@
-{"uuid":"7419c34e-0d0f-4557-8115-ae1a838f04a4","name":"USR_USERTYPE","desp":"用户类型，0:管理员，1:普通用户","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"3abfdfd9-300c-4cf4-addd-fc1f2efca730","chinese":false,"max":1,"min":1}]}

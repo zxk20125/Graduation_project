@@ -1,1 +1,0 @@
-{"uuid":"458aee3c-202b-47b4-8691-1df47884c15e","name":"chinaPostcode","desp":"校验中国邮政编码","rules":[{"kind":"regexp","value":"^[1-9]\\d{5}(?!\\d)$","message":"邮政编码格式不正确，必须填写6位正确邮政编码","uuid":"ae055616-9a8d-4ab2-9531-1ec79fcd430d"}]}

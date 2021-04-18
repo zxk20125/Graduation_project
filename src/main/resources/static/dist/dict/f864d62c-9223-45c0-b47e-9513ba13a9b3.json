@@ -1,1 +1,0 @@
-{"uuid":"f864d62c-9223-45c0-b47e-9513ba13a9b3","name":"RESC_NAME","desp":"案例名称","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"70315a8c-0862-4b85-9506-0c94370c1e48","chinese":false,"max":50,"min":50}]}

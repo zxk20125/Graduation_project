@@ -1,1 +1,0 @@
-{"uuid":"a4e795d0-ada6-4c50-ae51-dc66a6caa42a","name":"ULG_SESSIONID","desp":"Session会话ID","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"9e3f3424-b3a2-429b-ac22-e7c1cc6ab651","chinese":false,"max":50,"min":50}]}

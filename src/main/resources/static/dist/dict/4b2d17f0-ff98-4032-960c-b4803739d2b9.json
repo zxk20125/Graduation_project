@@ -1,1 +1,0 @@
-{"uuid":"4b2d17f0-ff98-4032-960c-b4803739d2b9","name":"SYS_ID","desp":"系统ID","rules":[{"kind":"length","message":"{字段名}长度必须为20","uuid":"01d52d8d-8332-4537-b4db-ae796c73abb6","chinese":false,"max":20,"min":20}]}

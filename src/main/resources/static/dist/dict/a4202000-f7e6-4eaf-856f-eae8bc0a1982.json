@@ -1,1 +1,0 @@
-{"uuid":"a4202000-f7e6-4eaf-856f-eae8bc0a1982","name":"ACC_DESC","desp":"描述","rules":[{"kind":"length","message":"{字段名}长度必须为100","uuid":"67308994-9ac4-402c-acdf-06713a89e0af","chinese":false,"max":100,"min":100}]}

@@ -1,1 +1,0 @@
-{"uuid":"3e1f5131-d5b5-4537-800c-20777a62b4da","name":"Wrapper","desp":"Wrapper","rules":[{"kind":"length","message":"{字段名}长度必须为64","uuid":"db731cf2-3b27-4eed-8c54-383c47d1c6d3","chinese":false,"max":64,"min":64}]}

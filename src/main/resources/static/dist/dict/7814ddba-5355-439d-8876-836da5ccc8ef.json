@@ -1,1 +1,0 @@
-{"uuid":"7814ddba-5355-439d-8876-836da5ccc8ef","name":"GTU_ID","desp":"ID","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"ee988faf-8c62-4859-aec9-16ec630c5b41","chinese":false,"max":50,"min":50}]}

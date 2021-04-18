@@ -4,5 +4,10 @@
       "name": "spring.datasource.data.username",
       "type": "java.lang.String",
       "description": "Description for spring.datasource.data.username."
-  }
-] }
+    },
+    {
+      "name": "spring.datasource.primary.max-idle",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.primary.max-idle."
+    }
+  ] }

@@ -1,1 +1,0 @@
-{"uuid":"ef281b66-a191-453a-b03b-8e3f0b3f0c45","name":"GLB_DESC","desp":"描述","rules":[{"kind":"length","message":"{字段名}长度必须为200","uuid":"6b02a622-ae33-4de7-8478-999e37f5d153","chinese":false,"max":200,"min":200}]}

@@ -1,1 +1,0 @@
-{"uuid":"4c50e184-2a8d-4017-8312-2ea84a5e1f22","name":"Grant_priv","desp":"Grant_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"a908847c-7ac9-4647-8b50-eaad5a370491","chinese":false,"max":1,"min":1}]}

@@ -1,1 +1,0 @@
-{"uuid":"feca90a8-64fe-46d9-aeca-9a4eb5f6ac2b","name":"USR_NICKNAME","desp":"昵称","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"e20ea8e8-2f95-4761-8992-3db570aaadc5","chinese":false,"max":50,"min":50}]}

@@ -1,1 +1,0 @@
-{"uuid":"11699f1d-4fed-4ee5-8b9f-6a8cab2e6a56","name":"telephoneNumber","desp":"校验座机号","rules":[{"kind":"regexp","value":"^(\\(\\d{3,4}\\)|\\d{3,4}-)?\\d{7,8}$","message":"座机号格式不正确，必须填写7到8位正确座机号","uuid":"0a903031-0a42-49f7-9d96-cf99bfc72207"}]}

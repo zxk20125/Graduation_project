@@ -1,1 +1,0 @@
-{"uuid":"3d0b82c9-3070-4fe3-8e18-d4e32ef4e371","name":"TASK_UPDATE_TIME","desp":"任务更新时间","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"c6bb08d9-9bff-4a94-b77d-9dfb70f06d64","chinese":false,"max":50,"min":50}]}

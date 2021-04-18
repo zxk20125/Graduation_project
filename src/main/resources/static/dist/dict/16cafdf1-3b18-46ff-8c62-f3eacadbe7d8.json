@@ -1,1 +1,0 @@
-{"uuid":"16cafdf1-3b18-46ff-8c62-f3eacadbe7d8","name":"GIFT_NUM","desp":"奖品数","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"99e7587d-43df-456e-b74d-da29f8ad0474","value":"\\d{10}$"}]}

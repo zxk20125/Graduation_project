@@ -1,1 +1,0 @@
-{"uuid":"f360c9a0-ce80-42d5-a688-37c7f13c5471","name":"APP_DATE","desp":"上传日期","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"f0571c90-44da-421a-ae7c-dda1177ed47f","chinese":false,"max":50,"min":50}]}

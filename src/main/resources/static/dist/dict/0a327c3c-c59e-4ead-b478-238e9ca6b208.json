@@ -1,1 +1,0 @@
-{"uuid":"0a327c3c-c59e-4ead-b478-238e9ca6b208","name":"Grantor","desp":"Grantor","rules":[{"kind":"length","message":"{字段名}长度必须为77","uuid":"96069217-69db-418a-aec6-acb9edf86a05","chinese":false,"max":77,"min":77}]}

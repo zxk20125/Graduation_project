@@ -1,1 +1,0 @@
-{"uuid":"08a5c996-8259-4035-ade7-44133af45aa7","name":"ends","desp":"ends","rules":[{"kind":"regexp","message":"{字段名}长度必须为0","uuid":"d41754cb-d2b5-4064-bc51-7706115d8df4","value":"\\d{0}$"}]}

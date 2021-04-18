@@ -1,1 +1,0 @@
-{"uuid":"f94171bb-c385-4375-a924-93ca9556bfd0","name":"download_url","desp":"下载链接","rules":[{"kind":"length","message":"{字段名}长度必须为200","uuid":"bc35a4a2-1997-4834-a0dd-d75235ed8527","chinese":false,"max":200,"min":200}]}

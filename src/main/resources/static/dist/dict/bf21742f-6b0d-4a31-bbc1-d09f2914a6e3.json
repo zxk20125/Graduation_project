@@ -1,1 +1,0 @@
-{"uuid":"bf21742f-6b0d-4a31-bbc1-d09f2914a6e3","name":"AMV_CREATE_TIME","desp":"创建时间","rules":[{"kind":"length","message":"{字段名}长度必须为30","uuid":"95ae0c37-8acc-4cd3-af65-83ba5d78558a","chinese":false,"max":30,"min":30}]}

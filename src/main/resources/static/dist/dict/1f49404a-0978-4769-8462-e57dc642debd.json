@@ -1,1 +1,0 @@
-{"uuid":"1f49404a-0978-4769-8462-e57dc642debd","name":"MEN_LANG","desp":"菜单项语言","rules":[{"kind":"length","message":"{字段名}长度必须为10","uuid":"299f7ba4-837a-474e-94be-337233990f39","chinese":false,"max":10,"min":10}]}

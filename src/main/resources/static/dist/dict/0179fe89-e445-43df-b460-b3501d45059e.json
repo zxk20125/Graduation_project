@@ -1,1 +1,0 @@
-{"uuid":"0179fe89-e445-43df-b460-b3501d45059e","name":"RTM_MEN_ID","desp":"菜单ID","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"3a04e3af-0f38-4073-8694-b58dafa4dcc5","chinese":false,"max":50,"min":50}]}

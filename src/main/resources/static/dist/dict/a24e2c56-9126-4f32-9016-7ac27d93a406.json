@@ -1,1 +1,0 @@
-{"uuid":"a24e2c56-9126-4f32-9016-7ac27d93a406","name":"command_type","desp":"command_type","rules":[{"kind":"length","message":"{字段名}长度必须为64","uuid":"f3e187b0-445a-48ea-8c32-2ab8c059cf62","chinese":false,"max":64,"min":64}]}

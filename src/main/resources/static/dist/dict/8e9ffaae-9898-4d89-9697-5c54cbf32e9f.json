@@ -1,1 +1,0 @@
-{"uuid":"8e9ffaae-9898-4d89-9697-5c54cbf32e9f","name":"USK_TYPE","desp":"搜索的位置，位置有：widget（组件）/developer（开发者中心）/menu（工具栏菜单）/appApi（应用接口）","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"48174556-6e76-401b-82cb-6bde6636af75","chinese":false,"max":50,"min":50}]}

@@ -1,1 +1,0 @@
-{"uuid":"27031360-a156-4de5-801d-ad4e562044e7","name":"Event_priv","desp":"Event_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"55202c6e-e457-4426-809e-2fdc35e61dcb","chinese":false,"max":1,"min":1}]}

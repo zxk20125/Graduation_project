@@ -1,1 +1,0 @@
-{"uuid":"8b59b383-0527-4819-ab50-4a1547b5a046","name":"USK_KEYWORD","desp":"搜索词条","rules":[{"kind":"length","message":"{字段名}长度必须为100","uuid":"ca540154-8908-49ef-b32a-9ea3804c31d1","chinese":false,"max":100,"min":100}]}

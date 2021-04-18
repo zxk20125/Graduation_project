@@ -1,1 +1,0 @@
-{"uuid":"93fdd8de-623e-4092-8b00-f8a5b98998ae","name":"chnese","desp":"检验否是汉字 ","rules":[{"kind":"regexp","value":"^[\\u4e00-\\u9fa5]{0,}$","message":"汉字格式不正确，必须要由中文字组成","uuid":"44be967f-829e-4d84-afd4-26ec8194bec7"}]}

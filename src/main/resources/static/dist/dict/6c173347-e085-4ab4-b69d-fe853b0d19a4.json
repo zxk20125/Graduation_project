@@ -1,1 +1,0 @@
-{"uuid":"1dc042ef-05ae-4658-b2d0-6f343aafe4cc","name":"TASK_ASSIGNEE","desp":"任务审批人","rules":[{"kind":"length","message":"{字段名}长度必须为800","uuid":"1b8dda85-02f5-4df6-aa12-ef77b592bf41","chinese":false,"max":800,"min":800}]}

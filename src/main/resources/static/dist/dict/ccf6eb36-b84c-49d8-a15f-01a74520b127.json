@@ -1,1 +1,0 @@
-{"uuid":"ccf6eb36-b84c-49d8-a15f-01a74520b127","name":"GTU_PHONE","desp":"手机号","rules":[{"kind":"length","message":"{字段名}长度必须为20","uuid":"a626aa1f-6991-4920-bf23-3e0748dc9912","chinese":false,"max":20,"min":20}]}

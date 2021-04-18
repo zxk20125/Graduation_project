@@ -1,1 +1,0 @@
-{"uuid":"2afe6394-add8-44d0-9f62-098211c8f0c6","name":"RTM_ACCESS","desp":"角色对应菜单的等级","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"52b45af5-1df4-479a-ab51-08c9346e041a","value":"\\d{10}$"}]}

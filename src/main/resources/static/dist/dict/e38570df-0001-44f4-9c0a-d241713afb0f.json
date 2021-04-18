@@ -1,1 +1,0 @@
-{"uuid":"e38570df-0001-44f4-9c0a-d241713afb0f","name":"RESC_ID","desp":"案例源码id，id同aweb_menu","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"7629be1c-8070-4399-bcd3-0006f0c23f1a","chinese":false,"max":50,"min":50}]}

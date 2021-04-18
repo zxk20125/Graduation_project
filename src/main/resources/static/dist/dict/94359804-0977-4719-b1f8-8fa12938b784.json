@@ -1,1 +1,0 @@
-{"uuid":"94359804-0977-4719-b1f8-8fa12938b784","name":"Timestamp","desp":"Timestamp","rules":[{"kind":"regexp","message":"{字段名}长度必须为0","uuid":"787c3c87-925b-488e-b39c-dfa3b26a5ff5","value":"\\d{0}$"}]}

@@ -1,1 +1,0 @@
-{"uuid":"e5af3da2-9186-4af5-8baa-67950d4307f9","name":"USR_CREATETIME","desp":"创建时间","rules":[{"kind":"length","message":"{字段名}长度必须为30","uuid":"49e9efc9-8e2a-4e1f-8464-2a3e476269fb","chinese":false,"max":30,"min":30}]}

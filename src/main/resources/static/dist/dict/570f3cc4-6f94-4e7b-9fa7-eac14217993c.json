@@ -1,1 +1,0 @@
-{"uuid":"570f3cc4-6f94-4e7b-9fa7-eac14217993c","name":"UTR_ROL_ID","desp":"角色ID","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"3952b4de-f346-4763-a1d2-987d707774d7","chinese":false,"max":50,"min":50}]}

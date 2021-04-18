@@ -1,1 +1,0 @@
-{"uuid":"08dc241b-ce9e-4963-9258-fd506ed288c5","name":"Show_db_priv","desp":"Show_db_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"feb259d0-355c-41fe-8e62-46f9be6f75fa","chinese":false,"max":1,"min":1}]}

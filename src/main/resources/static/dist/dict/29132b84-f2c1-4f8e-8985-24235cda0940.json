@@ -1,1 +1,0 @@
-{"uuid":"29132b84-f2c1-4f8e-8985-24235cda0940","name":"Password","desp":"Password","rules":[{"kind":"length","message":"{字段名}长度必须为64","uuid":"0a2e6122-0c91-49f3-99ed-6827e24aaa68","chinese":false,"max":64,"min":64}]}

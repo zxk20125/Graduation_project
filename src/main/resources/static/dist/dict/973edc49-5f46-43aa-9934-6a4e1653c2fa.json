@@ -1,1 +1,0 @@
-{"uuid":"973edc49-5f46-43aa-9934-6a4e1653c2fa","name":"event_time","desp":"event_time","rules":[{"kind":"regexp","message":"{字段名}长度必须为0","uuid":"8b456033-31de-47d1-8796-11afc14d2ca7","value":"\\d{0}$"}]}

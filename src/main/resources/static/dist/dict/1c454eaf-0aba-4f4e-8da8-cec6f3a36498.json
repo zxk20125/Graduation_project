@@ -1,1 +1,0 @@
-{"uuid":"1c454eaf-0aba-4f4e-8da8-cec6f3a36498","name":"help_topic_id","desp":"help_topic_id","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"d1a77405-9e81-4686-a94a-f6b15de144ea","value":"\\d{10}$"}]}

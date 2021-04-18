@@ -1,1 +1,0 @@
-{"uuid":"edbeb692-e5fa-44f1-9828-273706d98564","name":"GIFT_NAME","desp":"奖品名称","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"4c44b84b-a93d-4a90-9fd2-250c41779151","chinese":false,"max":50,"min":50}]}

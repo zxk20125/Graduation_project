@@ -1,1 +1,0 @@
-{"uuid":"aa85b309-1675-4b6c-9a8f-1b1a1104cb11","name":"TASK_CANDIDATES","desp":"任务执行人","rules":[{"kind":"length","message":"{字段名}长度必须为800","uuid":"f7525bc0-23b6-491f-9ecc-fc794fd559df","chinese":false,"max":800,"min":800}]}

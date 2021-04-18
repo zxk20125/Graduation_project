@@ -1,1 +1,0 @@
-{"uuid":"b75ee00e-b667-496e-b983-879a410e2e37","name":"AMV_MAIL","desp":"邮箱","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"068f1eb6-03ee-438e-8255-b5419d0ae386","chinese":false,"max":50,"min":50}]}

@@ -1,1 +1,0 @@
-{"uuid":"2dd079ce-5fcc-43a5-af5d-aed3958c17a8","name":"USR_MAILBOX","desp":"邮箱","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"709cee98-53cc-4461-8a25-cab78f9bae52","chinese":false,"max":50,"min":50}]}

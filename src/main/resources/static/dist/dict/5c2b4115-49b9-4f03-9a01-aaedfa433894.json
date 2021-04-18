@@ -1,1 +1,0 @@
-{"uuid":"5c2b4115-49b9-4f03-9a01-aaedfa433894","name":"Trigger_priv","desp":"Trigger_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"9f3a7e8f-33ac-459e-82ad-8535c6d0bab4","chinese":false,"max":1,"min":1}]}

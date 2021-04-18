@@ -1,1 +1,0 @@
-{"uuid":"07bcaae9-a5d7-4b0d-9643-dc8bdeb662be","name":"url","desp":"检验url地址","rules":[{"kind":"regexp","value":"(http|ftp|https):\\/\\/[\\w\\-_]+(\\.[\\w\\-_]+)+([\\w\\-\\.,@?^=%&:/~\\+#]*[\\w\\-\\@?^=%&/~\\+#])?","message":"url地址格式不正确","uuid":"e8a9bda4-bd9f-4853-8e9d-1a96a8d94156"}]}

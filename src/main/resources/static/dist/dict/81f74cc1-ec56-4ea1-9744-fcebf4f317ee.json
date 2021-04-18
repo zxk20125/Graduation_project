@@ -1,1 +1,0 @@
-{"uuid":"81f74cc1-ec56-4ea1-9744-fcebf4f317ee","name":"Db","desp":"Db","rules":[{"kind":"length","message":"{字段名}长度必须为64","uuid":"f1960d46-4b72-44f4-bf06-f56d57547d72","chinese":false,"max":64,"min":64}]}

@@ -1,1 +1,0 @@
-{"uuid":"9ec1d4a6-db07-490a-9d89-328c507832c1","name":"GTU_TYPE","desp":"收取方式， 0：现取， 1：邮寄","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"03ae9f14-f40f-49a4-a119-58f4ad9bb39d","value":"\\d{10}$"}]}

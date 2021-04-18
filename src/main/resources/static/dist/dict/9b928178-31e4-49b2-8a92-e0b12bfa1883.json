@@ -1,1 +1,0 @@
-{"uuid":"9b928178-31e4-49b2-8a92-e0b12bfa1883","name":"Repl_slave_priv","desp":"Repl_slave_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"0c99c1b6-752d-4cce-a3f1-6f7dd0d585d4","chinese":false,"max":1,"min":1}]}

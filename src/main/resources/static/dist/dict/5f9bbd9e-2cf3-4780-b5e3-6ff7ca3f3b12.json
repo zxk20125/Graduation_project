@@ -1,1 +1,0 @@
-{"uuid":"5f9bbd9e-2cf3-4780-b5e3-6ff7ca3f3b12","name":"USR_LASTHOSTADDRESS","desp":"用户ip","rules":[{"kind":"length","message":"{字段名}长度必须为20","uuid":"cb2f0a59-949d-4751-9b9b-663aad2d4712","chinese":false,"max":20,"min":20}]}

@@ -1,1 +1,0 @@
-{"uuid":"9826fbcd-48b1-48b9-95aa-bbad7a76c24e","name":"ULG_LASTHOST","desp":"最后登录HOST","rules":[{"kind":"length","message":"{字段名}长度必须为25","uuid":"41841096-8141-4173-a7fa-d1f3a3a317b3","chinese":false,"max":25,"min":25}]}

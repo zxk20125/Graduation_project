@@ -1,1 +1,0 @@
-{"uuid":"a1603b55-24d5-4585-960d-824d3c14f74c","name":"start_time","desp":"start_time","rules":[{"kind":"regexp","message":"{字段名}长度必须为0","uuid":"bba3423b-fc15-409b-bfaf-76adda274ad5","value":"\\d{0}$"}]}

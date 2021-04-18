@@ -1,1 +1,0 @@
-{"uuid":"615d4e6b-9ea7-4637-ba69-e84e8a01979b","name":"end","desp":"交易结束时间","rules":[{"kind":"length","message":"{字段名}长度必须为77","uuid":"8f746f91-4702-4c20-99dc-4c6a053aa1c7","chinese":false,"max":77,"min":77}]}

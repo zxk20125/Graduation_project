@@ -1,1 +1,0 @@
-{"uuid":"9a748935-8582-4cb8-bdcc-bd02f5babaa6","name":"ROL_CREATETIME","desp":"创建时间","rules":[{"kind":"length","message":"{字段名}长度必须为30","uuid":"8d991e26-02d5-4fbf-962e-ba70a03270af","chinese":false,"max":30,"min":30}]}

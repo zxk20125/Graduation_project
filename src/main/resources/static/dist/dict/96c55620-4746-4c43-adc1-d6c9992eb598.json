@@ -1,1 +1,0 @@
-{"uuid":"96c55620-4746-4c43-adc1-d6c9992eb598","name":"AMV_VERIFY_STATUS","desp":"验证状态","rules":[{"kind":"length","message":"{字段名}长度必须为2","uuid":"1c08ac76-f5ce-493b-9a23-d8e59b0999c3","chinese":false,"max":2,"min":2}]}

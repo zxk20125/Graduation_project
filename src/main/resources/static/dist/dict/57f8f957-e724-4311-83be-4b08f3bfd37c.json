@@ -1,1 +1,0 @@
-{"uuid":"57f8f957-e724-4311-83be-4b08f3bfd37c","name":"max_connections","desp":"max_connections","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"8761b554-b2a6-4b76-a93b-e93311f3fd92","value":"\\d{10}$"}]}

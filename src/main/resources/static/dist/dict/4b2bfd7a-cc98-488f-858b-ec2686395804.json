@@ -1,1 +1,0 @@
-{"uuid":"4b2bfd7a-cc98-488f-858b-ec2686395804","name":"Create_tablespace_priv","desp":"Create_tablespace_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"04bf3a7a-722a-4616-a296-99a6780d020a","chinese":false,"max":1,"min":1}]}

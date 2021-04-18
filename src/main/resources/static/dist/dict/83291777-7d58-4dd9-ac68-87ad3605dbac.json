@@ -1,1 +1,0 @@
-{"uuid":"430cc244-4717-4b8c-ab9d-f342fe9fcd83","name":"Lock_tables_priv","desp":"Lock_tables_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"0343a5b1-fc61-42b5-b888-60285717fbd1","chinese":false,"max":1,"min":1}]}

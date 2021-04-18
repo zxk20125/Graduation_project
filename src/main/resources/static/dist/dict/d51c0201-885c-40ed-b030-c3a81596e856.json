@@ -1,1 +1,0 @@
-{"uuid":"d51c0201-885c-40ed-b030-c3a81596e856","name":"USK_TIME","desp":"搜索时间","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"da018b64-9c6f-4880-ba8a-a40fae486288","chinese":false,"max":50,"min":50}]}

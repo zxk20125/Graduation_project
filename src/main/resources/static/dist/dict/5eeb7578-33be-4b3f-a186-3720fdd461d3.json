@@ -1,1 +1,0 @@
-{"uuid":"5eeb7578-33be-4b3f-a186-3720fdd461d3","name":"COINS_NUM","desp":"总金币数","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"6cdae307-6131-4320-ae0a-f1af2df40c56","value":"\\d{10}$"}]}

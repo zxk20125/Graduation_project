@@ -1,1 +1,0 @@
-{"uuid":"d39e5d29-1692-42a9-9fa0-7cf41482644a","name":"AMV_UPDATE_TIME","desp":"更新时间","rules":[{"kind":"length","message":"{字段名}长度必须为30","uuid":"1a1944ea-8df6-4ddf-ae77-c76ec729846e","chinese":false,"max":30,"min":30}]}

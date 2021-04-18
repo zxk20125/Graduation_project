@@ -1,1 +1,0 @@
-{"uuid":"0958f288-7f89-4ec2-aea5-9f97fff423fc","name":"TU_ID","desp":"关联表id","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"8fb5ac14-297d-4c2f-9e71-9913b0ca0c93","chinese":false,"max":50,"min":50}]}

@@ -1,1 +1,0 @@
-{"uuid":"59bf423a-6feb-40f3-94ed-e210324348bf","name":"USR_LOCKTIME","desp":"锁定开始时间","rules":[{"kind":"length","message":"{字段名}长度必须为30","uuid":"3b31163b-0018-4caf-8e73-7e6609da395b","chinese":false,"max":30,"min":30}]}

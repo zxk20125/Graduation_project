@@ -1,1 +1,0 @@
-{"uuid":"5125c6a9-51dc-442d-a94a-e92786eb6e30","name":"AMV_CAPTCHA","desp":"验证码","rules":[{"kind":"length","message":"{字段名}长度必须为10","uuid":"db0bdb2f-0afd-419e-932e-c757e66f2df6","chinese":false,"max":10,"min":10}]}

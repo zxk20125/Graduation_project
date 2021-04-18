@@ -1,1 +1,0 @@
-{"uuid":"58892115-4adf-44ea-b330-a91ad009bd02","name":"COINS_ID","desp":"ID","rules":[{"kind":"length","message":"{字段名}长度必须为50","uuid":"12e66da3-b8d1-4158-81ac-d919b9d2d075","chinese":false,"max":50,"min":50}]}

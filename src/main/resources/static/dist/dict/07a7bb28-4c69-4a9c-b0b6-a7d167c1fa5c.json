@@ -1,1 +1,0 @@
-{"uuid":"07a7bb28-4c69-4a9c-b0b6-a7d167c1fa5c","name":"Socket","desp":"Socket","rules":[{"kind":"length","message":"{字段名}长度必须为64","uuid":"b1434406-d91c-4f16-b2d4-ff7c0761be09","chinese":false,"max":64,"min":64}]}

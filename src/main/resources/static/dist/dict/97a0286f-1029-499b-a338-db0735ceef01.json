@@ -1,1 +1,0 @@
-{"uuid":"97a0286f-1029-499b-a338-db0735ceef01","name":"References_priv","desp":"References_priv","rules":[{"kind":"length","message":"{字段名}长度必须为1","uuid":"d50eb315-ec2f-4aa6-9181-6964c383d844","chinese":false,"max":1,"min":1}]}

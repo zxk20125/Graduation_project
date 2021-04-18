@@ -1,1 +1,0 @@
-{"uuid":"313bbf27-173a-4186-96ad-c90318c7db2e","name":"Table_name","desp":"Table_name","rules":[{"kind":"length","message":"{字段名}长度必须为64","uuid":"c7c05ca8-64f2-4e86-84bc-fc972b16ea0d","chinese":false,"max":64,"min":64}]}

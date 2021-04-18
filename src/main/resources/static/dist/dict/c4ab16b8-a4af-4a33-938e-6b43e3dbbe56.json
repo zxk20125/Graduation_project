@@ -1,1 +1,0 @@
-{"uuid":"c4ab16b8-a4af-4a33-938e-6b43e3dbbe56","name":"ACC_CODE","desp":"权限码","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"e1d85c41-e52b-4100-9db1-e11f69981e82","value":"\\d{10}$"}]}

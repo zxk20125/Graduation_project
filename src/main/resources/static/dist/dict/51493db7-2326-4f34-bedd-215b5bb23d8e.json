@@ -1,1 +1,0 @@
-{"uuid":"51493db7-2326-4f34-bedd-215b5bb23d8e","name":"DEMO_URL","desp":"案例路径","rules":[{"kind":"length","message":"{字段名}长度必须为200","uuid":"a4c1ccb2-f2b6-4c93-9b85-5da59e8c77b3","chinese":false,"max":200,"min":200}]}

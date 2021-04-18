@@ -1,1 +1,0 @@
-{"uuid":"fecab20a-6133-4002-9ed0-8032470cbeb7","name":"Table_priv","desp":"Table_priv","rules":[{"kind":"length","message":"{字段名}长度必须为98","uuid":"221686a8-e9e3-46e6-9bf0-3e9800d06ab5","chinese":false,"max":98,"min":98}]}

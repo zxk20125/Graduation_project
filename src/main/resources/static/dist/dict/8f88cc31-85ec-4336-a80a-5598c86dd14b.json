@@ -1,1 +1,0 @@
-{"uuid":"8f88cc31-85ec-4336-a80a-5598c86dd14b","name":"interval_value","desp":"interval_value","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"84cab7e6-f27b-466c-8397-ea5b20c65055","value":"\\d{10}$"}]}

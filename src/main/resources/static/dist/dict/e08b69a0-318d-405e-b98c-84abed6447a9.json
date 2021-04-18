@@ -1,1 +1,0 @@
-{"uuid":"e08b69a0-318d-405e-b98c-84abed6447a9","name":"email","desp":"校验邮箱","rules":[{"kind":"regexp","value":"^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+","message":"邮箱格式不正确","uuid":"5ba77b51-5d21-4b13-8366-486eee761806"}]}

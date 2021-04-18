@@ -1,1 +1,0 @@
-{"uuid":"c6d81e5d-a89a-4a65-82b6-3972342bdc45","name":"DEMO_TYPE","desp":"案例打开方式","rules":[{"kind":"length","message":"{字段名}长度必须为10","uuid":"4d45e4cb-4824-47de-9614-e5953828fe69","chinese":false,"max":10,"min":10}]}

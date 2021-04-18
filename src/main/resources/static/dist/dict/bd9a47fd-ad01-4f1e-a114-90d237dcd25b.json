@@ -1,1 +1,0 @@
-{"uuid":"bd9a47fd-ad01-4f1e-a114-90d237dcd25b","name":"last_executed","desp":"last_executed","rules":[{"kind":"regexp","message":"{字段名}长度必须为0","uuid":"a6cd4e37-b751-471c-953d-82e322e087d6","value":"\\d{0}$"}]}

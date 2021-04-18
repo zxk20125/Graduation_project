@@ -1,1 +1,0 @@
-{"uuid":"9528d3ae-30f5-40cd-a74a-687b1c23045e","name":"URL_ACCESS","desp":"URL_ACCESS","rules":[{"kind":"regexp","message":"{字段名}长度必须为10","uuid":"5ca7bbea-6b8a-4bb2-a86b-8bc3bbbfed2f","value":"\\d{10}$"}]}
